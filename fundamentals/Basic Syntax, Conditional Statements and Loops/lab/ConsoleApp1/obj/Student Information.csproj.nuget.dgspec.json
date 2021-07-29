@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\master\\Desktop\\GitHub\\C#\\fundamentals\\Basic Syntax, Conditional Statements and Loops\\lab\\ConsoleApp1\\Student Information.csproj": {}
+    "C:\\Users\\master\\Desktop\\GitHub\\C_Sharp\\fundamentals\\Basic Syntax, Conditional Statements and Loops\\lab\\ConsoleApp1\\Student Information.csproj": {}
   },
   "projects": {
-    "C:\\Users\\master\\Desktop\\GitHub\\C#\\fundamentals\\Basic Syntax, Conditional Statements and Loops\\lab\\ConsoleApp1\\Student Information.csproj": {
+    "C:\\Users\\master\\Desktop\\GitHub\\C_Sharp\\fundamentals\\Basic Syntax, Conditional Statements and Loops\\lab\\ConsoleApp1\\Student Information.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\master\\Desktop\\GitHub\\C#\\fundamentals\\Basic Syntax, Conditional Statements and Loops\\lab\\ConsoleApp1\\Student Information.csproj",
+        "projectUniqueName": "C:\\Users\\master\\Desktop\\GitHub\\C_Sharp\\fundamentals\\Basic Syntax, Conditional Statements and Loops\\lab\\ConsoleApp1\\Student Information.csproj",
         "projectName": "Student Information",
-        "projectPath": "C:\\Users\\master\\Desktop\\GitHub\\C#\\fundamentals\\Basic Syntax, Conditional Statements and Loops\\lab\\ConsoleApp1\\Student Information.csproj",
+        "projectPath": "C:\\Users\\master\\Desktop\\GitHub\\C_Sharp\\fundamentals\\Basic Syntax, Conditional Statements and Loops\\lab\\ConsoleApp1\\Student Information.csproj",
         "packagesPath": "C:\\Users\\master\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\master\\Desktop\\GitHub\\C#\\fundamentals\\Basic Syntax, Conditional Statements and Loops\\lab\\ConsoleApp1\\obj\\",
+        "outputPath": "C:\\Users\\master\\Desktop\\GitHub\\C_Sharp\\fundamentals\\Basic Syntax, Conditional Statements and Loops\\lab\\ConsoleApp1\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\master\\AppData\\Roaming\\NuGet\\NuGet.Config",
