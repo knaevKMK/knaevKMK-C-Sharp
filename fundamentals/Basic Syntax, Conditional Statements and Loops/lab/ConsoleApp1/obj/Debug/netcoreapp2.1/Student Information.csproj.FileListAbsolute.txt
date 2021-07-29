@@ -1,0 +1,12 @@
+C:\Users\master\Desktop\GitHub\C#\fundamentals\Basic Syntax, Conditional Statements and Loops\lab\ConsoleApp1\bin\Debug\netcoreapp2.1\Student Information.deps.json
+C:\Users\master\Desktop\GitHub\C#\fundamentals\Basic Syntax, Conditional Statements and Loops\lab\ConsoleApp1\bin\Debug\netcoreapp2.1\Student Information.runtimeconfig.json
+C:\Users\master\Desktop\GitHub\C#\fundamentals\Basic Syntax, Conditional Statements and Loops\lab\ConsoleApp1\bin\Debug\netcoreapp2.1\Student Information.runtimeconfig.dev.json
+C:\Users\master\Desktop\GitHub\C#\fundamentals\Basic Syntax, Conditional Statements and Loops\lab\ConsoleApp1\bin\Debug\netcoreapp2.1\Student Information.dll
+C:\Users\master\Desktop\GitHub\C#\fundamentals\Basic Syntax, Conditional Statements and Loops\lab\ConsoleApp1\bin\Debug\netcoreapp2.1\Student Information.pdb
+C:\Users\master\Desktop\GitHub\C#\fundamentals\Basic Syntax, Conditional Statements and Loops\lab\ConsoleApp1\obj\Debug\netcoreapp2.1\Student Information.csproj.AssemblyReference.cache
+C:\Users\master\Desktop\GitHub\C#\fundamentals\Basic Syntax, Conditional Statements and Loops\lab\ConsoleApp1\obj\Debug\netcoreapp2.1\Student Information.AssemblyInfoInputs.cache
+C:\Users\master\Desktop\GitHub\C#\fundamentals\Basic Syntax, Conditional Statements and Loops\lab\ConsoleApp1\obj\Debug\netcoreapp2.1\Student Information.AssemblyInfo.cs
+C:\Users\master\Desktop\GitHub\C#\fundamentals\Basic Syntax, Conditional Statements and Loops\lab\ConsoleApp1\obj\Debug\netcoreapp2.1\Student Information.csproj.CoreCompileInputs.cache
+C:\Users\master\Desktop\GitHub\C#\fundamentals\Basic Syntax, Conditional Statements and Loops\lab\ConsoleApp1\obj\Debug\netcoreapp2.1\Student Information.dll
+C:\Users\master\Desktop\GitHub\C#\fundamentals\Basic Syntax, Conditional Statements and Loops\lab\ConsoleApp1\obj\Debug\netcoreapp2.1\Student Information.pdb
+C:\Users\master\Desktop\GitHub\C#\fundamentals\Basic Syntax, Conditional Statements and Loops\lab\ConsoleApp1\obj\Debug\netcoreapp2.1\Student Information.genruntimeconfig.cache
