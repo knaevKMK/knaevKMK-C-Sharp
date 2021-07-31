@@ -26,12 +26,14 @@ namespace Stack_Sum
                         break;
                     case "remove":
                         int count = int.Parse(read[1]);
+                        if (stack.Count < count)
+                        {
+                            read = Console.ReadLine().Split(" ", StringSplitOptions.RemoveEmptyEntries);
+                            continue;
+                        }
                         for (int i = 0; i < count; i++)
                         {
-                            if (stack.Count == 0)
-                            {
-                                break;
-                            }
+                          
                             stack.Pop();
                         }
                         break;
