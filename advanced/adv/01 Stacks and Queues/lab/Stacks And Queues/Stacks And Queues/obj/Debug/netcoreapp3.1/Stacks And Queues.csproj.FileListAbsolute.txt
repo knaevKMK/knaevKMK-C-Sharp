@@ -1,0 +1,13 @@
+C:\Users\master\Desktop\GitHub\C_Sharp\advanced\adv\01 Stacks and Queues\lab\Stacks And Queues\Stacks And Queues\bin\Debug\netcoreapp3.1\Stacks And Queues.exe
+C:\Users\master\Desktop\GitHub\C_Sharp\advanced\adv\01 Stacks and Queues\lab\Stacks And Queues\Stacks And Queues\bin\Debug\netcoreapp3.1\Stacks And Queues.deps.json
+C:\Users\master\Desktop\GitHub\C_Sharp\advanced\adv\01 Stacks and Queues\lab\Stacks And Queues\Stacks And Queues\bin\Debug\netcoreapp3.1\Stacks And Queues.runtimeconfig.json
+C:\Users\master\Desktop\GitHub\C_Sharp\advanced\adv\01 Stacks and Queues\lab\Stacks And Queues\Stacks And Queues\bin\Debug\netcoreapp3.1\Stacks And Queues.runtimeconfig.dev.json
+C:\Users\master\Desktop\GitHub\C_Sharp\advanced\adv\01 Stacks and Queues\lab\Stacks And Queues\Stacks And Queues\bin\Debug\netcoreapp3.1\Stacks And Queues.dll
+C:\Users\master\Desktop\GitHub\C_Sharp\advanced\adv\01 Stacks and Queues\lab\Stacks And Queues\Stacks And Queues\bin\Debug\netcoreapp3.1\Stacks And Queues.pdb
+C:\Users\master\Desktop\GitHub\C_Sharp\advanced\adv\01 Stacks and Queues\lab\Stacks And Queues\Stacks And Queues\obj\Debug\netcoreapp3.1\Stacks And Queues.csproj.AssemblyReference.cache
+C:\Users\master\Desktop\GitHub\C_Sharp\advanced\adv\01 Stacks and Queues\lab\Stacks And Queues\Stacks And Queues\obj\Debug\netcoreapp3.1\Stacks And Queues.AssemblyInfoInputs.cache
+C:\Users\master\Desktop\GitHub\C_Sharp\advanced\adv\01 Stacks and Queues\lab\Stacks And Queues\Stacks And Queues\obj\Debug\netcoreapp3.1\Stacks And Queues.AssemblyInfo.cs
+C:\Users\master\Desktop\GitHub\C_Sharp\advanced\adv\01 Stacks and Queues\lab\Stacks And Queues\Stacks And Queues\obj\Debug\netcoreapp3.1\Stacks And Queues.csproj.CoreCompileInputs.cache
+C:\Users\master\Desktop\GitHub\C_Sharp\advanced\adv\01 Stacks and Queues\lab\Stacks And Queues\Stacks And Queues\obj\Debug\netcoreapp3.1\Stacks And Queues.dll
+C:\Users\master\Desktop\GitHub\C_Sharp\advanced\adv\01 Stacks and Queues\lab\Stacks And Queues\Stacks And Queues\obj\Debug\netcoreapp3.1\Stacks And Queues.pdb
+C:\Users\master\Desktop\GitHub\C_Sharp\advanced\adv\01 Stacks and Queues\lab\Stacks And Queues\Stacks And Queues\obj\Debug\netcoreapp3.1\Stacks And Queues.genruntimeconfig.cache

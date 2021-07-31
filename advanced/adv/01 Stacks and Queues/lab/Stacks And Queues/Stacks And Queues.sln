@@ -1,0 +1,45 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31515.178
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Stacks And Queues", "Stacks And Queues\Stacks And Queues.csproj", "{5DD10083-F219-41E1-B989-D0578A662639}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{32806780-11EB-4698-BFC0-7DFC5D3BCD07}"
+	ProjectSection(SolutionItems) = preProject
+		Class1.cs = Class1.cs
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Stack Sum", "Stack Sum\Stack Sum.csproj", "{316E5133-BFD0-45A2-80AE-93AD42E11DCF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Simple Calculator", "Simple Calculator\Simple Calculator.csproj", "{41CF460C-0A6A-43F5-A8C3-944A8EB9DAAE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5DD10083-F219-41E1-B989-D0578A662639}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5DD10083-F219-41E1-B989-D0578A662639}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5DD10083-F219-41E1-B989-D0578A662639}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5DD10083-F219-41E1-B989-D0578A662639}.Release|Any CPU.Build.0 = Release|Any CPU
+		{316E5133-BFD0-45A2-80AE-93AD42E11DCF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{316E5133-BFD0-45A2-80AE-93AD42E11DCF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{316E5133-BFD0-45A2-80AE-93AD42E11DCF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{316E5133-BFD0-45A2-80AE-93AD42E11DCF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{41CF460C-0A6A-43F5-A8C3-944A8EB9DAAE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{41CF460C-0A6A-43F5-A8C3-944A8EB9DAAE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{41CF460C-0A6A-43F5-A8C3-944A8EB9DAAE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{41CF460C-0A6A-43F5-A8C3-944A8EB9DAAE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{316E5133-BFD0-45A2-80AE-93AD42E11DCF} = {32806780-11EB-4698-BFC0-7DFC5D3BCD07}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7D8C8D5F-0599-4E63-899D-836AE836536A}
+	EndGlobalSection
+EndGlobal
