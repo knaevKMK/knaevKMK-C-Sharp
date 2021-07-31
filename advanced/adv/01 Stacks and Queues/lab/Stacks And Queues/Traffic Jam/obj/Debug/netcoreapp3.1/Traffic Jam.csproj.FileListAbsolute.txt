@@ -1,0 +1,13 @@
+C:\Users\master\Desktop\GitHub\C_Sharp\advanced\adv\01 Stacks and Queues\lab\Stacks And Queues\Traffic Jam\obj\Debug\netcoreapp3.1\Traffic Jam.csproj.AssemblyReference.cache
+C:\Users\master\Desktop\GitHub\C_Sharp\advanced\adv\01 Stacks and Queues\lab\Stacks And Queues\Traffic Jam\obj\Debug\netcoreapp3.1\Traffic Jam.AssemblyInfoInputs.cache
+C:\Users\master\Desktop\GitHub\C_Sharp\advanced\adv\01 Stacks and Queues\lab\Stacks And Queues\Traffic Jam\obj\Debug\netcoreapp3.1\Traffic Jam.AssemblyInfo.cs
+C:\Users\master\Desktop\GitHub\C_Sharp\advanced\adv\01 Stacks and Queues\lab\Stacks And Queues\Traffic Jam\obj\Debug\netcoreapp3.1\Traffic Jam.csproj.CoreCompileInputs.cache
+C:\Users\master\Desktop\GitHub\C_Sharp\advanced\adv\01 Stacks and Queues\lab\Stacks And Queues\Traffic Jam\bin\Debug\netcoreapp3.1\Traffic Jam.exe
+C:\Users\master\Desktop\GitHub\C_Sharp\advanced\adv\01 Stacks and Queues\lab\Stacks And Queues\Traffic Jam\bin\Debug\netcoreapp3.1\Traffic Jam.deps.json
+C:\Users\master\Desktop\GitHub\C_Sharp\advanced\adv\01 Stacks and Queues\lab\Stacks And Queues\Traffic Jam\bin\Debug\netcoreapp3.1\Traffic Jam.runtimeconfig.json
+C:\Users\master\Desktop\GitHub\C_Sharp\advanced\adv\01 Stacks and Queues\lab\Stacks And Queues\Traffic Jam\bin\Debug\netcoreapp3.1\Traffic Jam.runtimeconfig.dev.json
+C:\Users\master\Desktop\GitHub\C_Sharp\advanced\adv\01 Stacks and Queues\lab\Stacks And Queues\Traffic Jam\bin\Debug\netcoreapp3.1\Traffic Jam.dll
+C:\Users\master\Desktop\GitHub\C_Sharp\advanced\adv\01 Stacks and Queues\lab\Stacks And Queues\Traffic Jam\bin\Debug\netcoreapp3.1\Traffic Jam.pdb
+C:\Users\master\Desktop\GitHub\C_Sharp\advanced\adv\01 Stacks and Queues\lab\Stacks And Queues\Traffic Jam\obj\Debug\netcoreapp3.1\Traffic Jam.dll
+C:\Users\master\Desktop\GitHub\C_Sharp\advanced\adv\01 Stacks and Queues\lab\Stacks And Queues\Traffic Jam\obj\Debug\netcoreapp3.1\Traffic Jam.pdb
+C:\Users\master\Desktop\GitHub\C_Sharp\advanced\adv\01 Stacks and Queues\lab\Stacks And Queues\Traffic Jam\obj\Debug\netcoreapp3.1\Traffic Jam.genruntimeconfig.cache

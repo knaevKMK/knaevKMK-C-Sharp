@@ -1,0 +1,13 @@
+C:\Users\master\Desktop\GitHub\C_Sharp\advanced\adv\01 Stacks and Queues\lab\Stacks And Queues\Matching Brackets\bin\Debug\netcoreapp3.1\Matching Brackets.exe
+C:\Users\master\Desktop\GitHub\C_Sharp\advanced\adv\01 Stacks and Queues\lab\Stacks And Queues\Matching Brackets\bin\Debug\netcoreapp3.1\Matching Brackets.deps.json
+C:\Users\master\Desktop\GitHub\C_Sharp\advanced\adv\01 Stacks and Queues\lab\Stacks And Queues\Matching Brackets\bin\Debug\netcoreapp3.1\Matching Brackets.runtimeconfig.json
+C:\Users\master\Desktop\GitHub\C_Sharp\advanced\adv\01 Stacks and Queues\lab\Stacks And Queues\Matching Brackets\bin\Debug\netcoreapp3.1\Matching Brackets.runtimeconfig.dev.json
+C:\Users\master\Desktop\GitHub\C_Sharp\advanced\adv\01 Stacks and Queues\lab\Stacks And Queues\Matching Brackets\bin\Debug\netcoreapp3.1\Matching Brackets.dll
+C:\Users\master\Desktop\GitHub\C_Sharp\advanced\adv\01 Stacks and Queues\lab\Stacks And Queues\Matching Brackets\bin\Debug\netcoreapp3.1\Matching Brackets.pdb
+C:\Users\master\Desktop\GitHub\C_Sharp\advanced\adv\01 Stacks and Queues\lab\Stacks And Queues\Matching Brackets\obj\Debug\netcoreapp3.1\Matching Brackets.csproj.AssemblyReference.cache
+C:\Users\master\Desktop\GitHub\C_Sharp\advanced\adv\01 Stacks and Queues\lab\Stacks And Queues\Matching Brackets\obj\Debug\netcoreapp3.1\Matching Brackets.AssemblyInfoInputs.cache
+C:\Users\master\Desktop\GitHub\C_Sharp\advanced\adv\01 Stacks and Queues\lab\Stacks And Queues\Matching Brackets\obj\Debug\netcoreapp3.1\Matching Brackets.AssemblyInfo.cs
+C:\Users\master\Desktop\GitHub\C_Sharp\advanced\adv\01 Stacks and Queues\lab\Stacks And Queues\Matching Brackets\obj\Debug\netcoreapp3.1\Matching Brackets.csproj.CoreCompileInputs.cache
+C:\Users\master\Desktop\GitHub\C_Sharp\advanced\adv\01 Stacks and Queues\lab\Stacks And Queues\Matching Brackets\obj\Debug\netcoreapp3.1\Matching Brackets.dll
+C:\Users\master\Desktop\GitHub\C_Sharp\advanced\adv\01 Stacks and Queues\lab\Stacks And Queues\Matching Brackets\obj\Debug\netcoreapp3.1\Matching Brackets.pdb
+C:\Users\master\Desktop\GitHub\C_Sharp\advanced\adv\01 Stacks and Queues\lab\Stacks And Queues\Matching Brackets\obj\Debug\netcoreapp3.1\Matching Brackets.genruntimeconfig.cache
