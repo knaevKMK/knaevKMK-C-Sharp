@@ -1,0 +1,12 @@
+C:\Users\master\Desktop\GitHub\C_Sharp\advanced\adv\02 Multidimensional Arrays\lab\Pascal Triangle\bin\Debug\netcoreapp3.1\Pascal Triangle.exe
+C:\Users\master\Desktop\GitHub\C_Sharp\advanced\adv\02 Multidimensional Arrays\lab\Pascal Triangle\bin\Debug\netcoreapp3.1\Pascal Triangle.deps.json
+C:\Users\master\Desktop\GitHub\C_Sharp\advanced\adv\02 Multidimensional Arrays\lab\Pascal Triangle\bin\Debug\netcoreapp3.1\Pascal Triangle.runtimeconfig.json
+C:\Users\master\Desktop\GitHub\C_Sharp\advanced\adv\02 Multidimensional Arrays\lab\Pascal Triangle\bin\Debug\netcoreapp3.1\Pascal Triangle.runtimeconfig.dev.json
+C:\Users\master\Desktop\GitHub\C_Sharp\advanced\adv\02 Multidimensional Arrays\lab\Pascal Triangle\bin\Debug\netcoreapp3.1\Pascal Triangle.dll
+C:\Users\master\Desktop\GitHub\C_Sharp\advanced\adv\02 Multidimensional Arrays\lab\Pascal Triangle\bin\Debug\netcoreapp3.1\Pascal Triangle.pdb
+C:\Users\master\Desktop\GitHub\C_Sharp\advanced\adv\02 Multidimensional Arrays\lab\Pascal Triangle\obj\Debug\netcoreapp3.1\Pascal Triangle.AssemblyInfoInputs.cache
+C:\Users\master\Desktop\GitHub\C_Sharp\advanced\adv\02 Multidimensional Arrays\lab\Pascal Triangle\obj\Debug\netcoreapp3.1\Pascal Triangle.AssemblyInfo.cs
+C:\Users\master\Desktop\GitHub\C_Sharp\advanced\adv\02 Multidimensional Arrays\lab\Pascal Triangle\obj\Debug\netcoreapp3.1\Pascal Triangle.csproj.CoreCompileInputs.cache
+C:\Users\master\Desktop\GitHub\C_Sharp\advanced\adv\02 Multidimensional Arrays\lab\Pascal Triangle\obj\Debug\netcoreapp3.1\Pascal Triangle.dll
+C:\Users\master\Desktop\GitHub\C_Sharp\advanced\adv\02 Multidimensional Arrays\lab\Pascal Triangle\obj\Debug\netcoreapp3.1\Pascal Triangle.pdb
+C:\Users\master\Desktop\GitHub\C_Sharp\advanced\adv\02 Multidimensional Arrays\lab\Pascal Triangle\obj\Debug\netcoreapp3.1\Pascal Triangle.genruntimeconfig.cache

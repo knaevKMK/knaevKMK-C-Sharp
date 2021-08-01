@@ -1,0 +1,12 @@
+C:\Users\master\Desktop\GitHub\C_Sharp\advanced\adv\02 Multidimensional Arrays\lab\Symbol in Matrix\bin\Debug\netcoreapp3.1\Symbol in Matrix.exe
+C:\Users\master\Desktop\GitHub\C_Sharp\advanced\adv\02 Multidimensional Arrays\lab\Symbol in Matrix\bin\Debug\netcoreapp3.1\Symbol in Matrix.deps.json
+C:\Users\master\Desktop\GitHub\C_Sharp\advanced\adv\02 Multidimensional Arrays\lab\Symbol in Matrix\bin\Debug\netcoreapp3.1\Symbol in Matrix.runtimeconfig.json
+C:\Users\master\Desktop\GitHub\C_Sharp\advanced\adv\02 Multidimensional Arrays\lab\Symbol in Matrix\bin\Debug\netcoreapp3.1\Symbol in Matrix.runtimeconfig.dev.json
+C:\Users\master\Desktop\GitHub\C_Sharp\advanced\adv\02 Multidimensional Arrays\lab\Symbol in Matrix\bin\Debug\netcoreapp3.1\Symbol in Matrix.dll
+C:\Users\master\Desktop\GitHub\C_Sharp\advanced\adv\02 Multidimensional Arrays\lab\Symbol in Matrix\bin\Debug\netcoreapp3.1\Symbol in Matrix.pdb
+C:\Users\master\Desktop\GitHub\C_Sharp\advanced\adv\02 Multidimensional Arrays\lab\Symbol in Matrix\obj\Debug\netcoreapp3.1\Symbol in Matrix.AssemblyInfoInputs.cache
+C:\Users\master\Desktop\GitHub\C_Sharp\advanced\adv\02 Multidimensional Arrays\lab\Symbol in Matrix\obj\Debug\netcoreapp3.1\Symbol in Matrix.AssemblyInfo.cs
+C:\Users\master\Desktop\GitHub\C_Sharp\advanced\adv\02 Multidimensional Arrays\lab\Symbol in Matrix\obj\Debug\netcoreapp3.1\Symbol in Matrix.csproj.CoreCompileInputs.cache
+C:\Users\master\Desktop\GitHub\C_Sharp\advanced\adv\02 Multidimensional Arrays\lab\Symbol in Matrix\obj\Debug\netcoreapp3.1\Symbol in Matrix.dll
+C:\Users\master\Desktop\GitHub\C_Sharp\advanced\adv\02 Multidimensional Arrays\lab\Symbol in Matrix\obj\Debug\netcoreapp3.1\Symbol in Matrix.pdb
+C:\Users\master\Desktop\GitHub\C_Sharp\advanced\adv\02 Multidimensional Arrays\lab\Symbol in Matrix\obj\Debug\netcoreapp3.1\Symbol in Matrix.genruntimeconfig.cache
