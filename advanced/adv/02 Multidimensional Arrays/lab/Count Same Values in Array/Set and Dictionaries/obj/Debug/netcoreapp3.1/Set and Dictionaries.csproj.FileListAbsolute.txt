@@ -1,0 +1,13 @@
+C:\Users\master\Desktop\GitHub\C_Sharp\advanced\adv\02 Multidimensional Arrays\lab\Count Same Values in Array\Set and Dictionaries\bin\Debug\netcoreapp3.1\Set and Dictionaries.exe
+C:\Users\master\Desktop\GitHub\C_Sharp\advanced\adv\02 Multidimensional Arrays\lab\Count Same Values in Array\Set and Dictionaries\bin\Debug\netcoreapp3.1\Set and Dictionaries.deps.json
+C:\Users\master\Desktop\GitHub\C_Sharp\advanced\adv\02 Multidimensional Arrays\lab\Count Same Values in Array\Set and Dictionaries\bin\Debug\netcoreapp3.1\Set and Dictionaries.runtimeconfig.json
+C:\Users\master\Desktop\GitHub\C_Sharp\advanced\adv\02 Multidimensional Arrays\lab\Count Same Values in Array\Set and Dictionaries\bin\Debug\netcoreapp3.1\Set and Dictionaries.runtimeconfig.dev.json
+C:\Users\master\Desktop\GitHub\C_Sharp\advanced\adv\02 Multidimensional Arrays\lab\Count Same Values in Array\Set and Dictionaries\bin\Debug\netcoreapp3.1\Set and Dictionaries.dll
+C:\Users\master\Desktop\GitHub\C_Sharp\advanced\adv\02 Multidimensional Arrays\lab\Count Same Values in Array\Set and Dictionaries\bin\Debug\netcoreapp3.1\Set and Dictionaries.pdb
+C:\Users\master\Desktop\GitHub\C_Sharp\advanced\adv\02 Multidimensional Arrays\lab\Count Same Values in Array\Set and Dictionaries\obj\Debug\netcoreapp3.1\Set and Dictionaries.csproj.AssemblyReference.cache
+C:\Users\master\Desktop\GitHub\C_Sharp\advanced\adv\02 Multidimensional Arrays\lab\Count Same Values in Array\Set and Dictionaries\obj\Debug\netcoreapp3.1\Set and Dictionaries.AssemblyInfoInputs.cache
+C:\Users\master\Desktop\GitHub\C_Sharp\advanced\adv\02 Multidimensional Arrays\lab\Count Same Values in Array\Set and Dictionaries\obj\Debug\netcoreapp3.1\Set and Dictionaries.AssemblyInfo.cs
+C:\Users\master\Desktop\GitHub\C_Sharp\advanced\adv\02 Multidimensional Arrays\lab\Count Same Values in Array\Set and Dictionaries\obj\Debug\netcoreapp3.1\Set and Dictionaries.csproj.CoreCompileInputs.cache
+C:\Users\master\Desktop\GitHub\C_Sharp\advanced\adv\02 Multidimensional Arrays\lab\Count Same Values in Array\Set and Dictionaries\obj\Debug\netcoreapp3.1\Set and Dictionaries.dll
+C:\Users\master\Desktop\GitHub\C_Sharp\advanced\adv\02 Multidimensional Arrays\lab\Count Same Values in Array\Set and Dictionaries\obj\Debug\netcoreapp3.1\Set and Dictionaries.pdb
+C:\Users\master\Desktop\GitHub\C_Sharp\advanced\adv\02 Multidimensional Arrays\lab\Count Same Values in Array\Set and Dictionaries\obj\Debug\netcoreapp3.1\Set and Dictionaries.genruntimeconfig.cache

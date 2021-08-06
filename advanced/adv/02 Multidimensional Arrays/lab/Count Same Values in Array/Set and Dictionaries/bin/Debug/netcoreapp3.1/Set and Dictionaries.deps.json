@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v3.1",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v3.1": {
+      "Set and Dictionaries/1.0.0": {
+        "runtime": {
+          "Set and Dictionaries.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Set and Dictionaries/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

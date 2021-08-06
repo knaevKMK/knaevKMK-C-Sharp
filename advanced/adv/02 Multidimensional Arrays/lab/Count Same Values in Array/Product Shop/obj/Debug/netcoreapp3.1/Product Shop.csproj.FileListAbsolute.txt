@@ -1,0 +1,13 @@
+C:\Users\master\Desktop\GitHub\C_Sharp\advanced\adv\02 Multidimensional Arrays\lab\Count Same Values in Array\Product Shop\bin\Debug\netcoreapp3.1\Product Shop.exe
+C:\Users\master\Desktop\GitHub\C_Sharp\advanced\adv\02 Multidimensional Arrays\lab\Count Same Values in Array\Product Shop\bin\Debug\netcoreapp3.1\Product Shop.deps.json
+C:\Users\master\Desktop\GitHub\C_Sharp\advanced\adv\02 Multidimensional Arrays\lab\Count Same Values in Array\Product Shop\bin\Debug\netcoreapp3.1\Product Shop.runtimeconfig.json
+C:\Users\master\Desktop\GitHub\C_Sharp\advanced\adv\02 Multidimensional Arrays\lab\Count Same Values in Array\Product Shop\bin\Debug\netcoreapp3.1\Product Shop.runtimeconfig.dev.json
+C:\Users\master\Desktop\GitHub\C_Sharp\advanced\adv\02 Multidimensional Arrays\lab\Count Same Values in Array\Product Shop\bin\Debug\netcoreapp3.1\Product Shop.dll
+C:\Users\master\Desktop\GitHub\C_Sharp\advanced\adv\02 Multidimensional Arrays\lab\Count Same Values in Array\Product Shop\bin\Debug\netcoreapp3.1\Product Shop.pdb
+C:\Users\master\Desktop\GitHub\C_Sharp\advanced\adv\02 Multidimensional Arrays\lab\Count Same Values in Array\Product Shop\obj\Debug\netcoreapp3.1\Product Shop.csproj.AssemblyReference.cache
+C:\Users\master\Desktop\GitHub\C_Sharp\advanced\adv\02 Multidimensional Arrays\lab\Count Same Values in Array\Product Shop\obj\Debug\netcoreapp3.1\Product Shop.AssemblyInfoInputs.cache
+C:\Users\master\Desktop\GitHub\C_Sharp\advanced\adv\02 Multidimensional Arrays\lab\Count Same Values in Array\Product Shop\obj\Debug\netcoreapp3.1\Product Shop.AssemblyInfo.cs
+C:\Users\master\Desktop\GitHub\C_Sharp\advanced\adv\02 Multidimensional Arrays\lab\Count Same Values in Array\Product Shop\obj\Debug\netcoreapp3.1\Product Shop.csproj.CoreCompileInputs.cache
+C:\Users\master\Desktop\GitHub\C_Sharp\advanced\adv\02 Multidimensional Arrays\lab\Count Same Values in Array\Product Shop\obj\Debug\netcoreapp3.1\Product Shop.dll
+C:\Users\master\Desktop\GitHub\C_Sharp\advanced\adv\02 Multidimensional Arrays\lab\Count Same Values in Array\Product Shop\obj\Debug\netcoreapp3.1\Product Shop.pdb
+C:\Users\master\Desktop\GitHub\C_Sharp\advanced\adv\02 Multidimensional Arrays\lab\Count Same Values in Array\Product Shop\obj\Debug\netcoreapp3.1\Product Shop.genruntimeconfig.cache
