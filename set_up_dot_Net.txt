@@ -1,0 +1,43 @@
+power_shel in project folder:
+===================================================
+dotnet add package Microsoft.EntityFrameworkCore
+
+dotnet add package Microsoft.EntityFrameworkCore.SqlServer
+
+
+--check if is install
+dotnet tool update/install --global dotnet-ef
+
+dotnet add package Microsoft.EntityFramewotkCore.Design
+
+==============================================================
+anotation Entities: 
+[Key]
+
+[Column("Name")]
+
+[Required]
+
+[StringLength(50)]
+
+
+[Column(TypeName = "smalldatetime")]
+
+[Column(TypeName = "decimal(15, 4)")]
+public decimal 
+
+--FK:
+[ForeignKey(nameof(AddressId))]
+[InverseProperty("Employees")]
+public virtual Department Departme
+
+[InverseProperty("Manager")]
+public virtual ICollection<Department> Departments { get; set; }
+
+   [ForeignKey(nameof(ManagerId))]
+        [InverseProperty(nameof(Employee.InverseManager))]
+        public virtual Employee Manager { get; set; }
+
+ -- ManyToMany:
+ [InverseProperty(nameof(EmployeesProject.Employee))]
+ public virtual ICollection<EmployeesProject> EmployeesProjects { get; set; }
