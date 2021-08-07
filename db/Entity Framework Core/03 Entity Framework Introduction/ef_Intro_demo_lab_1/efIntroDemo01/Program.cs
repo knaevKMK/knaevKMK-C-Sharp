@@ -28,6 +28,7 @@ namespace efIntroDemo01
                     case "8": result = GetDepartmentsWithMoreThan5Employees(dbContext); break;
                     case "9": result = FindLatest10Projects(dbContext); break;
                     case "10": result = IncreaseSalaries(dbContext); break;
+                    case "11": result = FindEmployeesByFirstNameStartWith(dbContext); break;
                     default:
                         result = "Bad input";
                         break;
@@ -39,6 +40,21 @@ namespace efIntroDemo01
          
           
 
+        }
+
+        private static string FindEmployeesByFirstNameStartWith(SoftUniContext dbContext)
+        {
+           using(var context = new SoftUniContext())
+            {
+                return string.Join(Environment.NewLine, context.Employees
+                    .Where(e => e.FirstName.ToLower().StartsWith("sa"))
+                    .OrderBy(e=>e.FirstName)
+                    .ThenBy(e=>e.LastName)
+                    .Select(e=>String.Format("{0} {1} - {2} - (${3:F2})"
+                    ,e.FirstName,e.LastName,e.JobTitle,e.Salary
+                    )));
+      
+            }
         }
 
         private static string IncreaseSalaries(SoftUniContext dbContext)
@@ -221,6 +237,7 @@ namespace efIntroDemo01
                  "ex_8: Departments with More Than 5 Employees\n" +
                  "ex_9: Find Latest 10 Projects\n" +
                  "ex_10: Increase Salaries\n" +
+                 "ex_11: Find Employees By First Name Start With\n" +
                  "====================================\n" +
                  "Please, enter ex Number: ");
 
