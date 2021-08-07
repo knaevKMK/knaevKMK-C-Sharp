@@ -1,4 +1,5 @@
 ﻿using efIntroDemo01.Models;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -29,6 +30,8 @@ namespace efIntroDemo01
                     case "9": result = FindLatest10Projects(dbContext); break;
                     case "10": result = IncreaseSalaries(dbContext); break;
                     case "11": result = FindEmployeesByFirstNameStartWith(dbContext); break;
+                    case "12": result = DeleteProjectById(dbContext); break;
+                    case "13": result = RemoveTown(dbContext); break;
                     default:
                         result = "Bad input";
                         break;
@@ -40,6 +43,50 @@ namespace efIntroDemo01
          
           
 
+        }
+
+        private static string RemoveTown(SoftUniContext dbContext)
+        {
+            using(var context = new SoftUniContext())
+            {
+                Town town = context.Towns.First(town=>town.Name== "Seattle");
+                IQueryable<Address> addresses = context.Addresses.Where(a => a.TownId == town.TownId);
+
+                IQueryable<Employee> employees = context.Employees
+                    .Where(e => addresses.Contains(e.Address));
+                foreach (var e in employees)
+                {
+                    e.Address = null;
+                    e.AddressId = null;
+                }
+                
+
+                context.Employees.UpdateRange(employees);
+                context.Addresses.RemoveRange(addresses);
+    
+                context.Towns.Remove(town);
+                context.SaveChanges();
+
+                return addresses.Count() + " addresses in " + town.Name + " were deleted";
+
+            }
+        }
+
+        private static string DeleteProjectById(SoftUniContext dbContext)
+        {
+           using(var context = new SoftUniContext())
+            {
+
+                Project project = context.Projects.First(p => p.ProjectId == 2);
+                IQueryable<EmployeesProject> employeesProjects = dbContext.EmployeesProjects
+                    .Where(ep => ep.ProjectId == 2);
+                dbContext.EmployeesProjects.RemoveRange(employeesProjects);
+                dbContext.Projects.Remove(project);
+                dbContext.SaveChanges();
+
+                return string.Join(Environment.NewLine,
+                    context.Projects.Take(10).Select(p => p.Name));
+            }
         }
 
         private static string FindEmployeesByFirstNameStartWith(SoftUniContext dbContext)
@@ -238,6 +285,8 @@ namespace efIntroDemo01
                  "ex_9: Find Latest 10 Projects\n" +
                  "ex_10: Increase Salaries\n" +
                  "ex_11: Find Employees By First Name Start With\n" +
+                 "ex_12: Delete Project by Id\n" +
+                 "ex_13: Remove Town\n" +
                  "====================================\n" +
                  "Please, enter ex Number: ");
 
