@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Text;
-
+#nullable disable
 namespace ef_intro_code_first.Model
 {
-    class Employee
+    public class Employee
     {
         public Employee()
         {
@@ -15,8 +15,8 @@ namespace ef_intro_code_first.Model
             InverseManager = new HashSet<Employee>();
         }
         [Key]
-        [Column("EmployeeId")]
-        public int Id { get; set; }
+        [Column("EmployeeID")]
+        public int EmployeeID { get; set; }
         [Required]
         [StringLength(50)]
         public string FirstName { get; set; }
@@ -28,27 +28,27 @@ namespace ef_intro_code_first.Model
         [Required]
         [StringLength(50)]
         public string JobTitle { get; set; }
-        [Column("DeaprtmentID")]
-        public int DepartmentId { get; set; }
+        [Column("DepartmentID")]
+        public int DepartmentID { get; set; }
         [Column("ManagerID")]
-        public int ManagerId { get; set; }
+        public int ManagerID { get; set; }
         [Column(TypeName = "smaldatetime")]
         public DateTime HireDate { get; set; }
         [Column(TypeName = "decimal(15,4)")]
         public decimal Salary { get; set; }
         [Column("AddressID")]
-        public int AddressId { get; set; }
+        public int? AddressID { get; set; }
 
 
-        [ForeignKey(nameof(AddressId))]
+        [ForeignKey(nameof(AddressID))]
         [InverseProperty("Employees")]
         public virtual Address Address { get; set; }
 
-        [ForeignKey(nameof(DepartmentId))]
+        [ForeignKey(nameof(DepartmentID))]
         [InverseProperty("Employees")]
         public virtual Department Department { get; set; }
 
-        [ForeignKey(nameof(ManagerId))]
+        [ForeignKey(nameof(ManagerID))]
         [InverseProperty(nameof(Employee.InverseManager))]
         public virtual Employee Manager { get; set; }
 

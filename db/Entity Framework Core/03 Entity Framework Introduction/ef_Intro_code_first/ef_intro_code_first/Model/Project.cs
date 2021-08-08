@@ -7,7 +7,7 @@ using System.Text;
 #nullable disable
 namespace ef_intro_code_first.Model
 {
-    class Project
+    public class Project
     {
         public Project()
         {
@@ -15,7 +15,7 @@ namespace ef_intro_code_first.Model
         }
         [Key]
         [Column("ProjectID")]
-        public int Id { get; set; }
+        public int ProjectID { get; set; }
         [Required]
         [StringLength(50)]
         public string Name { get; set; }

@@ -8,7 +8,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 #nullable disable
 namespace ef_intro_code_first.Model
 {
-    class Town
+    public class Town
     {
         public Town()
         {
@@ -16,8 +16,8 @@ namespace ef_intro_code_first.Model
         }
 
         [Key]
-        [Column("TownId")]
-        public int TownId { get; set; }
+        [Column("TownID")]
+        public int TownID { get; set; }
 
         [Required]
         [StringLength(50)]

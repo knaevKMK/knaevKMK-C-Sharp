@@ -7,7 +7,7 @@ using System.Text;
 #nullable disable
 namespace ef_intro_code_first.Model
 {
-    class EmployeesProjects
+    public class EmployeesProjects
     {
        
         [Key]

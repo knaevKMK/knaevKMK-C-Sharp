@@ -8,7 +8,7 @@ using System.Text;
 #nullable disable
 namespace ef_intro_code_first.Model
 {
-    class Address
+    public class Address
         
     {
         public Address()
@@ -25,11 +25,11 @@ namespace ef_intro_code_first.Model
         [StringLength(100)]
         public string AddressText { get; set; }
 
-        [Column("TownId")]
-        public int TownId { get; set; }
+        [Column("TownID")]
+        public int TownID { get; set; }
 
 
-        [ForeignKey(nameof(TownId))]
+        [ForeignKey(nameof(TownID))]
         [InverseProperty("Addresses")]
         public Town Town { get; set; }
 
