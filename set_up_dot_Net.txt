@@ -10,6 +10,86 @@ dotnet tool update/install --global dotnet-ef
 
 dotnet add package Microsoft.EntityFramewotkCore.Design
 
+++++++++++++
+
+-- migration
+
+dotnet ef migrations add InitialCreate
++++++++++++++++++++++++++++++++++++++++++++++++++
+-- read DB to code 
+--to put Entities in folder -o <Name>
+--To update with the latest database changes use the –f flag
+--To use attributes for configuring the model use the –d flag
+
+
+dotnet ef dbcontext scaffold "Data Source=.\\SQLEXPRESS;Initial Catalog=SoftUni;Integrated Security=True" Microsoft.EntityFrameworkCore.SqlServer –o Models -f -d
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+--lazy loading
+
+Install-Package Microsoft.EntityFrameworkCore.Proxies
+
+-- add in  options.UseLazyLoadingProxies().UseSqlServer(myConnectionString);
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+-- update/delete of entities
+
+"context.Employees.Where(u => u.FirstName == "Pesho").Delete();"
+
+ Z.EntityFramework.Plus.EFCore
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+--map DTO
+++Using our configuration class:
+	var config = new MapperConfiguration(cfg =>cfg.AddProfile<ForumProfile>());
+
+
+Install-Package AutoMapper
+ +++
+var config = new MapperConfiguration(cfg =>
+  {cfg.CreateMap<Product, ProductDTO>();
+    cfg.CreateMap<Order, OrderDTO>();
+    cfg.CreateMap<Client, ClientDTO>();
+    cfg.CreateMap<SupportTicket, TicketDTO>();
+++ properties that don't match naming convention
+cfg.CreateMap<Product, ProductDTO>()
+     .ForMember(dto => dto.StockQty,
+         opt => opt.MapFrom(src => 
+             src.ProductStocks.Sum(p => p.Quantity))));
+
+}
+var mapper = config.CreateMapper();
+
+++
+var product = context.Products.FirstOrDefault();
+ProductDTO dto = mapper.Map<ProductDTO>(product);
+
+++Using AutoMapper to map an entire DB collection:
+var posts = context.Posts
+  .Where(p => p.Author.Username == "Nikolay.IT")
+  .ProjectTo<PostDto>(config)
+  .ToList();
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+--Json Parse
+ install System.Text.Json and System.Text.Json.Serilization;
+OR 
+	JSON.NET	
+ Install-Package Newtonsoft.Json
+	Also in class: [JsonProperty("user")] or [JsonIgnore]
+OR for Linq
+	JObject obj = JObject.Parse(jsonProduct);
+	var people = JObject.Parse(File.ReadAllText(@"c:\people.json"))
+	
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+--XML Parse
+		-use LinQ:	XDocument doc = XDocument.Parse(str);
+				XDocument xmlDoc = XDocument.Load("../../books.xml");
+
+
+
 ==============================================================
 anotation Entities: 
 [Key]
