@@ -26,11 +26,14 @@ namespace ef_intro_code_first.Data
         public virtual DbSet<Project> Projects { get; set; }
         public virtual DbSet<Town> Towns { get; set; }
 
-        private static string SERVER_CONNECTION = "Server=.\\SQLEXPRESS;Database=SoftUni;Integrated Security=True;";
-
+        private static string SERVER_CONNECTION =
+            "Server=.\\SQLEXPRESS;Database=SoftUni;Integrated Security=True";
+    //    private static string ADD_CONNECTION_OPTONS = "; user Id= DESKTOP-IBSOGM7\\master; password=knev458";
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(SERVER_CONNECTION);
+            optionsBuilder
+           .UseSqlServer(SERVER_CONNECTION);
+         //   .UseSqlServer(SERVER_CONNECTION, options => options.EnableRetryOnFailure());
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -85,7 +88,7 @@ namespace ef_intro_code_first.Data
                 entity.HasOne(d => d.Address).WithMany(p => p.Employees).HasForeignKey(d => d.AddressID)
                 .HasConstraintName("FK+Employees_Addresses");
                 entity.HasOne(d => d.Manager).WithMany(p => p.InverseManager).HasForeignKey(d => d.ManagerID)
-                .HasConstraintName("FK_Employees_Employees");
+                .HasConstraintName("FK_Employees_Employees").OnDelete(DeleteBehavior.NoAction);
                 entity.HasOne(d => d.Department).WithMany(p => p.Employees).HasForeignKey(d => d.DepartmentID)
                 .OnDelete(DeleteBehavior.ClientSetNull).HasConstraintName("FK_Emplyees_Departments");
 

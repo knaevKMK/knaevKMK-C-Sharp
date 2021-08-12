@@ -9,7 +9,7 @@ namespace RealEstates.ConsoleApplication
         {
 
             var db = new ApplicationDBContext();
-            db.Database.Migrate();
+        //    db.Database.Migrate();
         }
     }
 }

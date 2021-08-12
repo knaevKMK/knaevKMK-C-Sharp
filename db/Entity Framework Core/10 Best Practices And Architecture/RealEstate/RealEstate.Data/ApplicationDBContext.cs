@@ -25,6 +25,7 @@ namespace RealEstate.Data
 
         public DbSet<Tag> Tags { get; set; }
         public DbSet<TypeProperty> TypeProperties { get; set; }
+        public DbSet<PropertiesTags> PropertiesTags { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -36,7 +37,27 @@ namespace RealEstate.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.HasAnnotation("Relational:Collation", "SQL_latin1_General_CP1_CI_AS");
+            modelBuilder.Entity<Property>(entity =>
+            {
+                entity.Property(p => p.PropertyId).HasColumnName("PropertyID");
+
+            });
+
+            modelBuilder.Entity<PropertiesTags>()
+                .HasKey(k => new { k.PropertyId, k.TagId });
+            modelBuilder.Entity<PropertiesTags>()
+             .HasOne(p => p.Property)
+             .WithMany(t => t.PropertiesTags)
+             .HasForeignKey(t => t.PropertyId);
+
+            modelBuilder.Entity<PropertiesTags>()
+                .HasOne(p => p.Tag)
+                .WithMany(t => t.PropertiesTags)
+                .HasForeignKey(t => t.TagId);
+
             base.OnModelCreating(modelBuilder);
         }
+
     }
 }

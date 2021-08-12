@@ -69,13 +69,13 @@ namespace RealEstate.Data.Migrations
                         name: "FK_Properties_Buildings_BuildingId",
                         column: x => x.BuildingId,
                         principalTable: "Buildings",
-                        principalColumn: "Id",
+                        principalColumn: "PropertyId",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_Properties_TypeProperties_TypeId",
                         column: x => x.TypeId,
                         principalTable: "TypeProperties",
-                        principalColumn: "Id",
+                        principalColumn: "PropertyId",
                         onDelete: ReferentialAction.Restrict);
                 });
 
@@ -93,13 +93,13 @@ namespace RealEstate.Data.Migrations
                         name: "FK_PropertyTag_Properties_PropertiesId",
                         column: x => x.PropertiesId,
                         principalTable: "Properties",
-                        principalColumn: "Id",
+                        principalColumn: "PropertyId",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_PropertyTag_Tags_TagsId",
                         column: x => x.TagsId,
                         principalTable: "Tags",
-                        principalColumn: "Id",
+                        principalColumn: "PropertyId",
                         onDelete: ReferentialAction.Cascade);
                 });
 

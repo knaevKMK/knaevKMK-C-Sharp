@@ -12,7 +12,8 @@ namespace ef_intro_code_first
         {
            
             var dbContext = new SoftUniContext();
-
+            dbContext.Database.EnsureCreated();
+            Console.WriteLine(dbContext);
             string input = ioReLoad();
 
             while (!input.ToLower().Equals("end"))

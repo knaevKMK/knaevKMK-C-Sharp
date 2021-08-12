@@ -38,7 +38,7 @@ namespace RealEstate.Data.Migrations
 
             modelBuilder.Entity("RealEstates.Models.Building", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("PropertyId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
@@ -46,14 +46,14 @@ namespace RealEstate.Data.Migrations
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("Id");
+                    b.HasKey("PropertyId");
 
                     b.ToTable("Buildings");
                 });
 
             modelBuilder.Entity("RealEstates.Models.Property", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("PropertyId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
@@ -88,7 +88,7 @@ namespace RealEstate.Data.Migrations
                     b.Property<int>("Year")
                         .HasColumnType("int");
 
-                    b.HasKey("Id");
+                    b.HasKey("PropertyId");
 
                     b.HasIndex("BuildingId");
 
@@ -99,7 +99,7 @@ namespace RealEstate.Data.Migrations
 
             modelBuilder.Entity("RealEstates.Models.Tag", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("PropertyId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
@@ -107,14 +107,14 @@ namespace RealEstate.Data.Migrations
                     b.Property<string>("Contain")
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("Id");
+                    b.HasKey("PropertyId");
 
                     b.ToTable("Tags");
                 });
 
             modelBuilder.Entity("RealEstates.Models.TypeProperty", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("PropertyId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
@@ -122,7 +122,7 @@ namespace RealEstate.Data.Migrations
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("Id");
+                    b.HasKey("PropertyId");
 
                     b.ToTable("TypeProperties");
                 });

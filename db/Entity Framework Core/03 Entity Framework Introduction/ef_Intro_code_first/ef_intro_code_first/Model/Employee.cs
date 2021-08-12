@@ -31,7 +31,7 @@ namespace ef_intro_code_first.Model
         [Column("DepartmentID")]
         public int DepartmentID { get; set; }
         [Column("ManagerID")]
-        public int ManagerID { get; set; }
+        public int? ManagerID { get; set; }
         [Column(TypeName = "smaldatetime")]
         public DateTime HireDate { get; set; }
         [Column(TypeName = "decimal(15,4)")]
