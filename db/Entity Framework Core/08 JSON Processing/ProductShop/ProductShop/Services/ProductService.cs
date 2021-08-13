@@ -3,6 +3,7 @@ using Data;
 using Microsoft.EntityFrameworkCore;
 using Models;
 using Models.DtoImport;
+using Nancy.Json;
 using Services.interfaces;
 using System;
 using System.Collections.Generic;
@@ -16,6 +17,8 @@ namespace Services
 {
     public class ProductService : IProductService
     {
+        private static string OUT_PRODUCT_FILE_PATH = "./../../../../Resourses/Out/products-in-range.json";
+
         private static IMapper Mapper = new MapperConfiguration(c => {
             c.CreateMap<ProductImportDto, Product>();
         }).CreateMapper();
@@ -26,6 +29,23 @@ namespace Services
 
             db.Products.Add(product);
             db.SaveChanges();
+        }
+
+        public string ExportProductInRange(int DownRange, int UpRange)
+        {
+
+            var list = db.Products
+                .Where(x => x.Price >= DownRange && x.Price <= UpRange)
+                .Select(x=>new  { name =x.Name,price=x.Price,seller= x.Seller.FirstName+ " "+x.Seller.LastName  })
+                .ToList();
+
+
+
+            string jsondata = new JavaScriptSerializer().Serialize(list);
+
+            File.WriteAllText(OUT_PRODUCT_FILE_PATH, jsondata);
+            return "Success export: products-in-range.json ";
+
         }
 
         public string LoadFromJson(string filePath)

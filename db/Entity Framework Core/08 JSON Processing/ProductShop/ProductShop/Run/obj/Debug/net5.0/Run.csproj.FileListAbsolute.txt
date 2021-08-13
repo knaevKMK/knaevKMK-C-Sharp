@@ -148,3 +148,7 @@ C:\Users\master\Desktop\GitHub\C_Sharp\db\Entity Framework Core\08 JSON Processi
 C:\Users\master\Desktop\GitHub\C_Sharp\db\Entity Framework Core\08 JSON Processing\ProductShop\ProductShop\Run\obj\Debug\net5.0\Run.genruntimeconfig.cache
 C:\Users\master\Desktop\GitHub\C_Sharp\db\Entity Framework Core\08 JSON Processing\ProductShop\ProductShop\Run\bin\Debug\net5.0\Castle.Core.dll
 C:\Users\master\Desktop\GitHub\C_Sharp\db\Entity Framework Core\08 JSON Processing\ProductShop\ProductShop\Run\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Proxies.dll
+C:\Users\master\Desktop\GitHub\C_Sharp\db\Entity Framework Core\08 JSON Processing\ProductShop\ProductShop\Run\bin\Debug\net5.0\Microsoft.DotNet.PlatformAbstractions.dll
+C:\Users\master\Desktop\GitHub\C_Sharp\db\Entity Framework Core\08 JSON Processing\ProductShop\ProductShop\Run\bin\Debug\net5.0\Microsoft.Extensions.DependencyModel.dll
+C:\Users\master\Desktop\GitHub\C_Sharp\db\Entity Framework Core\08 JSON Processing\ProductShop\ProductShop\Run\bin\Debug\net5.0\Microsoft.Extensions.PlatformAbstractions.dll
+C:\Users\master\Desktop\GitHub\C_Sharp\db\Entity Framework Core\08 JSON Processing\ProductShop\ProductShop\Run\bin\Debug\net5.0\Nancy.dll

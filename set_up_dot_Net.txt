@@ -111,7 +111,7 @@ public decimal
 --FK:
 [ForeignKey(nameof(AddressId))]
 [InverseProperty("Employees")]
-public virtual Department Departme
+public virtual Department Department
 
 [InverseProperty("Manager")]
 public virtual ICollection<Department> Departments { get; set; }

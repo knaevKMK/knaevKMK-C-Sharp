@@ -11,5 +11,6 @@ namespace Services.interfaces
     {
         void Add(Product product);
         string LoadFromJson(string filePath);
+        string ExportProductInRange(int v1, int v2);
     }
 }
