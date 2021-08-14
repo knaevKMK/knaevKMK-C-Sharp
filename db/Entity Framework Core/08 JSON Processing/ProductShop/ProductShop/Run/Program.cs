@@ -47,7 +47,8 @@ namespace Run
             return "\n1. Improt users from file\n" +
                  "2. Import categories from file\n" +
                  "3. Import products from file\n" +
-                 "4. Export Products with price in range\n";
+                 "4. Export Products with price in range\n" +
+                 "5. Export Successfully Sold Products";
         }
 
         private static string result(string input)
@@ -58,7 +59,7 @@ namespace Run
                 case "2": return CategoryService.LoadFromJson(CATEGORY_FILE_PATH); 
                 case "3": return ProductService.LoadFromJson(PRODUCT_FILE_PATH); 
                 case "4": return ProductService.ExportProductInRange(500,1000);
-                case "5": 
+                case "5": return UserService.ExportSuccessfullySoldProducts();
                 case "6": 
                 case "7": return "";
             }

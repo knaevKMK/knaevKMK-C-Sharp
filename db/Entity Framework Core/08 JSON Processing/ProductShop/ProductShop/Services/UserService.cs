@@ -2,6 +2,7 @@
 using Data;
 using Models;
 using Models.DtoImport;
+using Nancy.Json;
 using Newtonsoft.Json;
 using Services.interfaces;
 
@@ -15,6 +16,10 @@ namespace Services
 {
     public class UserService : IUserService
     {
+        private static string OUT_USER_SOLD_PRODUCT_FILE_PATH =
+            "./../../../../Resourses/Out/users-sold-products.json";
+
+
         private static IMapper Mapper = new MapperConfiguration(c => {
             c.CreateMap<UserImportDto, User>();
         }).CreateMapper();
@@ -25,7 +30,30 @@ namespace Services
             db.SaveChanges();
         }
 
-      public User FindUserById(int id)
+        public string ExportSuccessfullySoldProducts()
+        {
+            var list = db.Users
+                .Where(x => x.BuyedProducts.Count > 0)
+                .OrderBy(x=>x.LastName)
+                .ThenBy(x=>x.FirstName)
+                .Select(x => new {
+                    fistName = x.FirstName,
+                    lastName = x.LastName,
+                    soldProducts = x.BuyedProducts.Select(y => new {
+                        name = y.Name,
+                        price =y.Price,
+                        buyerFirsName=y.Buyer.FirstName,
+                        buyerLastName=y.Buyer.LastName
+                    }).ToArray()
+                }).ToList();
+            string jsondata = new JavaScriptSerializer().Serialize(list);
+
+            File.WriteAllText(OUT_USER_SOLD_PRODUCT_FILE_PATH, jsondata);
+
+            return "Success export file users-sold-products.json";
+        }
+
+        public User FindUserById(int id)
         {
          
             return   db.Users.Find( id);

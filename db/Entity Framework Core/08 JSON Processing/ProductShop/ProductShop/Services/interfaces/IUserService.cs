@@ -13,5 +13,6 @@ namespace Services.interfaces
         string ImportFromFile(string filePath);
         void Add(User    user);
        User FindUserById(int id);
+        string ExportSuccessfullySoldProducts();
     }
 }
