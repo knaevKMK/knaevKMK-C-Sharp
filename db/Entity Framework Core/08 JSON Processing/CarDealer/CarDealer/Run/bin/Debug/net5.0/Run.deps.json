@@ -1448,7 +1448,8 @@
       "Models/1.0.0": {
         "dependencies": {
           "Microsoft.EntityFrameworkCore": "5.0.9",
-          "Microsoft.EntityFrameworkCore.SqlServer": "5.0.9"
+          "Microsoft.EntityFrameworkCore.SqlServer": "5.0.9",
+          "Nancy": "2.0.0"
         },
         "runtime": {
           "Models.dll": {}

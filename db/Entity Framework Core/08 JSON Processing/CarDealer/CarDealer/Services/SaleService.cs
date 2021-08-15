@@ -51,5 +51,10 @@ namespace Services
 
             return $"Successfully imported {db.Sales.Count<Sale>()}.";
         }
+
+        public string ExportSalesWithAppliedDiscount()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

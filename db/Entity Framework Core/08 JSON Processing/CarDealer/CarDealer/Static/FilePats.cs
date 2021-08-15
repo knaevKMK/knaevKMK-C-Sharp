@@ -19,5 +19,11 @@ namespace Static
 
 
         public static string EXPORT_DIRECTORY = "./../../../../Static/ExportJson/";
-    }
+        public static string EXPORT_ORDERED_CUSTOMERS = "ordered-customers.json";
+        public static string EXPORT_CARS_TOYOTA = "toyota-cars.json";
+        public static string EXPORT_SUPPLIER_LOCAL = "local-suppliers.json";
+        public static string EXPORT_CARS_PARTS = "cars-and-parts.json";
+        public static string EXPORT_CUSTOMERS_SALES = "customers-total-sales.json";
+        public static string EXPORT_SALES_DISCOUNT = "sales-discounts.json";
+            }
 }

@@ -1,14 +1,19 @@
 ﻿using AutoMapper;
 using Data;
+using Models.DtoExport;
 using Models.DtoImport;
 using Models.Entities;
-using Nancy.Json;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
 using Static;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.Json;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace Services
@@ -19,21 +24,61 @@ namespace Services
         private static ApplicationDbContext db = new ApplicationDbContext();
         private static IMapper Mapper = new MapperConfiguration(c => {
             c.CreateMap<CustomerImportDto, Customer>();
+            //.ForMember(e=>e.BithDate, opt=>opt.MapFrom(src=>src.birhtDate.Date));
+          
+            c.CreateMap<Customer, CustomerNameBDateIsYoungDriverDto>();
         }).CreateMapper();
+       
         public string ImportFromJson()
         {
 
-            ICollection<CustomerImportDto> customerDtos = new JavaScriptSerializer().Deserialize<ICollection<CustomerImportDto>>(
-                File.ReadAllText(FilePats.IMPORT_DIRECTORY+FilePats.IMPORT_CUSTOMERS));
+            string json = File.ReadAllText(path: FilePats.IMPORT_DIRECTORY + FilePats.IMPORT_CUSTOMERS);
+
+            //   List<CustomerImportDto> customerDtos = JsonSerializer.Deserialize<List<CustomerImportDto>>(json);
+            List<CustomerImportDto> customerDtos = JsonConvert.DeserializeObject<List<CustomerImportDto>>(json,
+     new IsoDateTimeConverter() { DateTimeFormat = "yyyy-MM-dd'T'HH:mm:ss" });
+
+
             foreach (var customerDto in customerDtos)
             {
                 Customer customer = Mapper.Map<Customer>(customerDto);
-                db.Customers.Add(customer);
-                db.SaveChanges();
+                customer.BithDate = customerDto.birthDate;
+                Console.WriteLine();
+                 db.Customers.Add(customer);
+               db.SaveChanges();
             }
 
 
             return $"Successfully imported {db.Customers.Count<Customer>()}.";
+        }
+
+        public string ExportOrderedCustomers()
+        {
+
+            //   List<CustomerNameBDateIsYoungDriverDto> customerDtos =
+
+            var customerDtos = db.Customers
+                .OrderBy(c => c.BithDate)
+                .ThenBy(c => c.IsYoungDriver)
+               //  .Select(c => Mapper.Map<CustomerNameBDateIsYoungDriverDto>(c))
+               .Select(c=> new
+               {
+                   Name=c.Name,
+                   BurthDate= c.BithDate,
+                   iSYoungDriver=c.IsYoungDriver
+               })
+                .ToList();
+
+            string jsonData =  JsonConvert.SerializeObject(customerDtos);
+            Console.WriteLine();
+            File.WriteAllText(FilePats.EXPORT_DIRECTORY+FilePats.EXPORT_ORDERED_CUSTOMERS,jsonData);
+
+            return "Success create file ordered-customers.json";
+        }
+
+        public string ExportTotalSalesByCustomer()
+        {
+            throw new NotImplementedException();
         }
     }
 }

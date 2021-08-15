@@ -42,5 +42,10 @@ namespace Services
 
             return $"Successfully imported {db.Suppliers.Count<Supplier>()}.";
         }
+
+        public string ExportLocalSuppliers()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

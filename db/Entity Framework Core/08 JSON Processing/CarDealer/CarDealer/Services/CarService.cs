@@ -48,5 +48,15 @@ namespace Services
 
             return $"Successfully imported {db.Cars.Count<Car>()}.";
         }
+
+        public string CarsByMake(string v)
+        {
+            throw new NotImplementedException();
+        }
+
+        public string ExportCarsWithTheirParts()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
