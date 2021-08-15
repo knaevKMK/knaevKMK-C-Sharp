@@ -24,7 +24,8 @@ namespace Services
         private static ApplicationDbContext db = new ApplicationDbContext();
         private static IMapper Mapper = new MapperConfiguration(c => {
             c.CreateMap<CustomerImportDto, Customer>();
-            //.ForMember(e=>e.BithDate, opt=>opt.MapFrom(src=>src.birhtDate.Date));
+            c.CreateMap< Customer, CustomerNameBDateIsYoungDriverDto>()
+            .ForMember(e=>e.BirthDate, opt=>opt.MapFrom(src=>src.BirthDate));
           
             c.CreateMap<Customer, CustomerNameBDateIsYoungDriverDto>();
         }).CreateMapper();
@@ -42,7 +43,7 @@ namespace Services
             foreach (var customerDto in customerDtos)
             {
                 Customer customer = Mapper.Map<Customer>(customerDto);
-                customer.BithDate = customerDto.birthDate;
+                customer.BirthDate = customerDto.birthDate;
                 Console.WriteLine();
                  db.Customers.Add(customer);
                db.SaveChanges();
@@ -58,15 +59,15 @@ namespace Services
             //   List<CustomerNameBDateIsYoungDriverDto> customerDtos =
 
             var customerDtos = db.Customers
-                .OrderBy(c => c.BithDate)
+                .OrderBy(c => c.BirthDate)
                 .ThenBy(c => c.IsYoungDriver)
-               //  .Select(c => Mapper.Map<CustomerNameBDateIsYoungDriverDto>(c))
-               .Select(c=> new
-               {
-                   Name=c.Name,
-                   BurthDate= c.BithDate,
-                   iSYoungDriver=c.IsYoungDriver
-               })
+               .Select(c => Mapper.Map<CustomerNameBDateIsYoungDriverDto>(c))
+               //.Select(c=> new
+               //{
+               //    Name=c.Name,
+               //    BurthDate= c.BirthDate,
+               //    iSYoungDriver=c.IsYoungDriver
+               //})
                 .ToList();
 
             string jsonData =  JsonConvert.SerializeObject(customerDtos);
