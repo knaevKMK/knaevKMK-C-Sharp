@@ -22,20 +22,30 @@ namespace Services
         public string ImportFromJson()
         {
             ICollection<SaleImportDto> saleDtos = new JavaScriptSerializer().Deserialize<ICollection<SaleImportDto>>(
-                File.ReadAllText(FilePats.IMPORT_DIRECTORY + FilePats.IMPORT_CUSTOMERS));
+                File.ReadAllText(FilePats.IMPORT_DIRECTORY + FilePats.IMPORT_SALES));
             foreach (var saleDto in saleDtos)
             {
                 Sale sale = Mapper.Map<Sale>(saleDto);
                 Car car = db.Cars.FirstOrDefault(x => x.Id == saleDto.carId);
-              
-                if (car == null)
+               if (car == null)
                 {
                     continue;
                 }
                 //TODO
-            //    sale.CarId = null;
+                //    sale.CarId = null;
+                sale.Car = car;
+
+                Customer customer = db.Customers.FirstOrDefault(x => x.Id == saleDto.customerId);
+
+                if (customer == null)
+                {
+                    continue;
+                }
+                sale.Customer = customer;
+
                 db.Sales.Add(sale);
-             //  db.SaveChanges();
+                 db.SaveChanges();
+
             }
 
 

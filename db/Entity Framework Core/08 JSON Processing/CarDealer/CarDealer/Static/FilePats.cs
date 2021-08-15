@@ -13,7 +13,7 @@ namespace Static
         public static string IMPORT_CARS = "cars.json";
         public static string IMPORT_CUSTOMERS = "customers.json";
         public static string IMPORT_PARTS ="parts.json";
-        public static string IMPORT_SALES = "sale.json";
+        public static string IMPORT_SALES = "sales.json";
         public static string IMPORT_SUPPLIERS = "suppliers.json";
 
 
