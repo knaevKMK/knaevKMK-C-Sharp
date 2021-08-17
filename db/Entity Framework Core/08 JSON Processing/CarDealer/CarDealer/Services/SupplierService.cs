@@ -5,6 +5,7 @@ using Data;
 using Models.DtoImport;
 using Models.Entities;
 using Nancy.Json;
+using Newtonsoft.Json;
 using Static;
 using System;
 using System.Collections.Generic;
@@ -45,7 +46,23 @@ namespace Services
 
         public string ExportLocalSuppliers()
         {
-            throw new NotImplementedException();
+
+            var list = db.Suppliers
+                .Where(s => !s.IsImporter)
+                .Select(s => new { 
+                    Id=s.Id,
+                    Name=s.Name,
+                    PartsCount= s.Parts.Count()
+                })
+                .ToList();
+
+            string jsonData = JsonConvert.SerializeObject(list);
+
+            File.WriteAllText(
+                FilePats.EXPORT_DIRECTORY+FilePats.EXPORT_SUPPLIER_LOCAL
+                , jsonData);
+
+            return "Success create file " + FilePats.EXPORT_SUPPLIER_LOCAL;
         }
     }
 }

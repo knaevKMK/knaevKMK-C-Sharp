@@ -1,6 +1,7 @@
 ﻿
 using AutoMapper;
 using Data;
+using Models.DtoExport;
 using Models.DtoImport;
 using Models.Entities;
 using Nancy.Json;
@@ -72,7 +73,32 @@ namespace Services
 
         public string ExportCarsWithTheirParts()
         {
-            throw new NotImplementedException();
+
+            var list = db.Cars
+                .Select(c => new
+                {
+                    car = new
+                    {
+                        Make = c.Model,
+                        Model = c.Model,
+                        TravelledDistance = c.TravelledDistance
+                    },
+                    parts = c.Parts
+                       .Select(p => new { Name = p.Name, Price = p.Price }).ToList()
+
+        }) 
+                .ToList();
+
+           
+
+            string jsonData = JsonConvert.SerializeObject(list);
+
+
+            File.WriteAllText(FilePats.EXPORT_DIRECTORY+FilePats.EXPORT_CARS_PARTS, jsonData);
+
+            return "Success create " + FilePats.EXPORT_CARS_PARTS;
         }
+
+       
     }
 }

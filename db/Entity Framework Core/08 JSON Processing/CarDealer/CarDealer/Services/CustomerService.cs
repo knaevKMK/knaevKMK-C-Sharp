@@ -8,13 +8,8 @@ using Newtonsoft.Json.Converters;
 using Static;
 using System;
 using System.Collections.Generic;
-using System.Globalization;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Text.Json;
-using System.Text.Json.Serialization;
-using System.Threading.Tasks;
 
 namespace Services
 {
@@ -79,7 +74,54 @@ namespace Services
 
         public string ExportTotalSalesByCustomer()
         {
-            throw new NotImplementedException();
+            using (var context = new ApplicationDbContext())
+            {
+               
+                var list = db.Customers
+                              .Where(c => c.Sales.Count() > 0)
+                              .Select(c => new {
+                                  fullName = c.Name,
+                                  boughtCars = c.Sales.Count(),
+                                  spentMoney = c.Sales
+                                                       .SelectMany(s => s.Car.Parts, (carPrice,partPrice) =>new{ carPrice,partPrice })
+                                                       .Select(e=>e.partPrice.Price)
+                                                       .Sum()
+                              })
+                              .OrderByDescending(x=>x.spentMoney)
+                              .ThenByDescending(x=>x.boughtCars)
+                              .ToList();
+
+                string jsonData = JsonConvert.SerializeObject(list);
+
+                File.WriteAllText(
+                    FilePats.EXPORT_DIRECTORY + FilePats.EXPORT_CUSTOMERS_SALES
+                    , jsonData);
+                return "Success create file " + FilePats.EXPORT_CUSTOMERS_SALES;
+            }
+          
+        }
+
+        private decimal getTotoalPrice(int customerId)
+        {
+
+            using (var ctx = new ApplicationDbContext())
+            {
+
+
+                string query = "SELECT SUM(p.Price) " +
+    "  FROM Customers as cu " +
+     $" Where cu.id = {customerId} " +
+      " JOIN Sales as s ON cu.Id = s.CustomerId " +
+     " JOIN Cars as ca ON s.CarId = ca.Id " +
+     " JOIN CarPart as cp ON ca.Id = cp.CarsId " +
+     " JOIN Parts as p ON cp.PartsId = p.Id " +
+     " Group By cu.Id";
+   //             object result = ctx.Customers.SelectMany.SqlQuery(query);
+
+
+                return new decimal(0.0);
+            }
+            }
         }
     }
-}
+

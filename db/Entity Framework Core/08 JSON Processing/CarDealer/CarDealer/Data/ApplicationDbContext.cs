@@ -29,7 +29,9 @@ namespace Data
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseSqlServer(CONNECTION);
+                optionsBuilder.UseSqlServer(CONNECTION)
+                    //.ConfigureWarnings(warnings =>warnings.Throw(RelationalEventId.QueryClientEvaluationWarning))
+                    ;
             }
         }
 
