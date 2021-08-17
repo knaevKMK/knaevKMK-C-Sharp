@@ -3,6 +3,7 @@ using Data;
 using Models.DtoImport;
 using Models.Entities;
 using Nancy.Json;
+using Newtonsoft.Json;
 using Static;
 using System;
 using System.Collections.Generic;
@@ -54,7 +55,33 @@ namespace Services
 
         public string ExportSalesWithAppliedDiscount()
         {
-            throw new NotImplementedException();
+
+            var list = db.Sales
+                .Where(x=>x.Car!=null && x.Customer!=null)
+                .Take(10)
+                .Select(s => new
+                {
+                    car = new
+                    {
+                        Make = s.Car.Make,
+                        Models = s.Car.Model,
+                        TravelledDistance = s.Car.TravelledDistance
+                    },
+                    customerName = s.Customer.Name,
+                    Discount = s.Discount,
+                    price = s.Car.Parts.Select(p=>p.Price).Sum(),
+                    priceWithDiscount = s.Car.Parts.Select(p => p.Price).Sum() * (1-s.Discount/100)
+                })
+                .OrderByDescending(x=>x.priceWithDiscount)
+                .ToList();
+            string jsonData = JsonConvert.SerializeObject(list);
+
+            File.WriteAllText(
+                FilePats.EXPORT_DIRECTORY+FilePats.EXPORT_SALES_DISCOUNT
+                ,jsonData);
+
+
+            return "Success create file " + FilePats.EXPORT_SALES_DISCOUNT;
         }
     }
 }
