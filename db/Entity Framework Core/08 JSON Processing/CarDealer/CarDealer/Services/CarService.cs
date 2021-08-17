@@ -4,12 +4,14 @@ using Data;
 using Models.DtoImport;
 using Models.Entities;
 using Nancy.Json;
+using Newtonsoft.Json;
 using Static;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace Services
@@ -49,9 +51,23 @@ namespace Services
             return $"Successfully imported {db.Cars.Count<Car>()}.";
         }
 
-        public string CarsByMake(string v)
+        public string CarsByMake(string carMake)
         {
-            throw new NotImplementedException();
+            var list = db.Cars
+                .Where(c => c.Make == carMake)
+                .OrderBy(c => c.Model)
+                .ThenBy(c => c.TravelledDistance)
+                .Select(c => new { 
+                    Id=c.Id,
+                    Make= c.Make,
+                    Model= c.Model,
+                    TravelledDistance = c.TravelledDistance
+                })
+                .ToList();
+            string jsonData = JsonConvert.SerializeObject(list);
+            File.WriteAllText(FilePats.EXPORT_DIRECTORY+FilePats.EXPORT_CARS_TOYOTA, jsonData);
+
+            return $"Successfully create file toyota-cars.json";
         }
 
         public string ExportCarsWithTheirParts()
