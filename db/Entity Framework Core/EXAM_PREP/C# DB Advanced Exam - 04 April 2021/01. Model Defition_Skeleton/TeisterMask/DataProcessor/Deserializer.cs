@@ -66,7 +66,7 @@
                     context.SaveChanges();
                     result.Add(String.Format(SuccessfullyImportedProject, project.Name, project.Tasks.Count));
                 }
-                catch (Exception e)
+                catch (Exception )
                 {
                     result.Add(ErrorMessage);
                 }

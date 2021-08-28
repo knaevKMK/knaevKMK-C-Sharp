@@ -15,6 +15,7 @@
         {
             var context = new TeisterMaskContext();
 
+            //work in old versions
             Mapper.Initialize(cfg => cfg.AddProfile<TeisterMaskProfile>());
 
             ResetDatabase(context, shouldDropDatabase: true);
@@ -22,8 +23,8 @@
             var projectDir = GetProjectDirectory();
 
             ImportEntities(context, projectDir + @"Datasets/", projectDir + @"ImportResults/");
-
-            ExportEntities(context, projectDir + @"ExportResults/");
+            //TODO
+          //  ExportEntities(context, projectDir + @"ExportResults/");
 
             using (var transaction = context.Database.BeginTransaction())
             {
@@ -62,7 +63,7 @@
         {
             if (shouldDropDatabase)
             {
-                context.Database.EnsureDeleted();
+            context.Database.EnsureDeleted();
             }
 
             if (context.Database.EnsureCreated())
@@ -71,18 +72,18 @@
             }
 
             var disableIntegrityChecksQuery = "EXEC sp_MSforeachtable @command1='ALTER TABLE ? NOCHECK CONSTRAINT ALL'";
-            context.Database.ExecuteSqlCommand(disableIntegrityChecksQuery);
+         //   context.Database.ExecuteSqlCommand(disableIntegrityChecksQuery);
 
             var deleteRowsQuery = "EXEC sp_MSforeachtable @command1='SET QUOTED_IDENTIFIER ON;DELETE FROM ?'";
-            context.Database.ExecuteSqlCommand(deleteRowsQuery);
+      //      context.Database.ExecuteSqlCommand(deleteRowsQuery);
 
             var enableIntegrityChecksQuery =
                 "EXEC sp_MSforeachtable @command1='ALTER TABLE ? WITH CHECK CHECK CONSTRAINT ALL'";
-            context.Database.ExecuteSqlCommand(enableIntegrityChecksQuery);
+        //    context.Database.ExecuteSqlCommand(enableIntegrityChecksQuery);
 
             var reseedQuery =
                 "EXEC sp_MSforeachtable @command1='IF OBJECT_ID(''?'') IN (SELECT OBJECT_ID FROM SYS.IDENTITY_COLUMNS) DBCC CHECKIDENT(''?'', RESEED, 0)'";
-            context.Database.ExecuteSqlCommand(reseedQuery);
+         //   context.Database.ExecuteSqlCommand(reseedQuery);
         }
 
         private static void PrintAndExportEntityToFile(string entityOutput, string outputPath)

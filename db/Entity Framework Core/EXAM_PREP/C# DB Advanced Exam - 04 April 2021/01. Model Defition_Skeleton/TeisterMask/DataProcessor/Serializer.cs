@@ -10,12 +10,14 @@
     {
         public static string ExportProjectWithTheirTasks(TeisterMaskContext context)
         {
-            throw new NotImplementedException();
+
+            return "";
+          //  throw new NotImplementedException();
         }
 
         public static string ExportMostBusiestEmployees(TeisterMaskContext context, DateTime date)
         {
-            throw new NotImplementedException();
+            return "";
         }
     }
 }

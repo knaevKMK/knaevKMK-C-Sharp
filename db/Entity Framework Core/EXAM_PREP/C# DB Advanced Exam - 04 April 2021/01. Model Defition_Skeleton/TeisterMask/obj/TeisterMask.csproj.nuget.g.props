@@ -15,4 +15,7 @@
   <PropertyGroup>
     <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
   </PropertyGroup>
+  <PropertyGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
+    <PkgAutoMapper Condition=" '$(PkgAutoMapper)' == '' ">C:\Users\master\.nuget\packages\automapper\3.1.0</PkgAutoMapper>
+  </PropertyGroup>
 </Project>
