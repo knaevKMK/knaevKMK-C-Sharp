@@ -63,3 +63,4 @@ C:\Users\master\Desktop\GitHub\C_Sharp\db\Entity Framework Core\EXAM_PREP\C# DB 
 C:\Users\master\Desktop\GitHub\C_Sharp\db\Entity Framework Core\EXAM_PREP\C# DB Advanced Exam - 04 April 2021\01. Model Defition_Skeleton\TeisterMask\obj\Debug\netcoreapp3.1\TeisterMask.dll
 C:\Users\master\Desktop\GitHub\C_Sharp\db\Entity Framework Core\EXAM_PREP\C# DB Advanced Exam - 04 April 2021\01. Model Defition_Skeleton\TeisterMask\obj\Debug\netcoreapp3.1\TeisterMask.pdb
 C:\Users\master\Desktop\GitHub\C_Sharp\db\Entity Framework Core\EXAM_PREP\C# DB Advanced Exam - 04 April 2021\01. Model Defition_Skeleton\TeisterMask\obj\Debug\netcoreapp3.1\TeisterMask.genruntimeconfig.cache
+C:\Users\master\Desktop\GitHub\C_Sharp\db\Entity Framework Core\EXAM_PREP\C# DB Advanced Exam - 04 April 2021\01. Model Defition_Skeleton\TeisterMask\bin\Debug\netcoreapp3.1\AutoMapper.Net4.dll

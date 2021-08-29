@@ -1,0 +1,9 @@
+{
+  "profiles": {
+    "SUS.HTTP": {
+      "commandName": "Executable",
+      "executablePath": "devenv.exe",
+      "commandLineArgs": "/rootsuffix Exp"
+    }
+  }
+}
