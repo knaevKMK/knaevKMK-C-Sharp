@@ -1,0 +1,13 @@
+C:\Users\master\Desktop\GitHub\C_Sharp\web\Exam_Prep\C# Web Development Basics Exam - 28 Apr 2020\Battle Cards_Skeleton\SIS.MvcFramework\bin\Debug\netstandard2.0\SIS.MvcFramework.deps.json
+C:\Users\master\Desktop\GitHub\C_Sharp\web\Exam_Prep\C# Web Development Basics Exam - 28 Apr 2020\Battle Cards_Skeleton\SIS.MvcFramework\bin\Debug\netstandard2.0\SIS.MvcFramework.dll
+C:\Users\master\Desktop\GitHub\C_Sharp\web\Exam_Prep\C# Web Development Basics Exam - 28 Apr 2020\Battle Cards_Skeleton\SIS.MvcFramework\bin\Debug\netstandard2.0\SIS.MvcFramework.pdb
+C:\Users\master\Desktop\GitHub\C_Sharp\web\Exam_Prep\C# Web Development Basics Exam - 28 Apr 2020\Battle Cards_Skeleton\SIS.MvcFramework\bin\Debug\netstandard2.0\SIS.HTTP.dll
+C:\Users\master\Desktop\GitHub\C_Sharp\web\Exam_Prep\C# Web Development Basics Exam - 28 Apr 2020\Battle Cards_Skeleton\SIS.MvcFramework\bin\Debug\netstandard2.0\SIS.HTTP.pdb
+C:\Users\master\Desktop\GitHub\C_Sharp\web\Exam_Prep\C# Web Development Basics Exam - 28 Apr 2020\Battle Cards_Skeleton\SIS.MvcFramework\obj\Debug\netstandard2.0\SIS.MvcFramework.csproj.AssemblyReference.cache
+C:\Users\master\Desktop\GitHub\C_Sharp\web\Exam_Prep\C# Web Development Basics Exam - 28 Apr 2020\Battle Cards_Skeleton\SIS.MvcFramework\obj\Debug\netstandard2.0\SIS.MvcFramework.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\master\Desktop\GitHub\C_Sharp\web\Exam_Prep\C# Web Development Basics Exam - 28 Apr 2020\Battle Cards_Skeleton\SIS.MvcFramework\obj\Debug\netstandard2.0\SIS.MvcFramework.AssemblyInfoInputs.cache
+C:\Users\master\Desktop\GitHub\C_Sharp\web\Exam_Prep\C# Web Development Basics Exam - 28 Apr 2020\Battle Cards_Skeleton\SIS.MvcFramework\obj\Debug\netstandard2.0\SIS.MvcFramework.AssemblyInfo.cs
+C:\Users\master\Desktop\GitHub\C_Sharp\web\Exam_Prep\C# Web Development Basics Exam - 28 Apr 2020\Battle Cards_Skeleton\SIS.MvcFramework\obj\Debug\netstandard2.0\SIS.MvcFramework.csproj.CoreCompileInputs.cache
+C:\Users\master\Desktop\GitHub\C_Sharp\web\Exam_Prep\C# Web Development Basics Exam - 28 Apr 2020\Battle Cards_Skeleton\SIS.MvcFramework\obj\Debug\netstandard2.0\SIS.MvcFramework.csproj.CopyComplete
+C:\Users\master\Desktop\GitHub\C_Sharp\web\Exam_Prep\C# Web Development Basics Exam - 28 Apr 2020\Battle Cards_Skeleton\SIS.MvcFramework\obj\Debug\netstandard2.0\SIS.MvcFramework.dll
+C:\Users\master\Desktop\GitHub\C_Sharp\web\Exam_Prep\C# Web Development Basics Exam - 28 Apr 2020\Battle Cards_Skeleton\SIS.MvcFramework\obj\Debug\netstandard2.0\SIS.MvcFramework.pdb

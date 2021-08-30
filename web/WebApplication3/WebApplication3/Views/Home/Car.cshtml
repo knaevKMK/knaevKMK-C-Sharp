@@ -1,0 +1,14 @@
+﻿@model WebApplication3.Views.ExportDto.CarExportDto
+
+@{
+    ViewData["Title"] = "Car";
+}
+
+<div>
+    <p>Car Details</p><br />
+    <img src="@Model.ImageUrl" alt="@Model.Manufacturer @Model.Model" />
+    <p>@Model.type</p>
+    <p>@Model.Engine</p>
+    <p>@Model.Transmision</p>
+
+</div>

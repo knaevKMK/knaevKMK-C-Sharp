@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "Ne1mSjxLIYfQ+MadsajQvB08QpcvQKOFyoraZP/ZqJPAlE+PzrJf97P3Jm+UdSKsBtklpwe9wu0gKZb8i8AlOg==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\master\\Desktop\\GitHub\\C_Sharp\\web\\Exam_Prep\\C# Web Development Basics - 25 October 2020\\Git - Problem Description_Skeleton\\Skeleton\\SUS.HTTP\\SUS.HTTP.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\master\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\master\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

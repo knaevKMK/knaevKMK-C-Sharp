@@ -1,0 +1,10 @@
+C:\Users\master\Desktop\GitHub\C_Sharp\web\Exam_Prep\C# Web Development Basics - 25 October 2020\Git - Problem Description_Skeleton\Skeleton\SUS.HTTP\bin\Debug\netstandard2.0\SUS.HTTP.deps.json
+C:\Users\master\Desktop\GitHub\C_Sharp\web\Exam_Prep\C# Web Development Basics - 25 October 2020\Git - Problem Description_Skeleton\Skeleton\SUS.HTTP\bin\Debug\netstandard2.0\SUS.HTTP.dll
+C:\Users\master\Desktop\GitHub\C_Sharp\web\Exam_Prep\C# Web Development Basics - 25 October 2020\Git - Problem Description_Skeleton\Skeleton\SUS.HTTP\bin\Debug\netstandard2.0\SUS.HTTP.pdb
+C:\Users\master\Desktop\GitHub\C_Sharp\web\Exam_Prep\C# Web Development Basics - 25 October 2020\Git - Problem Description_Skeleton\Skeleton\SUS.HTTP\obj\Debug\netstandard2.0\SUS.HTTP.csproj.AssemblyReference.cache
+C:\Users\master\Desktop\GitHub\C_Sharp\web\Exam_Prep\C# Web Development Basics - 25 October 2020\Git - Problem Description_Skeleton\Skeleton\SUS.HTTP\obj\Debug\netstandard2.0\SUS.HTTP.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\master\Desktop\GitHub\C_Sharp\web\Exam_Prep\C# Web Development Basics - 25 October 2020\Git - Problem Description_Skeleton\Skeleton\SUS.HTTP\obj\Debug\netstandard2.0\SUS.HTTP.AssemblyInfoInputs.cache
+C:\Users\master\Desktop\GitHub\C_Sharp\web\Exam_Prep\C# Web Development Basics - 25 October 2020\Git - Problem Description_Skeleton\Skeleton\SUS.HTTP\obj\Debug\netstandard2.0\SUS.HTTP.AssemblyInfo.cs
+C:\Users\master\Desktop\GitHub\C_Sharp\web\Exam_Prep\C# Web Development Basics - 25 October 2020\Git - Problem Description_Skeleton\Skeleton\SUS.HTTP\obj\Debug\netstandard2.0\SUS.HTTP.csproj.CoreCompileInputs.cache
+C:\Users\master\Desktop\GitHub\C_Sharp\web\Exam_Prep\C# Web Development Basics - 25 October 2020\Git - Problem Description_Skeleton\Skeleton\SUS.HTTP\obj\Debug\netstandard2.0\SUS.HTTP.dll
+C:\Users\master\Desktop\GitHub\C_Sharp\web\Exam_Prep\C# Web Development Basics - 25 October 2020\Git - Problem Description_Skeleton\Skeleton\SUS.HTTP\obj\Debug\netstandard2.0\SUS.HTTP.pdb
