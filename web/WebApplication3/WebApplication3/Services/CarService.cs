@@ -13,12 +13,15 @@ namespace WebApplication3.Services
     public class CarService : ICarService
     {
         private readonly ICarRepository CarRepository;
-        private readonly IMapper mapper;
+     //   private readonly IMapper mapper;
 
-        public CarService(ICarRepository CarRepository, IMapper mapper)
+        public CarService(
+            ICarRepository CarRepository
+            //,IMapper mapper
+            )
         {
             this.CarRepository = CarRepository;
-            this.mapper = mapper;
+       //     this.mapper = mapper;
         }
         public void AddAllCars(ICollection<CarImportDto> carsDto)
         {
@@ -32,7 +35,8 @@ namespace WebApplication3.Services
         {
 
             //ToDo Validate
-            Car car = mapper.Map<Car>(carDto);
+            Car car = //mapper.Map<Car>(carDto);
+                new Car() { };
             //ToDo Create and add fields: manufacturer, model, enums
             return car;
         }
@@ -48,8 +52,18 @@ namespace WebApplication3.Services
 
         public ICollection<CarExportDto> AllCars()
         {
-            //ToDo
-            throw new NotImplementedException();
+            ICollection<Car> cars = this.CarRepository.GetAllCars();
+           
+           
+               return cars  .Select(car => new CarExportDto() {
+                  Manufacturer=car.Model.Manufacturer.Name,
+                  Model= car.Model.Name,
+                  ImageUrl=car.ImageUrl,
+                  Engine=car.Engine.Type,
+                  Transmision=car.Transmision.Type,
+                  type=car.TypeCabin.Type
+                  })
+                  .ToList();
         }
 
         public CarExportDto DeleteCar(int id)
@@ -73,7 +87,16 @@ namespace WebApplication3.Services
 
         private CarExportDto MapCarEntityToExportDto(Car car)
         {
-            return mapper.Map<CarExportDto>(car);
+            //   return mapper.Map<CarExportDto>(car);
+            return new CarExportDto() {
+                Manufacturer = car.Model.Manufacturer.Name,
+                Model = car.Model.Name,
+                ImageUrl = car.ImageUrl,
+                type = car.TypeCabin.Type,
+                Id = car.Id,
+                Engine = car.Engine.Type,
+                Transmision = car.Transmision.Type
+            };
         }
     }
 }

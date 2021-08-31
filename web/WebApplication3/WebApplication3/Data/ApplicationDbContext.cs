@@ -9,21 +9,24 @@ namespace WebApplication3.Data
 {
     public class ApplicationDbContext : DbContext
     {
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        public ApplicationDbContext()
         {
-            if (!optionsBuilder.IsConfigured)
-            {
-               
-            //ToDo create connection string + install SQLServer
-            }
+
+        }
+
+        public ApplicationDbContext(DbContextOptions options) : base(options)
+        {
         }
 
         public DbSet<Car> Cars { get; set; }
+        public DbSet<Engine> Engines { get; set; }
+        public DbSet<Transmision> Transmisions { get; set; }
+        public DbSet<TypeCabin> Cabins { get; set; }
         public DbSet<Manufacturer> Manufacturers { get; set; }
         public DbSet<Model> Models { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            base.OnModelCreating(modelBuilder);
+          
         }
     }
 }

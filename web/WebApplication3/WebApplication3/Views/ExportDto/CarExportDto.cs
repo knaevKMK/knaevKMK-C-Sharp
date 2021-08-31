@@ -8,7 +8,7 @@ namespace WebApplication3.Views.ExportDto
     public class CarExportDto
     {
 
-       
+        public int Id { get; set; }
         public string Manufacturer { get; set; }
         public string Model { get; set; }
 

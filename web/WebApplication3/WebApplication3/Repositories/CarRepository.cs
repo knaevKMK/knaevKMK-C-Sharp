@@ -40,7 +40,7 @@ namespace WebApplication3.Repositories
         public ICollection<Car> GetAllCars()
         {
             return _ctx.Cars
-                    .OrderBy(c=>c.Manufacturer.Name)
+                    .OrderBy(c=>c.Model.Manufacturer.Name)
                     .ToList<Car>();
         }
 
