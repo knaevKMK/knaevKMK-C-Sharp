@@ -31,7 +31,7 @@ namespace WebApplication3
             //DB
             services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
             //repositories
-            services.AddScoped<ICarRepository, CarRepository>();
+            services.AddScoped<IRepository, BaseRepository>();
 
             services.AddMvc();
 

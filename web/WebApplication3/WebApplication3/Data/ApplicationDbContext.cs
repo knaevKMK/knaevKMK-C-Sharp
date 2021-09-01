@@ -19,14 +19,16 @@ namespace WebApplication3.Data
         }
 
         public DbSet<Car> Cars { get; set; }
-        public DbSet<Engine> Engines { get; set; }
-        public DbSet<Transmision> Transmisions { get; set; }
-        public DbSet<TypeCabin> Cabins { get; set; }
-        public DbSet<Manufacturer> Manufacturers { get; set; }
-        public DbSet<Model> Models { get; set; }
+        public DbSet<Part> Parts { get; set; }
+        public DbSet<Customer> Customers { get; set; }
+        public DbSet<PartCar> PartCars { get; set; }
+        public DbSet<Sale> Sales { get; set; }
+        public DbSet<Supplier> Suppliers { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-          
+            modelBuilder.Entity<PartCar>(e=> {
+                e.HasKey(pc=>new { pc.CarId, pc.PartId});
+            });
         }
     }
 }

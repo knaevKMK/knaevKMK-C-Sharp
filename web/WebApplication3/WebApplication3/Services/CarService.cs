@@ -12,11 +12,11 @@ namespace WebApplication3.Services
 {
     public class CarService : ICarService
     {
-        private readonly ICarRepository CarRepository;
+        private readonly IRepository CarRepository;
      //   private readonly IMapper mapper;
 
         public CarService(
-            ICarRepository CarRepository
+            IRepository CarRepository
             //,IMapper mapper
             )
         {

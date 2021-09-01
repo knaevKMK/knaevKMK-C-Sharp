@@ -1,23 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
 namespace WebApplication3.Models
 {
-    public class Manufacturer
+    public class Supplier: IEntity
     {
-        public Manufacturer()
+
+        public Supplier()
         {
-           this.Models = new HashSet<Model>();
+            Parts = new HashSet<Part>();
         }
         public int Id { get; set; }
         public string Name { get; set; }
-
-       
-        public virtual ICollection<Model> Models { get; set; }
-       
-       
+        public bool IsImporter { get; set; }
+        public virtual ICollection<Part> Parts { get; set; }
     }
 }
