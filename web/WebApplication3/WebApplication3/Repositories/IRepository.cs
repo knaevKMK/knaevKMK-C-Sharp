@@ -8,12 +8,12 @@ namespace WebApplication3.Repositories
 {
   public   interface IRepository<T> where T : class, IEntity
     {
+        bool IsEmpty();
+       List<T> GetAll();
+        T GetById(int id);
 
-       Task<List<T>> GetAll();
-        Task<T> GetById(int id);
-
-        Task<T> Add(T entity);
-        Task<T> Delete(int id);
-        Task<T> Update(T entity);
+        T Add(T entity);
+        T Delete(int id);
+        T Update(T entity);
     }
 }

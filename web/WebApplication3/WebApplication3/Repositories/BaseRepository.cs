@@ -12,36 +12,53 @@ namespace WebApplication3.Repositories
         where TEntity:class,IEntity
         where TContext: DbContext
     {
-        private readonly TContext _ctx;
+        private readonly DbContext _ctx;
 
-        public BaseRepository(TContext ctx)
+        public BaseRepository(DbContext ctx)
         {
             _ctx = ctx;
         }
 
-        public Task<TEntity> Add(TEntity entity)
+        public bool IsEmpty() {
+            return _ctx.Set<TEntity>().Count<TEntity>() == 0;
+        }
+        public TEntity Add(TEntity entity)
         {
-            throw new NotImplementedException();
+            _ctx.Set<TEntity>().Add(entity);
+            _ctx.SaveChanges();
+            return entity;
         }
 
-        public Task<TEntity> Delete(int id)
+        public TEntity Delete(int id)
         {
-            throw new NotImplementedException();
+            var entity = this.GetById(id);
+            if (entity==null)
+            {
+                return entity;
+            }
+
+            _ctx.Set<TEntity>().Remove(entity);
+            _ctx.SaveChanges();
+
+            return entity;
         }
 
-        public Task<List<TEntity>> GetAll()
+        public List<TEntity> GetAll()
         {
-            throw new NotImplementedException();
+           return _ctx.Set<TEntity>().ToList();
         }
 
-        public Task<TEntity> GetById(int id)
+        public TEntity GetById(int id)
         {
-            throw new NotImplementedException();
+            return _ctx.Set<TEntity>().Find(id);
         }
 
-        public Task<TEntity> Update(TEntity entity)
+        public TEntity Update(TEntity entity)
         {
-            throw new NotImplementedException();
+            _ctx.Entry(entity).State = EntityState.Modified;
+            _ctx.SaveChanges();
+
+            return entity;
         }
     }
 }

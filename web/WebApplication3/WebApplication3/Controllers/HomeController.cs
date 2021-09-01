@@ -7,20 +7,21 @@ using System.Linq;
 using System.Threading.Tasks;
 using WebApplication3.Models;
 using WebApplication3.Services;
-using WebApplication3.Views.ExportDto;
-using WebApplication3.Views.ImportDto;
 
 namespace WebApplication3.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ICarService _carService;
-        private readonly ILogger<HomeController> _logger;
+        private readonly ICarService carService;
+        private readonly ISupplerServce supplerServce;
 
-        public HomeController(ILogger<HomeController> logger, ICarService carService)
+        private readonly ILogger<HomeController> logger;
+
+        public HomeController(ILogger<HomeController> _logger, ICarService _carService, ISupplerServce _supplerServce)
         {
-            _carService = carService;
-            _logger = logger;
+            carService = _carService;
+            logger = _logger;
+            supplerServce = _supplerServce;
         }
 
         public IActionResult Index()
@@ -30,40 +31,21 @@ namespace WebApplication3.Controllers
 
         public IActionResult Privacy()
         {
-            return View();
-        }
-
-        public IActionResult Car(int id) {
-            CarExportDto car = _carService.GetCarById(id);
-            return View(car);
-        }
-        //public IActionResult AllCars() {
-        //    ICollection<CarExportDto> cars = _carService.AllCars();
-        //    return View(cars);
-        //}
-
-      [HttpGet]
-        public IActionResult AddCar_get(CarImportDto carDto)
-        {
-
-                return View(carDto);
-           }
-
-        [HttpPost] 
-    
-        public IActionResult AddCar_post(CarImportDto carDto) {
-
-
-             if (!ModelState.IsValid)
+            if (!supplerServce.IsImported())
             {
-                carDto.Model = "BMW";
-                return RedirectToAction("AddCar_get");
+                supplerServce.ImportFromJson();
             }
-            
-            //  add dto to db and redirect
-            //   return RedirectToAction("AllCars");
+            if (!carService.IsImported())
+            {
+          //    carService.ImportFromJson();
+            }
+
             return RedirectToAction("Index");
         }
+
+       
+
+    
 
         
 

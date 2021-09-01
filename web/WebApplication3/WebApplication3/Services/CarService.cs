@@ -5,33 +5,28 @@ using System.Linq;
 using System.Threading.Tasks;
 using WebApplication3.Models;
 using WebApplication3.Repositories;
-using WebApplication3.Views.ExportDto;
-using WebApplication3.Views.ImportDto;
+using WebApplication3.Views.ImoprtDto;
+using Newtonsoft.Json;
+using System.IO;
 
 namespace WebApplication3.Services
 {
     public class CarService : ICarService
     {
-        private readonly IRepository CarRepository;
+        private readonly CarRepository CarRepository;
      //   private readonly IMapper mapper;
 
         public CarService(
-            IRepository CarRepository
+            CarRepository CarRepository
             //,IMapper mapper
             )
         {
             this.CarRepository = CarRepository;
        //     this.mapper = mapper;
         }
-        public void AddAllCars(ICollection<CarImportDto> carsDto)
-        {
-            List<Car> cars = carsDto
-                 .Select(MapCarImportDtoToEntity)
-                 .ToList();
-            this.CarRepository.AddCars(cars);
-        }
+       
 
-        private Car MapCarImportDtoToEntity(CarImportDto carDto)
+        private Car MapCarImportDtoToEntity(CarDto carDto)
         {
 
             //ToDo Validate
@@ -41,62 +36,72 @@ namespace WebApplication3.Services
             return car;
         }
 
-        public CarExportDto AddCar(CarImportDto carDto)
+        public bool IsImported() {
+            return !CarRepository.IsEmpty();
+        }
+        public CarDto AddCar(CarDto carDto)
         {
-            Car car = this.CarRepository.AddCar(MapCarImportDtoToEntity(carDto));
 
-            return this.MapCarEntityToExportDto(car);
+            //ToDo
+            throw new NotImplementedException();
+
 
 
         }
 
-        public ICollection<CarExportDto> AllCars()
+        public ICollection<CarDto> AllCars()
         {
-            ICollection<Car> cars = this.CarRepository.GetAllCars();
-           
-           
-               return cars  .Select(car => new CarExportDto() {
-                  Manufacturer=car.Model.Manufacturer.Name,
-                  Model= car.Model.Name,
-                  ImageUrl=car.ImageUrl,
-                  Engine=car.Engine.Type,
-                  Transmision=car.Transmision.Type,
-                  type=car.TypeCabin.Type
-                  })
-                  .ToList();
+
+
+            //ToDo
+            throw new NotImplementedException();
         }
 
-        public CarExportDto DeleteCar(int id)
+        public CarDto DeleteCar(int id)
         {
             //ToDo
             throw new NotImplementedException();
         }
 
-        public CarExportDto GetCarById(int id)
+        public CarDto GetCarById(int id)
         {
             //ToDo
             throw new NotImplementedException();
         }
 
-        public CarExportDto UpdateCar(CarImportDto carDto)
+        public CarDto UpdateCar(CarDto carDto)
         {
             //ToDo
             throw new NotImplementedException();
         }
 
 
-        private CarExportDto MapCarEntityToExportDto(Car car)
+        private CarDto MapCarEntityToExportDto(Car car)
         {
-            //   return mapper.Map<CarExportDto>(car);
-            return new CarExportDto() {
-                Manufacturer = car.Model.Manufacturer.Name,
-                Model = car.Model.Name,
-                ImageUrl = car.ImageUrl,
-                type = car.TypeCabin.Type,
-                Id = car.Id,
-                Engine = car.Engine.Type,
-                Transmision = car.Transmision.Type
-            };
+            //ToDo
+            throw new NotImplementedException();
+        }
+
+        public void ImportFromJson()
+        {
+
+            ICollection<CarDto> carDtos = JsonConvert.DeserializeObject<ICollection<CarDto>>(File.ReadAllText("./Data/ImportFromFile/cars.json"));
+
+            Console.WriteLine();
+            foreach (var carDto in carDtos)
+            {
+                try { 
+                Car car = new Car() {
+                Make=carDto.make,
+                Model= carDto.model,
+                TravelledDistance = carDto.travelledDistance
+                };
+
+                //    CarRepository.Add(car);
+            }catch (Exception) { continue; }
+        }
+
+
         }
     }
 }

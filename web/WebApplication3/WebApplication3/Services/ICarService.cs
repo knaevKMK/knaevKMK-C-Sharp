@@ -3,20 +3,19 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using WebApplication3.Models;
-using WebApplication3.Views.ExportDto;
-using WebApplication3.Views.ImportDto;
+using WebApplication3.Views.ImoprtDto;
 
 namespace WebApplication3.Services
 {
     public interface ICarService
     {
+        bool IsImported();
+        ICollection<CarDto> AllCars();
+        CarDto GetCarById(int id);
+        CarDto AddCar(CarDto carDto);
+        CarDto DeleteCar(int id);
 
-        ICollection<CarExportDto> AllCars();
-        void AddAllCars(ICollection<CarImportDto> carsDto);
-        CarExportDto GetCarById(int id);
-        CarExportDto AddCar(CarImportDto carDto);
-        CarExportDto DeleteCar(int id);
-
-        CarExportDto UpdateCar(CarImportDto carDto);
+        CarDto UpdateCar(CarDto carDto);
+        void ImportFromJson();
     }
 }
