@@ -10,7 +10,6 @@ namespace WebApplication3.Views.ImoprtDto
     public class CarDto
     {
         public int Id { get; set; }
-        public int MyProperty { get; set; }
         public string make { get; set; }
         public string model { get; set; }
         public long travelledDistance { get; set; }

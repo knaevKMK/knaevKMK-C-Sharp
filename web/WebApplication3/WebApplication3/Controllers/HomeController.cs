@@ -7,6 +7,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using WebApplication3.Models;
 using WebApplication3.Services;
+using WebApplication3.Views.ImoprtDto;
 
 namespace WebApplication3.Controllers
 {
@@ -25,12 +26,38 @@ namespace WebApplication3.Controllers
             this.partServce = partServce;
             this.logger = logger;
         }
-
+      
+        
+       
         public IActionResult Index()
         {
             return View();
         }
+        public IActionResult Cars() {
 
+            ICollection<Views.ImoprtDto.CarDto> carDtos = carService.AllCars();
+            return View(carDtos);
+        }
+
+        public IActionResult Details(int id) {
+            Views.ImoprtDto.CarDto carDto = carService.GetCarById(id);
+            return View(carDto);
+        }
+        [HttpGet]
+        public IActionResult Edit(int id) {
+
+            Views.ImoprtDto.CarDto carDto = carService.GetCarById(id);
+            return View(carDto);
+        }
+
+        [HttpPost]
+        public IActionResult EditPost(CarDto car) {
+
+            //ToDo update entty
+
+            var id = new { car.Id };
+            return RedirectToAction("Details",id);
+        }
         public IActionResult Privacy()
         {
             if (!supplerServce.IsImported())

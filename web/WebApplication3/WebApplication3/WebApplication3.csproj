@@ -16,7 +16,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Remove="Controllers\CarController.cs" />
     <Compile Remove="Controllers\CarController1.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="Views\_viewSrart.cshtml" />
   </ItemGroup>
 
   <ItemGroup>
@@ -33,10 +38,6 @@
 
   <ItemGroup>
     <Folder Include="Data\ImportFromFile\" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Include="Views\Car\AllCars.cshtml" />
   </ItemGroup>
 
 </Project>

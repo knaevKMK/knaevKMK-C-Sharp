@@ -1,21 +1,24 @@
 ﻿@model IEnumerable<WebApplication3.Views.ImoprtDto.CarDto>
 
 @{
-    ViewData["Title"] = "AllCars";
-    Layout = "~/Views/_ViewImports.cshtml";
+  
 }
 
-<h1>AllCars</h1>
+<!DOCTYPE html>
 
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Cars</title>
+</head>
+<body>
 <p>
     <a asp-action="Create">Create New</a>
 </p>
 <table class="table">
     <thead>
         <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.MyProperty)
-            </th>
+           
             <th>
                 @Html.DisplayNameFor(model => model.make)
             </th>
@@ -31,9 +34,7 @@
     <tbody>
 @foreach (var item in Model) {
         <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.MyProperty)
-            </td>
+          
             <td>
                 @Html.DisplayFor(modelItem => item.make)
             </td>
@@ -52,3 +53,5 @@
 }
     </tbody>
 </table>
+</body>
+</html>

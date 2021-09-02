@@ -52,7 +52,7 @@ namespace WebApplication3.Services
 
         }
 
-        public ICollection<CarDto> AllCars()
+        public  ICollection<CarDto> AllCars()
         {
 
 
@@ -69,8 +69,8 @@ namespace WebApplication3.Services
 
         public CarDto GetCarById(int id)
         {
-            //ToDo
-            throw new NotImplementedException();
+            Car car = CarRepository.GetById(id);
+            return new CarDto() { Id= car.Id, make=car.Make,model=car.Model,travelledDistance=car.TravelledDistance};
         }
 
         public CarDto UpdateCar(CarDto carDto)
