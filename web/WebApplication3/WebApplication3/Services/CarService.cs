@@ -13,18 +13,21 @@ namespace WebApplication3.Services
 {
     public class CarService : ICarService
     {
+        private readonly PartRepository partRepository;
         private readonly CarRepository CarRepository;
-     //   private readonly IMapper mapper;
+        //   private readonly IMapper mapper;
 
         public CarService(
             CarRepository CarRepository
+, PartRepository partRepository
             //,IMapper mapper
             )
         {
             this.CarRepository = CarRepository;
-       //     this.mapper = mapper;
+            this.partRepository = partRepository;
+            //     this.mapper = mapper;
         }
-       
+
 
         private Car MapCarImportDtoToEntity(CarDto carDto)
         {
@@ -97,7 +100,17 @@ namespace WebApplication3.Services
                 TravelledDistance = carDto.travelledDistance
                 };
 
-                //    CarRepository.Add(car);
+                    foreach (var id in carDto.partsId)
+                    {
+                        Part part = partRepository.GetById(id);
+                        if (part==null)
+                        {
+                            continue;
+                        }
+                        PartCar partCar = new PartCar { Car = car, Part = part };
+                        car.PartCars.Add(partCar);
+                    }
+                  CarRepository.Add(car);
             }catch (Exception) { continue; }
         }
 

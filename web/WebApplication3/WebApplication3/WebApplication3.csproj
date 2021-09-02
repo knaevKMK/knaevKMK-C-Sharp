@@ -5,6 +5,17 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Views\Car\**" />
+    <Content Remove="Views\Car\**" />
+    <EmbeddedResource Remove="Views\Car\**" />
+    <None Remove="Views\Car\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="Controllers\CarController.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="AutoMapper" Version="10.1.1" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.9" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="5.0.9">
@@ -18,7 +29,6 @@
 
   <ItemGroup>
     <Folder Include="Data\ImportFromFile\" />
-    <Folder Include="Views\Car\" />
   </ItemGroup>
 
 </Project>

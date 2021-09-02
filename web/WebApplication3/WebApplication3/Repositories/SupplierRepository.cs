@@ -26,17 +26,22 @@ namespace WebApplication3.Repositories
 
         public Supplier Delete(int id)
         {
-            throw new NotImplementedException();
+            Supplier supplier = GetById(id);
+
+            dbContext.Suppliers.Remove(supplier);
+            dbContext.SaveChanges();
+
+            return supplier;
         }
 
         public List<Supplier> GetAll()
         {
-            throw new NotImplementedException();
+            return dbContext.Suppliers.ToList();
         }
 
         public Supplier GetById(int id)
         {
-            throw new NotImplementedException();
+            return dbContext.Suppliers.Find(id);
         }
 
         public bool IsEmpty()
@@ -46,7 +51,10 @@ namespace WebApplication3.Repositories
 
         public Supplier Update(Supplier entity)
         {
-            throw new NotImplementedException();
+            dbContext.Entry(entity).State = EntityState.Modified;
+            dbContext.SaveChanges();
+
+            return entity;
         }
     }
 }

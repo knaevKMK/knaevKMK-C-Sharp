@@ -16,7 +16,7 @@ namespace WebApplication3.Models
         public decimal Prce { get; set; }
         public long Quantty { get; set; }
         public virtual ICollection<PartCar> PartCars { get; set; }
-        public int SupplerId { get; set; }
+        public int SupplierId { get; set; }
         public Supplier Supplier { get; set; }
     }
 

@@ -32,18 +32,19 @@ namespace WebApplication3
             services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
             //repositories
            services.AddScoped<CarRepository>();
-            services.AddScoped<SupplierRepository>();
-                
-                //    services.AddScoped<PartRepository>();
-          //  services.AddScoped<CustomerRepository>();
+           services.AddScoped<SupplierRepository>();
+           services.AddScoped<PartRepository>();
+
+            //  services.AddScoped<CustomerRepository>();
 
             services.AddMvc();
 
             services.AddHttpContextAccessor();
             //services
-           services.AddTransient<ICarService,CarService>();
+            services.AddTransient<ICarService,CarService>();
             services.AddTransient<ISupplerServce,SupplerServce>();
-       //     services.AddSingleton<PartService>();
+            services.AddTransient<IPartService,PartService>();
+           
 
         }
 

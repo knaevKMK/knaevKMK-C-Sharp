@@ -14,14 +14,16 @@ namespace WebApplication3.Controllers
     {
         private readonly ICarService carService;
         private readonly ISupplerServce supplerServce;
+        private readonly IPartService   partServce;
 
         private readonly ILogger<HomeController> logger;
 
-        public HomeController(ILogger<HomeController> _logger, ICarService _carService, ISupplerServce _supplerServce)
+        public HomeController(ICarService carService, ISupplerServce supplerServce, IPartService partServce, ILogger<HomeController> logger)
         {
-            carService = _carService;
-            logger = _logger;
-            supplerServce = _supplerServce;
+            this.carService = carService;
+            this.supplerServce = supplerServce;
+            this.partServce = partServce;
+            this.logger = logger;
         }
 
         public IActionResult Index()
@@ -35,9 +37,13 @@ namespace WebApplication3.Controllers
             {
                 supplerServce.ImportFromJson();
             }
+            if (!partServce.IsImported())
+            {
+                partServce.ImportFromJson();
+            }
             if (!carService.IsImported())
             {
-          //    carService.ImportFromJson();
+             carService.ImportFromJson();
             }
 
             return RedirectToAction("Index");
