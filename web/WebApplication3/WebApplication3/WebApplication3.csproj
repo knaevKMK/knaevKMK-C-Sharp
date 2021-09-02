@@ -5,14 +5,18 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Views\Cars\**" />
     <Compile Remove="Views\Car\**" />
+    <Content Remove="Views\Cars\**" />
     <Content Remove="Views\Car\**" />
+    <EmbeddedResource Remove="Views\Cars\**" />
     <EmbeddedResource Remove="Views\Car\**" />
+    <None Remove="Views\Cars\**" />
     <None Remove="Views\Car\**" />
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Remove="Controllers\CarController.cs" />
+    <Compile Remove="Controllers\CarController1.cs" />
   </ItemGroup>
 
   <ItemGroup>
@@ -29,6 +33,10 @@
 
   <ItemGroup>
     <Folder Include="Data\ImportFromFile\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Views\Car\AllCars.cshtml" />
   </ItemGroup>
 
 </Project>

@@ -4,15 +4,27 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using WebApplication3.Services;
 
 namespace WebApplication3.Controllers
 {
+
+  //  [Route("/Cars")]
     public class CarController : Controller
     {
-        // GET: CarController
-        public ActionResult Index()
+
+        private readonly ICarService carService;
+
+        public CarController(ICarService carService)
         {
-            return View();
+            this.carService = carService;
+        }
+
+        // GET: CarController
+        public ActionResult AllCars()
+        {
+            ICollection<Views.ImoprtDto.CarDto> carDtos = carService.AllCars();
+            return View(carDtos);
         }
 
         // GET: CarController/Details/5

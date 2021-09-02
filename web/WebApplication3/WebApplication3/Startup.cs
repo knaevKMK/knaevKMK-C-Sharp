@@ -28,8 +28,10 @@ namespace WebApplication3
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+
             //DB
-            services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+                       services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+            
             //repositories
            services.AddScoped<CarRepository>();
            services.AddScoped<SupplierRepository>();
@@ -69,12 +71,12 @@ namespace WebApplication3
             app.UseRouting();
 
             app.UseAuthorization();
-      //      app.ApplicationServices.GetRequiredService<CarService>();
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
+                endpoints.MapRazorPages();
             });
         }
     }

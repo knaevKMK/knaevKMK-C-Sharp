@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using WebApplication3.Models;
+using WebApplication3.Views.ImoprtDto;
 
 namespace WebApplication3.Data
 {
@@ -30,5 +31,6 @@ namespace WebApplication3.Data
                 e.HasKey(pc=>new { pc.CarId, pc.PartId});
             });
         }
+        public DbSet<WebApplication3.Views.ImoprtDto.CarDto> CarDto { get; set; }
     }
 }

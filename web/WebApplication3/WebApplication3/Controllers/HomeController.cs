@@ -41,8 +41,8 @@ namespace WebApplication3.Controllers
             {
                 partServce.ImportFromJson();
             }
-            if (!carService.IsImported())
-            {
+           if (!carService.IsImported())
+          {
              carService.ImportFromJson();
             }
 

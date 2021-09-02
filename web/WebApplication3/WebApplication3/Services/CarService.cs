@@ -56,8 +56,9 @@ namespace WebApplication3.Services
         {
 
 
-            //ToDo
-            throw new NotImplementedException();
+        return    CarRepository.GetAll()
+                 .Select(car=> new CarDto { Id= car.Id, make=car.Make, model=car.Model, travelledDistance=car.TravelledDistance })
+                 .ToList();
         }
 
         public CarDto DeleteCar(int id)
@@ -90,7 +91,6 @@ namespace WebApplication3.Services
 
             ICollection<CarDto> carDtos = JsonConvert.DeserializeObject<ICollection<CarDto>>(File.ReadAllText("./Data/ImportFromFile/cars.json"));
 
-            Console.WriteLine();
             foreach (var carDto in carDtos)
             {
                 try { 
@@ -99,17 +99,26 @@ namespace WebApplication3.Services
                 Model= carDto.model,
                 TravelledDistance = carDto.travelledDistance
                 };
-
-                    foreach (var id in carDto.partsId)
+                    IEnumerable<int> enumerable = carDto.partsId.Distinct();
+                    foreach (var id in enumerable)
                     {
-                        Part part = partRepository.GetById(id);
-                        if (part==null)
+                        try
+                        {
+                            Part part = partRepository.GetById(id);
+                            if (part==null)
+                            {
+                                throw new Exception();
+                            }
+
+                            car.PartCars.Add(new PartCar() {Part = part });
+                        }
+                        catch (Exception)
                         {
                             continue;
                         }
-                        PartCar partCar = new PartCar { Car = car, Part = part };
-                        car.PartCars.Add(partCar);
                     }
+                                           
+
                   CarRepository.Add(car);
             }catch (Exception) { continue; }
         }
