@@ -59,9 +59,9 @@ namespace WebApplication3.Repositories
 
         public TEntity Update(TEntity entity)
         {
-            _ctx.Entry(entity).State = EntityState.Modified;
+            TEntity _entity = GetById(entity.Id);
+            _ctx.Entry(_entity).CurrentValues.SetValues(entity);
             _ctx.SaveChanges();
-
             return entity;
         }
 

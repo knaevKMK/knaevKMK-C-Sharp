@@ -54,6 +54,7 @@ namespace WebApplication3.Controllers
         public IActionResult EditPost(CarDto car) {
 
             //ToDo update entity
+            car= carService.UpdateCar(car);
 
             var id = new { car.Id };
             return RedirectToAction("Details",id);
@@ -69,7 +70,10 @@ namespace WebApplication3.Controllers
         [HttpPost]
         public IActionResult CreatePost(CarDto car) {
             //TODO valdate
-            // return RedirectToAction("Create", car);
+            if (car.make==null || car.model==null|| car.travelledDistance<0)
+            {
+            return RedirectToAction("Create", car);
+            }
         
             CarDto carDto = carService.AddCar(car);
              return View("Details",car);
