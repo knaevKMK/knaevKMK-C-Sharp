@@ -36,7 +36,7 @@ namespace WebApplication3
            services.AddScoped<CarRepository>();
            services.AddScoped<SupplierRepository>();
            services.AddScoped<PartRepository>();
-
+            services.AddRouting();
             //  services.AddScoped<CustomerRepository>();
 
             services.AddMvc();

@@ -52,19 +52,27 @@ namespace WebApplication3.Services
 
         }
 
-        public  ICollection<CarDto> AllCars()
+        public  ICollection<CarDto> AllCars(int? page)
         {
+            if (page==null)
+            {
+                page = 0;
+            }
 
 
-        return    CarRepository.GetAll()
+        return    CarRepository.GetAll((int)page)
                  .Select(car=> new CarDto { Id= car.Id, make=car.Make, model=car.Model, travelledDistance=car.TravelledDistance })
                  .ToList();
         }
 
         public CarDto DeleteCar(int id)
         {
-            //ToDo
-            throw new NotImplementedException();
+            
+
+            
+            Car car = CarRepository.Delete(id);
+
+            return car == null ? null : new CarDto() { Id = car.Id, make = car.Make, model = car.Model };
         }
 
         public CarDto GetCarById(int id)

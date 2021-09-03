@@ -43,9 +43,13 @@ namespace WebApplication3.Repositories
             return entity;
         }
 
-        public List<TEntity> GetAll()
+        public List<TEntity> GetAll(int page)
         {
-           return _ctx.Set<TEntity>().ToList();
+           return _ctx.Set<TEntity>()
+                .OrderBy(e=>e.Id)
+            //    .Skip(page*20)
+              //  .Take(20)
+                .ToList();
         }
 
         public TEntity GetById(int id)
@@ -59,6 +63,11 @@ namespace WebApplication3.Repositories
             _ctx.SaveChanges();
 
             return entity;
+        }
+
+        public long Count()
+        {
+            return _ctx.Set<TEntity>().Count();
         }
     }
 }

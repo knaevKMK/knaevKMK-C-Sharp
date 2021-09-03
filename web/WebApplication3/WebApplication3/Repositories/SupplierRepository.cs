@@ -24,6 +24,11 @@ namespace WebApplication3.Repositories
             return entity;
         }
 
+        public long Count()
+        {
+            throw new NotImplementedException();
+        }
+
         public Supplier Delete(int id)
         {
             Supplier supplier = GetById(id);
@@ -34,7 +39,7 @@ namespace WebApplication3.Repositories
             return supplier;
         }
 
-        public List<Supplier> GetAll()
+        public List<Supplier> GetAll(int page)
         {
             return dbContext.Suppliers.ToList();
         }

@@ -25,6 +25,11 @@ namespace WebApplication3.Repositories
             return entity;
         }
 
+        public long Count()
+        {
+            throw new NotImplementedException();
+        }
+
         public Part Delete(int id)
         {
             Part part = GetById(id);
@@ -33,7 +38,7 @@ namespace WebApplication3.Repositories
             return part;
         }
 
-        public List<Part> GetAll()
+        public List<Part> GetAll(int page)
         {
             return ctx.Parts.ToList();
         }

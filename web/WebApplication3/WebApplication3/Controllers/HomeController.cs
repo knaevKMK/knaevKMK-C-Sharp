@@ -33,9 +33,9 @@ namespace WebApplication3.Controllers
         {
             return View();
         }
-        public IActionResult Cars() {
-
-            ICollection<Views.ImoprtDto.CarDto> carDtos = carService.AllCars();
+        public IActionResult Cars(int? page) {
+           
+            ICollection<Views.ImoprtDto.CarDto> carDtos = carService.AllCars(page);
             return View(carDtos);
         }
 
@@ -53,10 +53,45 @@ namespace WebApplication3.Controllers
         [HttpPost]
         public IActionResult EditPost(CarDto car) {
 
-            //ToDo update entty
+            //ToDo update entity
 
             var id = new { car.Id };
             return RedirectToAction("Details",id);
+        }
+
+
+        [HttpGet]
+        public IActionResult Create(CarDto car) {
+      
+            return View(car);
+        }
+
+        [HttpPost]
+        public IActionResult CreatePost(CarDto car) {
+            //TODO valdate and
+            // return RedirectToAction("Create", car);
+            //
+            //
+            //
+            //item add in db
+            return View("Details",car);
+ 
+            //Confirm 
+
+            //redrect to Details wthout confirm
+        }
+
+
+       
+        public IActionResult Delete(int id) {
+            // todo delete from db
+            CarDto carDto = carService.DeleteCar(id); 
+            
+            if (carDto==null)
+            {
+               // Return error msg 
+            }
+            return RedirectToAction("Cars");
         }
         public IActionResult Privacy()
         {

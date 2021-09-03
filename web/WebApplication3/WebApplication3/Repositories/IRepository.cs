@@ -9,9 +9,9 @@ namespace WebApplication3.Repositories
   public   interface IRepository<T> where T : class, IEntity
     {
         bool IsEmpty();
-       List<T> GetAll();
+       List<T> GetAll(int page);
         T GetById(int id);
-
+        long Count();
         T Add(T entity);
         T Delete(int id);
         T Update(T entity);
