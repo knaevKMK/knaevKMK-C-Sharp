@@ -35,7 +35,7 @@ namespace WebApplication3.Controllers
         }
         public IActionResult Cars(int? page) {
            
-            ICollection<Views.ImoprtDto.CarDto> carDtos = carService.AllCars(page);
+            ICollection<Views.ImoprtDto.CarDto> carDtos = carService.AllCars();
             return View(carDtos);
         }
 
@@ -68,23 +68,16 @@ namespace WebApplication3.Controllers
 
         [HttpPost]
         public IActionResult CreatePost(CarDto car) {
-            //TODO valdate and
+            //TODO valdate
             // return RedirectToAction("Create", car);
-            //
-            //
-            //
-            //item add in db
-            return View("Details",car);
- 
-            //Confirm 
-
-            //redrect to Details wthout confirm
+        
+            CarDto carDto = carService.AddCar(car);
+             return View("Details",car);
         }
 
 
        
         public IActionResult Delete(int id) {
-            // todo delete from db
             CarDto carDto = carService.DeleteCar(id); 
             
             if (carDto==null)

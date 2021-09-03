@@ -10,7 +10,7 @@ namespace WebApplication3.Services
     public interface ICarService
     {
         bool IsImported();
-        ICollection<CarDto> AllCars(int? page);
+        ICollection<CarDto> AllCars();
         CarDto GetCarById(int id);
         CarDto AddCar(CarDto carDto);
         CarDto DeleteCar(int id);
