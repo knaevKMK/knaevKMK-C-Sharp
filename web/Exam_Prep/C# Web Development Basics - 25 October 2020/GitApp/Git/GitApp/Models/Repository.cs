@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GitApp.Models
 {
-    public class Repository
+    public class Repository: IEntity
     {
         public Repository( )
         {

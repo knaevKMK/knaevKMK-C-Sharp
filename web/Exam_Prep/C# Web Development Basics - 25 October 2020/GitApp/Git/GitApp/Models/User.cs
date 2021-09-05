@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace GitApp.Models
 {
-    public class User
+    public class User: IEntity
     {
         public User()
         {

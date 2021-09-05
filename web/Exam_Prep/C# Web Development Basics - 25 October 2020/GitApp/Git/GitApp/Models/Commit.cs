@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GitApp.Models
 {
-    public class Commit
+    public class Commit: IEntity
     {
         public int Id { get; set; }
 
