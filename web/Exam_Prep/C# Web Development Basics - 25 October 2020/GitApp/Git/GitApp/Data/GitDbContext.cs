@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using GitApp.Views.User.Dto;
 
 namespace GitApp.Data
 {
@@ -51,5 +52,8 @@ namespace GitApp.Data
 
             base.OnModelCreating(modelBuilder);
         }
+
+
+        public DbSet<GitApp.Views.User.Dto.UserRegisterDto> UserRegisterDto { get; set; }
     }
 }
