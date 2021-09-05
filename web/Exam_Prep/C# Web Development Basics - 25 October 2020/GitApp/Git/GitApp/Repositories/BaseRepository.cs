@@ -1,4 +1,5 @@
-﻿using GitApp.Models;
+﻿using GitApp.Data;
+using GitApp.Models;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -7,13 +8,13 @@ using System.Threading.Tasks;
 
 namespace GitApp.Repositories
 {
-    public class BaseRepository<T,TContext> : IRepository<T>
+    public abstract class BaseRepository<T,TContext> : IRepository<T>
         where T : class, IEntity
-        where TContext: DbContext
+        where TContext: GitDbContext
     {
-        private readonly DbContext ctx;
+        protected readonly GitDbContext ctx;
 
-        public BaseRepository(DbContext ctx)
+        public BaseRepository(GitDbContext ctx)
         {
             this.ctx = ctx;
         }
@@ -24,10 +25,9 @@ namespace GitApp.Repositories
             return entity;
         }
 
-        public ICollection<T> All()
+        public virtual ICollection<T> All()
         {
             return ctx.Set<T>()
-                //orderIf need
                 .ToList();
         }
 
@@ -41,7 +41,9 @@ namespace GitApp.Repositories
             T entity = GetById(id);
             if (entity==null)
             {
-                return null;
+               
+                    throw new Exception(entity.GetType().Name +" does not exist");
+               
             }
             ctx.Set<T>().Remove(entity);
             ctx.SaveChanges();

@@ -10,17 +10,38 @@ namespace GitApp.Repositories
 {
     public class UserRepository : BaseRepository<User, GitDbContext>
     {
-        public readonly GitDbContext ctx;
-        public UserRepository(DbContext ctx) : base(ctx)
+      
+        public UserRepository(GitDbContext ctx) : base(ctx)
         {
-            this.ctx = new GitDbContext();
+          
         }
-        public User GetUserByUsername(string username, string password) {
-        return ctx.Users.First(u=>u.Username==username && u.Password==password);
+        public User GetUserByUsernameAndPassword(string username, string password)
+        {
+            try
+            {
+
+                return base.ctx.Set<User>().First(u => u.Username == username && u.Password == password);
+            }
+            catch (Exception)
+            {
+
+                return null;
+            }
         }
         public User GetUserByUsername(string username)
         {
-            return ctx.Users.First(u => u.Username == username);
+
+            try
+            {
+                return base.ctx.Set<User>().FirstOrDefault(u=>u.Username==username);
+
+            }
+            catch (Exception)
+            {
+
+                return null;
+            }
+          
         }
     }
 }

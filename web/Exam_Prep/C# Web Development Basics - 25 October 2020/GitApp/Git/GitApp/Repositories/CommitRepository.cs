@@ -10,8 +10,18 @@ namespace GitApp.Repositories
 {
     public class CommitRepository : BaseRepository<Commit, GitDbContext>
     {
-        public CommitRepository(DbContext ctx) : base(ctx)
+        public CommitRepository(GitDbContext ctx) : base(ctx)
         {
         }
+
+
+        override public  ICollection<Commit> All() {
+
+            return ctx.Commits
+              //  .Where(c=> c.Creator== )
+                .ToList();
+
+        }
+
     }
 }

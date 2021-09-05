@@ -10,8 +10,20 @@ namespace GitApp.Repositories
 {
     public class RepositoryRepository : BaseRepository<Repository, GitDbContext>
     {
-        public RepositoryRepository(DbContext ctx) : base(ctx)
+      //  private readonly GitDbContext ctx;
+        public RepositoryRepository(GitDbContext ctx) : base(ctx)
         {
+        //    this.ctx = new GitDbContext();
+        }
+
+        internal Repository GetByName(string name)
+        {
+            Repository repository = base.ctx.Set<Repository>().First(r => r.Name == name);
+            if (repository==null)
+            {
+                throw new Exception("Repository with this name does not exist");
+            }
+            return repository;
         }
     }
 }

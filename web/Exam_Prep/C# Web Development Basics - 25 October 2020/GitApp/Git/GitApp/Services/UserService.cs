@@ -19,37 +19,39 @@ namespace GitApp.Services
 
         public void Register(UserRegisterDto userDto)
         {
-            
-
-            if (userRepostory.GetUserByUsername(userDto.Username)!=null)
+            if (!userDto.Password.Equals(userDto.ConfirmPassword))
+            {
+                throw new Exception("Password does not match");
+            }
+            User user1 = userRepostory.GetUserByUsername(userDto.Username);
+            if (user1 != null)
             {
                 throw new Exception($"User with username: {userDto.Username} alredy exst");
             }
             User user = new User {
                 Username = userDto.Username,
                 Email = userDto.Email,
-                Password = userDto.Password,
-
-            
+                Password = userDto.Password
             };
             userRepostory.Add(user);
         }
 
         string IUserService.Login(UserLoginDto userDto)
         {
-            try
-            {
-                Models.User user = userRepostory.GetUserByUsername(userDto.Username, userDto.Password);
-                if (user==null)
+          
+           Models.User user = userRepostory.GetUserByUsernameAndPassword(userDto.Username, userDto.Password);
+                if (user!=null)
                 {
                     throw new Exception("Username or password does not match");
-                }
-            }
-            catch (Exception)
-            {
-                throw new Exception("Username or password does not match");
-            }
-            return "Get Token";
+               }
+          //TODO return ???
+            return "Success Loged-In";
+        }
+
+        internal User GetCurrentUser()
+        {
+            //TODO get current user data
+            throw new NotImplementedException();
         }
     }
 }

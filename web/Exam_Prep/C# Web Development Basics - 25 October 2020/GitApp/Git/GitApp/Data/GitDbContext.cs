@@ -8,13 +8,17 @@ using System.Threading.Tasks;
 using GitApp.Views.User.Dto;
 using GitApp.Views.Repository.Dto;
 using GitApp.Views.Commit.Dto;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 
 namespace GitApp.Data
 {
-    public class GitDbContext : DbContext
+    // ne se pravi taka za cqlata rabota se polzva identity framework
+
+    public class GitDbContext : IdentityDbContext<ApplicationUser> // tuk se izpolzva dbcontexta na identity framework moment che deteto plache ok
     {
         public GitDbContext()
         {
+         //    sega vecher imash po shik neshta koito da izpolzvash:) napravi nova migraciq
                     }
         public GitDbContext(DbContextOptions options) : base(options)
         {
@@ -56,18 +60,6 @@ namespace GitApp.Data
         }
 
 
-        public DbSet<GitApp.Views.User.Dto.UserRegisterDto> UserRegisterDto { get; set; }
-
-
-        public DbSet<GitApp.Views.Repository.Dto.RepositoryListOutDto> RepositoryListOutDto { get; set; }
-
-
-        public DbSet<GitApp.Views.Repository.Dto.RepositoryCreateDto> RepositoryCreateDto { get; set; }
-
-
-        public DbSet<GitApp.Views.Commit.Dto.CommitListOutDto> CommitListOutDto { get; set; }
-
-
-        public DbSet<GitApp.Views.Commit.Dto.CommitCreateDto> CommitCreateDto { get; set; }
+        
     }
 }

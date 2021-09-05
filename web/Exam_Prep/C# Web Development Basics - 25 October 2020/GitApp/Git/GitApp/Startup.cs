@@ -1,7 +1,11 @@
 using GitApp.Data;
+using GitApp.Models;
+using GitApp.Repositories;
+using GitApp.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -27,7 +31,22 @@ namespace GitApp
         {
             services.AddControllersWithViews();
 
-            services.AddDbContext<GitDbContext>(opt=>opt.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+            services.AddDbContext<GitDbContext>(opt => opt.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+            services.AddIdentity<ApplicationUser, IdentityRole>()
+        .AddEntityFrameworkStores<GitDbContext>()
+        .AddDefaultTokenProviders(); // mnogo e qko nali :) kak se 
+            // servces
+            services.AddTransient<IUserService, UserService>();
+            services.AddTransient<IRepositoryService, RepositoryService>();
+            services.AddTransient<ICommitService, CommitServce>();
+
+            //repositories
+            services.AddScoped<UserRepository>();
+            services.AddScoped<RepositoryRepository>();
+            services.AddScoped<CommitRepository>();
+
+            services.AddMvc();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

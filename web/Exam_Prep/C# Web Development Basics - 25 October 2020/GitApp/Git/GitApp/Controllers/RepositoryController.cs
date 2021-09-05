@@ -1,4 +1,5 @@
-﻿using GitApp.Views.Repository.Dto;
+﻿using GitApp.Services;
+using GitApp.Views.Repository.Dto;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -10,16 +11,24 @@ namespace GitApp.Controllers
 {
     public class RepositoryController : Controller
     {
-        // GET: RepositoryController
-        public ActionResult All() {
-            return View();
-        }
-        // GET: RepositoryController/Details/5
-        public ActionResult Details(int id)
+
+        private readonly IRepositoryService repositoryServce;
+
+        public RepositoryController(IRepositoryService repositoryServce)
         {
-            return View();
+            this.repositoryServce = repositoryServce;
         }
 
+
+
+        // GET: RepositoryController
+        public ActionResult All() {
+
+            ICollection<RepositoryListOutDto> repositoryListOutDtos = repositoryServce.GetAll();
+
+            return View(repositoryListOutDtos);
+        }
+    
         // GET: RepositoryController/Create
         public ActionResult Create(RepositoryCreateDto repositoryDto)
         {
@@ -31,10 +40,17 @@ namespace GitApp.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult CreatePost(RepositoryCreateDto repositoryDto)
         {
-          
-               //validate adn add todb
-              //  return RedirectToAction(nameof(Index));
-                return RedirectToAction("Create", repositoryDto) ;
+
+            //validate adn add todb
+            if (!ModelState.IsValid)
+            {
+                return RedirectToAction("Create", repositoryDto);
+            }
+
+            repositoryServce.Add(repositoryDto);
+            return RedirectToAction("All");
         }
+
+
     }
 }
