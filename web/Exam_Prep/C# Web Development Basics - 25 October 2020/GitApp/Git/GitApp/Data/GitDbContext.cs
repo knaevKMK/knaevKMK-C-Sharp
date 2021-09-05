@@ -6,6 +6,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using GitApp.Views.User.Dto;
+using GitApp.Views.Repository.Dto;
+using GitApp.Views.Commit.Dto;
 
 namespace GitApp.Data
 {
@@ -55,5 +57,17 @@ namespace GitApp.Data
 
 
         public DbSet<GitApp.Views.User.Dto.UserRegisterDto> UserRegisterDto { get; set; }
+
+
+        public DbSet<GitApp.Views.Repository.Dto.RepositoryListOutDto> RepositoryListOutDto { get; set; }
+
+
+        public DbSet<GitApp.Views.Repository.Dto.RepositoryCreateDto> RepositoryCreateDto { get; set; }
+
+
+        public DbSet<GitApp.Views.Commit.Dto.CommitListOutDto> CommitListOutDto { get; set; }
+
+
+        public DbSet<GitApp.Views.Commit.Dto.CommitCreateDto> CommitCreateDto { get; set; }
     }
 }

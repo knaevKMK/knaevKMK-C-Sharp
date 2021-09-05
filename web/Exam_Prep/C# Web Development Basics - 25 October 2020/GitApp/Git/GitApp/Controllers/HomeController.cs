@@ -20,13 +20,12 @@ namespace GitApp.Controllers
 
         public IActionResult Index()
         {
+            //If the user is logged in and he tries to go the home page,
+            //the application must redirect him to the /Repositories/All
             return View();
         }
 
-        public IActionResult Privacy()
-        {
-            return View();
-        }
+      
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()

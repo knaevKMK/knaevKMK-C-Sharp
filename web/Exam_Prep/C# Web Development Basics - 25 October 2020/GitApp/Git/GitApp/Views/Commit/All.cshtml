@@ -1,0 +1,55 @@
+﻿@model IEnumerable<GitApp.Views.Commit.Dto.CommitListOutDto>
+
+@{
+    ViewData["Title"] = "All";
+}
+
+<div class="container">
+    <div class="section">
+        <div class="row">
+            <div class="col-md-8 offset-md-2">
+                <div class="page-header text-center">
+                    <h2 id="tables">My Commits</h2>
+                </div>
+
+                <div class="component">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Repository)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Description)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.CreateOn)
+                                </th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr class="table-light">
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Repository)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Description)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.CreateOn)
+                                    </td>
+                                    <td>
+                                        <a asp-controller="Commit" asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

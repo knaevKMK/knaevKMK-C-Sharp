@@ -145,3 +145,6 @@ C:\Users\master\Desktop\GitHub\C_Sharp\web\Exam_Prep\C# Web Development Basics -
 C:\Users\master\Desktop\GitHub\C_Sharp\web\Exam_Prep\C# Web Development Basics - 25 October 2020\GitApp\Git\GitApp\bin\Debug\net5.0\runtimes\win-arm64\lib\net5.0\dotnet-aspnet-codegenerator-design.exe
 C:\Users\master\Desktop\GitHub\C_Sharp\web\Exam_Prep\C# Web Development Basics - 25 October 2020\GitApp\Git\GitApp\obj\Debug\net5.0\Razor\Views\User\Login.cshtml.g.cs
 C:\Users\master\Desktop\GitHub\C_Sharp\web\Exam_Prep\C# Web Development Basics - 25 October 2020\GitApp\Git\GitApp\obj\Debug\net5.0\Razor\Views\User\Register.cshtml.g.cs
+C:\Users\master\Desktop\GitHub\C_Sharp\web\Exam_Prep\C# Web Development Basics - 25 October 2020\GitApp\Git\GitApp\obj\Debug\net5.0\Razor\Views\Repository\All.cshtml.g.cs
+C:\Users\master\Desktop\GitHub\C_Sharp\web\Exam_Prep\C# Web Development Basics - 25 October 2020\GitApp\Git\GitApp\obj\Debug\net5.0\Razor\Views\Repository\Create.cshtml.g.cs
+C:\Users\master\Desktop\GitHub\C_Sharp\web\Exam_Prep\C# Web Development Basics - 25 October 2020\GitApp\Git\GitApp\obj\Debug\net5.0\Razor\Views\Commit\All.cshtml.g.cs
