@@ -1,4 +1,6 @@
 using BattleCards_App.Data;
+using BattleCards_App.Repositories;
+using BattleCards_App.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -29,10 +31,12 @@ namespace BattleCards_App
             services.AddDbContext<AppDbContext>(o => o.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
             //service
-
+            services.AddTransient<UsersService>();
 
             //repository
+            services.AddScoped<UsersRepository>();
 
+            services.AddMvc();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

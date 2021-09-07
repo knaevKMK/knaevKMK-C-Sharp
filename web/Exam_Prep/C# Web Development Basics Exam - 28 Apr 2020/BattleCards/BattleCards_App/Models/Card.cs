@@ -3,19 +3,23 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
+using BattleCards_App.Constants;
 
 namespace BattleCards_App.Models
 {
+        using static FieldConstatnts;
     public class Card
     {
         public Card()
         {
             UserCards = new HashSet<UserCard>();
         }
-
+        [Key]
+        [MaxLength(KEY_MAX_LENGHT)]
         public string Id { get; set; } = Guid.NewGuid().ToString();
         [Required]
-        [MaxLength(15)]
+        [MinLength(CARD_NAME_MIN_LENGHT)]
+        [MaxLength(CARD_NAME_MAX_LENGHT)]
         public string Name { get; set; }
         [Required]
         public string ImageUrl { get; set; }
