@@ -23,7 +23,7 @@
                     <span class="attack-stat">@item.Attack</span><span class="health-stat">@item.Healt</span>
                 </li>
             </ul>
-            <a href="/Cards/AddToCollection?cardId=X" class="btn btn-block btn-primary">Add to Collection</a>
+            <a asp-controller="Cards" asp-action="AddToCollection" asp-route-id="@item.Id" class="btn btn-block btn-primary">Add to Collection</a>
         </div>
     </div>
     }

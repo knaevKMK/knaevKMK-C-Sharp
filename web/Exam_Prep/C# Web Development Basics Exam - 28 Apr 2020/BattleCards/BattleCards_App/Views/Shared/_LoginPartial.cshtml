@@ -5,7 +5,7 @@
 @if (SignInManager.IsSignedIn(User))
 {
     <li class="nav-item">
-        <a class="nav-link text-white active h5" asp-controller="Cards" asp-action="Add">Add Card</a>
+        <a class="nav-link text-white active h5" asp-controller="Cards" asp-action="Create">Add Card</a>
     </li>
     <li class="nav-item">
         <a class="nav-link text-white active h5" asp-controller="Cards" asp-action="Collection">@User.Identity.Name Collection</a>

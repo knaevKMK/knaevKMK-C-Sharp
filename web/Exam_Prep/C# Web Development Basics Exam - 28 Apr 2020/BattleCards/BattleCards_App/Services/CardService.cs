@@ -1,4 +1,5 @@
 ﻿using BattleCards_App.Dto;
+using BattleCards_App.Models;
 using BattleCards_App.Repositories;
 using System;
 using System.Collections.Generic;
@@ -20,7 +21,7 @@ namespace BattleCards_App.Services
         internal ICollection<CardVM> GetAllCards()
         {
 
-            return _cardRepository.GetAllByUserName(null);
+            return _cardRepository.GetAll();
 
         }
         internal ICollection<CardVM> GetAllCards(string userName)
@@ -31,6 +32,33 @@ namespace BattleCards_App.Services
 
         }
 
-       
+        internal void CreateCard(CardVM card,User user)
+        {
+
+            Models.Card _card = new Models.Card() {
+            Name=card.Name,
+            Keyword=card.Keyword,
+            Attack=card.Attack,
+            Healt=card.Healt,
+            ImageUrl=card.ImageUrl,
+            Description=card.Description
+            };
+
+            _cardRepository.Add(_card, user);
+            
+
+           
+        }
+
+        internal void AddToCollection(string cardId, string userId)
+        {
+          
+            _cardRepository.AddCardToCollection(cardId, userId);
+        }
+
+        internal void RemoveFromCollection(string cardId, string userId)
+        {
+            _cardRepository.RemoveFromCollection(cardId, userId);
+        }
     }
 }

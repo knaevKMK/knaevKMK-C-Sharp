@@ -1,6 +1,12 @@
-﻿using BattleCards_App.Services;
+﻿using BattleCards_App.Dto;
+using BattleCards_App.Models;
+using BattleCards_App.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.UI.V4.Pages.Account.Internal;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,10 +17,17 @@ namespace BattleCards_App.Controllers
     public class CardsController : Controller
     {
         private readonly CardService _cardService;
+        private readonly UserManager<User> _userManager;
+        private readonly SignInManager<User> _signInManager;
+        private readonly ILogger<RegisterModel> _logger;
 
-        public CardsController(CardService cardService)
+
+        public CardsController(CardService cardService, SignInManager<User> signInManager, ILogger<RegisterModel> logger, UserManager<User> userManager)
         {
             _cardService = cardService;
+            _signInManager = signInManager;
+            _logger = logger;
+            _userManager = userManager;
         }
 
 
@@ -27,78 +40,60 @@ namespace BattleCards_App.Controllers
             return View(cardVMs);
         }
 
-        public IActionResult Collection() {
+        public async Task<IActionResult> Collection() {
+            User user = await _userManager.FindByNameAsync(User.Identity.Name);
 
-            ICollection<Dto.CardVM> cardVMs = _cardService.GetAllCards(User.Identity.Name);
+            ICollection<Dto.CardVM> cardVMs = _cardService.GetAllCards(user.Id);
             return View(cardVMs);
         }
-        // GET: CardsController/Details/5
-        public ActionResult Details(int id)
-        {
-            return View();
-        }
 
-        // GET: CardsController/Create
-        public ActionResult Create()
-        {
-            return View();
+        public IActionResult RemoveFromCollection() {
+            return Ok();
         }
+        [HttpGet]
+    //    [Authorize]
+        public IActionResult Create(CardVM card) {
 
+            return View(card);
+        }
         // POST: CardsController/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
+        public async Task<ActionResult> CreatePost(CardVM card)
         {
+            if (!ModelState.IsValid)
+            {
+                return RedirectToAction("Create", card);
+            }
             try
             {
-                return RedirectToAction(nameof(Index));
+                User user = await _userManager.FindByNameAsync(User.Identity.Name);
+
+                _cardService.CreateCard(card,user);
+                return RedirectToAction("All");
             }
             catch
             {
-                return View();
+                return RedirectToAction("CreateGet",card);
             }
         }
 
-        // GET: CardsController/Edit/5
-        public ActionResult Edit(int id)
-        {
-            return View();
-        }
-
-        // POST: CardsController/Edit/5
+        [HttpGet]
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
+    public async Task<IActionResult> AddToCollection(string id)
         {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
+
+            User user = await _userManager.FindByNameAsync(User.Identity.Name);
+            _cardService.AddToCollection(id, user.Id);
+            return RedirectToAction("All");
         }
 
-        // GET: CardsController/Delete/5
-        public ActionResult Delete(int id)
-        {
-            return View();
+        [HttpGet]
+        public async Task<IActionResult> RemoveFromCollection(string id) {
+            User user = await _userManager.FindByNameAsync(User.Identity.Name);
+            _cardService.RemoveFromCollection(id, user.Id);
+            return RedirectToAction("Collection");
         }
 
-        // POST: CardsController/Delete/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, IFormCollection collection)
-        {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
-        }
     }
 }

@@ -2,7 +2,7 @@
 
 @{ ViewData["Title"] = "My Cards";}
 
-<h1 class="text-center mt-2">All Cards</h1>
+<h1 class="text-center mt-2">My Cards</h1>
 <div class="row mt-2 mb-4">
     @foreach (var item in Model)
     {
@@ -21,7 +21,7 @@
                         <span class="attack-stat">@item.Attack</span><span class="health-stat">@item.Healt</span>
                     </li>
                 </ul>
-                <a href="/Cards/RemoveFromCollection/@item.Id" class="btn btn-block btn-danger">Remove from Collection</a>
+                <a asp-controller="Cards" asp-action="RemoveFromCollection" asp-route-id="@item.Id" class="btn btn-block btn-danger">Remove from Collection</a>
             </div>
         </div>
     }

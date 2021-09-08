@@ -55,17 +55,16 @@ namespace BattleCards_App.Controllers
                 ModelState.AddModelError(string.Empty, "User With this username does not exist");
                 return RedirectToAction("Login", user);
             }
-
-
             Microsoft.AspNetCore.Identity.SignInResult signInResult =
-           await _signInManager.PasswordSignInAsync(_user.UserName, user.Password, false, lockoutOnFailure: false);
-        //    await _signInManager.CheckPasswordSignInAsync(_user, user.Password, lockoutOnFailure: false);
+            await _signInManager.PasswordSignInAsync(_user.UserName, user.Password, false, lockoutOnFailure: false);
             if (signInResult.Succeeded)
-            { _logger.LogInformation("User logged in.");
-            return RedirectToAction("Index","Home");
-            //  HttpContext.Session.SetString("username", _user.UserName);
+            {
+                _logger.LogInformation("User logged in.");
+                 return RedirectToAction("Index","Home");
+
             }
             ModelState.AddModelError(string.Empty, "Invalid login attempt.");
+
             return RedirectToAction("Login", user);
 
         }
