@@ -26,8 +26,15 @@ using BattleCards_App.Models;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 3 "C:\Users\master\Desktop\GitHub\C_Sharp\web\Exam_Prep\C# Web Development Basics Exam - 28 Apr 2020\BattleCards\BattleCards_App\Views\_ViewImports.cshtml"
+using Microsoft.AspNetCore.Identity;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"e423b784f9d0e56c72d09514dbfcad28a3e1e61f", @"/Views/Home/Index.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"71dbc49fcc6de3aff898da7abc19c32f2fd730d9", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"fe52accdced2b3ead7c59ce9939e48a16c100ba7", @"/Views/_ViewImports.cshtml")]
     public class Views_Home_Index : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("class", new global::Microsoft.AspNetCore.Html.HtmlString("text-primay"), global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -67,7 +74,7 @@ using BattleCards_App.Models;
 #line hidden
 #nullable disable
             WriteLiteral("\r\n<div class=\"index-div bg-blur border border-white\">\r\n    <h1>Welcome to Battle Cards</h1>\r\n    <hr class=\"bg-primary w-75\">\r\n    <h3>On our platform you will create and collect game cards.</h3>\r\n    <h3>\r\n        ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e423b784f9d0e56c72d09514dbfcad28a3e1e61f5044", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e423b784f9d0e56c72d09514dbfcad28a3e1e61f5314", async() => {
                 WriteLiteral("Login");
             }
             );
@@ -86,7 +93,7 @@ using BattleCards_App.Models;
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n        if you have an account or\r\n        ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e423b784f9d0e56c72d09514dbfcad28a3e1e61f6532", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e423b784f9d0e56c72d09514dbfcad28a3e1e61f6802", async() => {
                 WriteLiteral("Register");
             }
             );

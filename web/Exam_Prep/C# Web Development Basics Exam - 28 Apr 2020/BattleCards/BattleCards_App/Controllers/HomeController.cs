@@ -1,4 +1,5 @@
 ﻿using BattleCards_App.Models;
+using BattleCards_App.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
@@ -12,7 +13,6 @@ namespace BattleCards_App.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-
         public HomeController(ILogger<HomeController> logger)
         {
             _logger = logger;
@@ -20,7 +20,10 @@ namespace BattleCards_App.Controllers
 
         public IActionResult Index()
         {
-            return View();
+               return 
+                //HttpContext.User!=null
+                //?RedirectToAction("All", "Cards"):
+             View();
         }
 
    

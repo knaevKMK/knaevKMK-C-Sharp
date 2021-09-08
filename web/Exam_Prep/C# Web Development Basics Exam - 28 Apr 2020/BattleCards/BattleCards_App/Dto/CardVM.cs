@@ -3,23 +3,13 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
-using BattleCards_App.Constants;
 
-namespace BattleCards_App.Models
+namespace BattleCards_App.Dto
 {
-        using static FieldConstatnts;
-    public class Card:IEntity
+    public class CardVM
     {
-        public Card()
-        {
-            UserCards = new HashSet<UserCard>();
-        }
-        [Key]
-        [MaxLength(KEY_MAX_LENGHT)]
-        public string Id { get; set; } = Guid.NewGuid().ToString();
+        public string Id { get; set; }
         [Required]
-        [MinLength(CARD_NAME_MIN_LENGHT)]
-        [MaxLength(CARD_NAME_MAX_LENGHT)]
         public string Name { get; set; }
         [Required]
         public string ImageUrl { get; set; }
@@ -33,7 +23,5 @@ namespace BattleCards_App.Models
         [Required]
         [MaxLength(200)]
         public string Description { get; set; }
-
-        public virtual ICollection<UserCard> UserCards { get; set; }
     }
 }
