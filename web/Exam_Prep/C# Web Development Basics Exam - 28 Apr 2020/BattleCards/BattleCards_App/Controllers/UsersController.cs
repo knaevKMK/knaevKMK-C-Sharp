@@ -58,14 +58,14 @@ namespace BattleCards_App.Controllers
 
 
             Microsoft.AspNetCore.Identity.SignInResult signInResult =
-        //    await _signInManager.PasswordSignInAsync(_user.UserName, user.Password, false, lockoutOnFailure: false);
-            await _signInManager.CheckPasswordSignInAsync(_user, user.Password, lockoutOnFailure: false);
+           await _signInManager.PasswordSignInAsync(_user.UserName, user.Password, false, lockoutOnFailure: false);
+        //    await _signInManager.CheckPasswordSignInAsync(_user, user.Password, lockoutOnFailure: false);
             if (signInResult.Succeeded)
             { _logger.LogInformation("User logged in.");
             return RedirectToAction("Index","Home");
-              this.HttpContext.Session.SetString("username", _user.UserName);
+            //  HttpContext.Session.SetString("username", _user.UserName);
             }
-
+            ModelState.AddModelError(string.Empty, "Invalid login attempt.");
             return RedirectToAction("Login", user);
 
         }

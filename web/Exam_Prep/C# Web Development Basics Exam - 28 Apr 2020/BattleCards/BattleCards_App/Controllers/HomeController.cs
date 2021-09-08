@@ -1,5 +1,6 @@
 ﻿using BattleCards_App.Models;
 using BattleCards_App.Services;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
@@ -13,16 +14,18 @@ namespace BattleCards_App.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-        public HomeController(ILogger<HomeController> logger)
+        private readonly SignInManager<User> _signInManager;
+        public HomeController(ILogger<HomeController> logger, SignInManager<User> signInManager)
         {
             _logger = logger;
+            _signInManager = signInManager;
         }
 
         public IActionResult Index()
         {
                return 
-                //HttpContext.User!=null
-                //?RedirectToAction("All", "Cards"):
+               _signInManager.IsSignedIn(User)
+                ?RedirectToAction("All", "Cards"):
              View();
         }
 

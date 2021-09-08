@@ -1,7 +1,4 @@
-﻿@using Microsoft.AspNetCore.Identity
-@inject SignInManager<User> SignInManager
-@inject UserManager<User> UserManager
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -23,30 +20,8 @@
                     <li class="nav-item">
                         <a class="nav-link text-white active h5" asp-controller="Home" asp-action="Index">Home</a>
                     </li>
-                    @if (SignInManager.IsSignedIn(User))
-                    {
-                        <li class="nav-item">
-                            <a class="nav-link text-white active h5" asp-controller="Cards" asp-action="Add">Add Card</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-white active h5" asp-controller="Cards" asp-action="Collection">@User.Identity.Name Collection</a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link text-danger active h5" asp-controller="Users" asp-action="Logout">Logout</a>
-                        </li>
-
-                    }
-                    else
-                    {
-                        <li class="nav-item">
-                            <a class="nav-link text-white active h5" asp-controller="Users" asp-action="Login">Login</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-white active h5" asp-controller="Users" asp-action="Register">Register</a>
-                        </li>
-
-                    }
+                    <partial name="_LoginPartial" />
+                         
                 </ul>
             </div>
         </nav>
