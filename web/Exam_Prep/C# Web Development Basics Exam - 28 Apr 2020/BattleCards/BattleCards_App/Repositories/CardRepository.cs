@@ -61,6 +61,12 @@ namespace BattleCards_App.Repositories
                                 ).ToList();
         }
 
+        internal bool IsInMyList(string cardId, string userId)
+        {
+            UserCard userCard = new UserCard() { CardId= cardId, UserId= userId };
+          return _ctx.UserCards.Contains(userCard);
+        }
+
         internal void RemoveFromCollection(string cardId, string userId)
         {
 

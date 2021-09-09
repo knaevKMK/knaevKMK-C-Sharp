@@ -1,7 +1,7 @@
 ﻿using BattleCards_App.Dto;
 using BattleCards_App.Models;
-using BattleCards_App.Services;
 using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.UI.V4.Pages.Account.Internal;
@@ -32,6 +32,8 @@ namespace BattleCards_App.Controllers
 
 
         [HttpGet]
+        [AllowAnonymous]
+
         public IActionResult Login(UserLoginVM user) {
             if (user.Username == null)
             {
@@ -44,6 +46,7 @@ namespace BattleCards_App.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [AllowAnonymous]
         public async Task<IActionResult> LoginPost(UserLoginVM user) {
             if (!ModelState.IsValid)
             {
@@ -60,7 +63,7 @@ namespace BattleCards_App.Controllers
             if (signInResult.Succeeded)
             {
                 _logger.LogInformation("User logged in.");
-                 return RedirectToAction("Index","Home");
+                return RedirectToAction("Index", "Home");
 
             }
             ModelState.AddModelError(string.Empty, "Invalid login attempt.");
@@ -68,14 +71,15 @@ namespace BattleCards_App.Controllers
             return RedirectToAction("Login", user);
 
         }
-        
+
 
         [HttpGet]
+        [AllowAnonymous]
         public IActionResult Register(UserRegisterMV user) {
 
-            if (user.Username==null)
+            if (user.Username == null)
             {
-            return View();
+                return View();
             }
 
             user.Password = "";
@@ -84,44 +88,46 @@ namespace BattleCards_App.Controllers
         }
 
         [HttpPost]
+        [AllowAnonymous]
         public async Task<IActionResult> RegisterPost(UserRegisterMV user) {
-          
-                if (!ModelState.IsValid)
-                {
-                    return RedirectToAction("Register", user);
-                }
 
-                if (!user.Password.Equals(user.ConfirmPassword))
-                {
-                  ModelState.AddModelError(string.Empty,"Passwords not matched");
+            if (!ModelState.IsValid)
+            {
                 return RedirectToAction("Register", user);
             }
-                if (await _userManager.FindByNameAsync(user.Username) != null)
-                {
+
+            if (!user.Password.Equals(user.ConfirmPassword))
+            {
+                ModelState.AddModelError(string.Empty, "Passwords not matched");
+                return RedirectToAction("Register", user);
+            }
+            if (await _userManager.FindByNameAsync(user.Username) != null)
+            {
                 ModelState.AddModelError(string.Empty, "Username allredy exist");
                 return RedirectToAction("Register", user);
             }
-         
-                if (await _userManager.FindByEmailAsync(user.Email) != null)
-                {
+
+            if (await _userManager.FindByEmailAsync(user.Email) != null)
+            {
                 ModelState.AddModelError(string.Empty, "Emial allredy exist");
                 return RedirectToAction("Register", user);
             }
-            
-                Models.User _user = new Models.User()
-                {
-                    UserName = user.Username,
-                    Email = user.Email,
-                    TwoFactorEnabled = false,
-                    EmailConfirmed = true,
-                    LockoutEnabled = false,
-                    PhoneNumberConfirmed = true
-                };
-                IdentityResult identityResult = await _userManager.CreateAsync(_user, user.Password);
+
+            Models.User _user = new Models.User()
+            {
+                UserName = user.Username,
+                Email = user.Email,
+                TwoFactorEnabled = false,
+                EmailConfirmed = true,
+                LockoutEnabled = false,
+                PhoneNumberConfirmed = true
+            };
+            IdentityResult identityResult = await _userManager.CreateAsync(_user, user.Password);
+            await _userManager.AddToRoleAsync(_user,"Super Admin");
             if (identityResult.Succeeded)
             {
                 _logger.LogInformation("User created a new account with password.");
-                return RedirectToAction("Login",new UserLoginVM() { Username=_user.UserName, Password=""});
+                return RedirectToAction("Login", new UserLoginVM() { Username = _user.UserName, Password = "" });
 
             }
             foreach (var error in identityResult.Errors)
@@ -132,6 +138,7 @@ namespace BattleCards_App.Controllers
         }
 
         [HttpGet]
+       [Authorize]
         public async Task<IActionResult> LogOut() {
             await HttpContext.SignOutAsync(IdentityConstants.ExternalScheme);
             await _signInManager.SignOutAsync();

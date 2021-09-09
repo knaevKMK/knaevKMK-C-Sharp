@@ -60,5 +60,11 @@ namespace BattleCards_App.Services
         {
             _cardRepository.RemoveFromCollection(cardId, userId);
         }
+
+        internal bool IsInMyCollection(string cardId, string userId)
+        {
+           return   _cardRepository.IsInMyList(cardId, userId);
+          
+        }
     }
 }

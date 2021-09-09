@@ -14,6 +14,7 @@ using System.Threading.Tasks;
 
 namespace BattleCards_App.Controllers
 {
+    [Authorize]
     public class CardsController : Controller
     {
         private readonly CardService _cardService;
@@ -32,7 +33,6 @@ namespace BattleCards_App.Controllers
 
 
 
-        // GET: CardsController
         public IActionResult All() {
 
 
@@ -50,8 +50,9 @@ namespace BattleCards_App.Controllers
         public IActionResult RemoveFromCollection() {
             return Ok();
         }
+      
+        
         [HttpGet]
-    //    [Authorize]
         public IActionResult Create(CardVM card) {
 
             return View(card);
@@ -79,12 +80,14 @@ namespace BattleCards_App.Controllers
         }
 
         [HttpGet]
-        [HttpPost]
-    public async Task<IActionResult> AddToCollection(string id)
+        public async Task<IActionResult> AddToCollection(string id)
         {
 
             User user = await _userManager.FindByNameAsync(User.Identity.Name);
+            if (!_cardService.IsInMyCollection(id, user.Id))
+            {
             _cardService.AddToCollection(id, user.Id);
+            }
             return RedirectToAction("All");
         }
 
