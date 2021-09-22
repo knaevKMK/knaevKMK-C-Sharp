@@ -21,7 +21,7 @@ using Microsoft.EntityFrameworkCore;
                 .WithMany(c => c.Cars)
                 .HasForeignKey(c => c.CategoryId)
                 .OnDelete(DeleteBehavior.Restrict);
-
+            builder.Entity<Category>();
             base.OnModelCreating(builder);
         }
     }
