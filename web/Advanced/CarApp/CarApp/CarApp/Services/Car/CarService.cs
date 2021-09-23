@@ -21,6 +21,48 @@
             this.mapper = mapper.ConfigurationProvider;
         }
 
+        public CarQueryServiceModel All(
+             string brand = null,
+            string searchTerm = null,
+           CarSorting sorting = CarSorting.DateCreated,
+            int currentPage = 1,
+            int carsPerPage = int.MaxValue,
+            bool publicOnly = true)
+        {
+
+            var carsQuery = this.data.Cars
+                .Where(c => !publicOnly || c.IsPublic);
+
+            if (!string.IsNullOrWhiteSpace(brand))
+            {
+                carsQuery = carsQuery.Where(c => c.Brand == brand);
+            }
+
+            if (!string.IsNullOrWhiteSpace(searchTerm))
+            {
+                carsQuery = carsQuery.Where(c =>
+                    (c.Brand + " " + c.Model).ToLower().Contains(searchTerm.ToLower()) ||
+                    c.Description.ToLower().Contains(searchTerm.ToLower()));
+            }
+
+            var totalCars = carsQuery.Count();
+
+            var cars = GetCars(carsQuery
+                .Skip((currentPage - 1) * carsPerPage)
+                .Take(carsPerPage));
+
+            return new CarQueryServiceModel
+            {
+                TotalCars = totalCars,
+                CurrentPage = currentPage,
+                CarsPerPage = carsPerPage,
+                Cars = cars
+            };
+        }
+        private IEnumerable<CarDetailsServiceModel> GetCars(IQueryable<Car> carQuery)
+           => carQuery
+               .ProjectTo<CarDetailsServiceModel>(this.mapper)
+               .ToList();
         public IEnumerable<CarCategoryServiceModel> AllCategories()
             => this.data
                   .Categories
@@ -48,5 +90,20 @@
                data.SaveChanges();
             return carData.Id;
         }
+        public IEnumerable<string> AllBrands()
+            => this.data
+                .Cars
+                .Select(c => c.Brand)
+                .Distinct()
+                .OrderBy(br => br)
+                .ToList();
+
+        public CarDetailsServiceModel GetCarById(int id) =>
+            this
+            .data
+            .Cars
+            .Where(c => c.Id == id)
+            .ProjectTo<CarDetailsServiceModel>(mapper)
+            .FirstOrDefault();
     }
 }

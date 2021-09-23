@@ -33,8 +33,15 @@ using CarApp.Models.Car;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 4 "C:\Users\master\Desktop\GitHub\C_Sharp\web\Advanced\CarApp\CarApp\CarApp\Views\_ViewImports.cshtml"
+using CarApp.Services.Car.Model;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"d6a5625cc8fb4476f348b0fe9041c550465d8bf9", @"/Views/Shared/Error.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"3e763dfff9cb9f7a7ea57f6c94acaa466802ae3e", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"1e598a695bd46574c589df3fee3afc42981320cc", @"/Views/_ViewImports.cshtml")]
     public class Views_Shared_Error : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<ErrorViewModel>
     {
         #pragma warning disable 1998

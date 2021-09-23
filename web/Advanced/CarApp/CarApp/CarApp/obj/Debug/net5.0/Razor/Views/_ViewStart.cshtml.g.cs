@@ -33,8 +33,15 @@ using CarApp.Models.Car;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 4 "C:\Users\master\Desktop\GitHub\C_Sharp\web\Advanced\CarApp\CarApp\CarApp\Views\_ViewImports.cshtml"
+using CarApp.Services.Car.Model;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"7091c65830b0329e613be026ede8a57552863778", @"/Views/_ViewStart.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"3e763dfff9cb9f7a7ea57f6c94acaa466802ae3e", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"1e598a695bd46574c589df3fee3afc42981320cc", @"/Views/_ViewImports.cshtml")]
     public class Views__ViewStart : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
     {
         #pragma warning disable 1998

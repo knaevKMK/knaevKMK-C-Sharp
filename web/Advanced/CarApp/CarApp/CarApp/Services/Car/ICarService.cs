@@ -10,5 +10,8 @@
 
         bool CategoryExists(int categoryId);
         int Create(CarFromModel car);
+        CarDetailsServiceModel GetCarById(int id);
+        CarQueryServiceModel All(string brand, string searchTerm, CarSorting sorting, int currentPage, int carsPerPage, bool publicOnly);
+        IEnumerable<string> AllBrands();
     }
 }

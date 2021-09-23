@@ -438,3 +438,5 @@ C:\Users\master\Desktop\GitHub\C_Sharp\web\Advanced\CarApp\CarApp\CarApp\bin\Deb
 C:\Users\master\Desktop\GitHub\C_Sharp\web\Advanced\CarApp\CarApp\CarApp\obj\Debug\net5.0\Razor\Views\Car\AddCar.cshtml.g.cs
 C:\Users\master\Desktop\GitHub\C_Sharp\web\Advanced\CarApp\CarApp\CarApp\bin\Debug\net5.0\AutoMapper.dll
 C:\Users\master\Desktop\GitHub\C_Sharp\web\Advanced\CarApp\CarApp\CarApp\bin\Debug\net5.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+C:\Users\master\Desktop\GitHub\C_Sharp\web\Advanced\CarApp\CarApp\CarApp\obj\Debug\net5.0\Razor\Views\Car\Details.cshtml.g.cs
+C:\Users\master\Desktop\GitHub\C_Sharp\web\Advanced\CarApp\CarApp\CarApp\obj\Debug\net5.0\Razor\Views\Car\All.cshtml.g.cs
