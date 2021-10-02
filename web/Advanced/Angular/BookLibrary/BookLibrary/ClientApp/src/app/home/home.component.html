@@ -1,0 +1,48 @@
+<div>
+  <button onclick="">LOAD ALL BOOKS</button>
+  <p *ngIf="!books"><em>Loading...</em></p>
+  <table class='table table-striped' aria-labelledby="tableLabel" *ngIf="books">
+    <thead>
+      <tr>
+        <td>Title</td>
+        <td>Author</td>
+        <td>Isbn</td>
+        <td>Action</td>
+       </tr>
+          </thead>
+    <tbody >
+      <tr *ngFor="let book of books">
+        <td>{{book.title}}</td>
+        <td>{{book.author}}</td>
+        <td>{{book.Isbn}}</td>
+        <td>
+          <button onclick="">EDIT</button>
+          <button onclick="">DELETE</button>
+        </td>
+      </tr>
+
+    </tbody>
+
+  </table>
+
+</div>
+<div class="table">
+  <form>
+    <div>
+      <label>Title</label>
+      <input type="text" value="Title...">
+    </div>
+    <div>
+      <label>Author</label>
+      <input type="text" value="Author...">
+    </div>
+    <div>
+      <label>Isbn</label>
+      <input type="text" value="Isbn...">
+    </div>
+    <div>
+      
+      <input class="btn-primary" type="button" value="Submit">
+    </div>
+  </form>
+ </div>
