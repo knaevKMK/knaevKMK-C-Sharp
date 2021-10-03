@@ -1,0 +1,28 @@
+<div class="form-group">
+    <button class="btn btn-success btn-lg btn-block" (click)="ngOnInit()">Load Book Library</button>
+
+<table class="table table-hover">
+<thead>
+    <tr>
+        <td>Id</td>
+        <td>Title</td>
+        <td>Author Name</td>
+        <td>Action</td>
+
+    </tr>
+</thead>
+<tbody>
+    <tr *ngFor="let book of service.list">
+        <td>{{book.id}}</td>
+        <td>{{book.title}}</td>
+        <td>{{book.authorName}}</td>
+        <td>
+            <button class="far fa-trash-alt fa-lg text-green" (click)="onEdit(book.id)" >Edit</button>
+            <button class="far fa-trash-alt fa-lg text-danger" (click)= "onDelete(book.id)">Delete</button>
+
+        </td>
+    </tr>
+
+</tbody>
+</table>
+</div>
