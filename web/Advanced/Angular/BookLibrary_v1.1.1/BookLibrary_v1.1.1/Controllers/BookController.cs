@@ -7,10 +7,12 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using BookLibrary_v1._1._1.Data;
 using BookLibrary_v1._1._1.Data.Models;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Cors;
 
 namespace BookLibrary_v1._1._1.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("/api")]
     [ApiController]
     public class BookController : ControllerBase
     {
@@ -23,6 +25,9 @@ namespace BookLibrary_v1._1._1.Controllers
 
         // GET: api/Book
         [HttpGet]
+        [DisableCors]
+
+
         public async Task<ActionResult<IEnumerable<Book>>> GetBooks()
         {
             return await _context.Books.ToListAsync();
@@ -30,6 +35,7 @@ namespace BookLibrary_v1._1._1.Controllers
 
         // GET: api/Book/5
         [HttpGet("{id}")]
+        [AllowAnonymous]
         public async Task<ActionResult<Book>> GetBook(int id)
         {
             var book = await _context.Books.FindAsync(id);
@@ -45,6 +51,7 @@ namespace BookLibrary_v1._1._1.Controllers
         // PUT: api/Book/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
+        [AllowAnonymous]
         public async Task<IActionResult> PutBook(int id, Book book)
         {
             if (id != book.Id)
@@ -76,6 +83,7 @@ namespace BookLibrary_v1._1._1.Controllers
         // POST: api/Book
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
+        [AllowAnonymous]
         public async Task<ActionResult<Book>> PostBook(Book book)
         {
             _context.Books.Add(book);

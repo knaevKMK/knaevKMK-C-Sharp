@@ -8,6 +8,11 @@ cmd=>
  netstat -ano | findstr <port>
 taskkill /F /PID <processId>
 
+
+dotnet new angular -o <my-new-app>
+cd <my-new-app>
+
+
 ng g c <entity-name> -s --skipTests
 ng g c <entity-name> --module app
 ng g c <entity-name>/<entity>-form -s --skipTests
