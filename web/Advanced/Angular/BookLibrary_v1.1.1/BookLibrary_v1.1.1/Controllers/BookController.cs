@@ -14,6 +14,9 @@ namespace BookLibrary_v1._1._1.Controllers
 {
     [Route("/api")]
     [ApiController]
+    [EnableCors("CORS")]
+    //[Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
+    //[Produces("application/json")]
     public class BookController : ControllerBase
     {
         private readonly LibraryDbContext _context;

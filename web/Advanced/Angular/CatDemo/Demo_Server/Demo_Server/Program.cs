@@ -1,14 +1,7 @@
-using Microsoft.AspNetCore.Hosting;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace BookLibrary_v1._1._1
+namespace Demo_Server
 {
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.Extensions.Hosting;
     public class Program
     {
         public static void Main(string[] args)
@@ -20,8 +13,7 @@ namespace BookLibrary_v1._1._1
             Host.CreateDefaultBuilder(args)
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
-                    webBuilder.UseStartup<Startup>()
-                    .UseUrls("https://localhost:44348/");
+                    webBuilder.UseStartup<Startup>();
                 });
     }
 }

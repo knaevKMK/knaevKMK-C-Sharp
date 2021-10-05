@@ -22,17 +22,26 @@ namespace BookLibrary_v1._1._1
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddCors(options =>
+            {
+                options.AddPolicy("CORS",
+               builder =>
+               {
+                   builder.WithOrigins("http://localhost:5000")
+                          .AllowAnyMethod()
+                          .AllowAnyHeader()
+                          .AllowCredentials()
+                          .WithExposedHeaders("Authorization", "WWW-Authenticate");
+               });
+            });
             services.AddControllersWithViews();
-            // In production, the Angular files will be served from this directory
             services.AddSpaStaticFiles(configuration =>
             {
                 configuration.RootPath = "ClientApp/dist";
             });
             services.AddDbContext<LibraryDbContext>(options=>options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
-            services.AddCors();
         }
 
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env,LibraryDbContext data)
         {
             if (env.IsDevelopment())
@@ -43,9 +52,12 @@ namespace BookLibrary_v1._1._1
             else
             {
                 app.UseExceptionHandler("/Error");
-                // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
+
+            app.UseRouting();
+
+            app.UseCors("CORS");
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();
@@ -54,19 +66,15 @@ namespace BookLibrary_v1._1._1
                 app.UseSpaStaticFiles();
             }
 
-            app.UseRouting();
-            app.UseCors(builder =>
-            {
-     
-                builder.AllowAnyOrigin();
-            });
+            //   app.UsePreflightRequestHandler();
+         
+        
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller}/{action=Index}/{id?}");
             });
-
             app.UseSpa(spa =>
             {
                 // To learn more about options for serving an Angular SPA from ASP.NET Core,
