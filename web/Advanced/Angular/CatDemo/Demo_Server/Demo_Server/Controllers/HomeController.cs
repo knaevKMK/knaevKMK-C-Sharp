@@ -4,12 +4,10 @@ namespace Demo_Server.Controllers
     using Microsoft.AspNetCore.Authorization;
     using Microsoft.AspNetCore.Mvc;
 
-    [ApiController]
-    [Route("[controller]")]
-    public class HomeController : ControllerBase
+    public class HomeController : ApiController
     {
        // [Authorize]
-        public IActionResult Get() {
+        public ActionResult Get() {
             return Ok("Work it");
         }
     }

@@ -33,7 +33,6 @@ C:\Users\master\Desktop\GitHub\C_Sharp\web\Advanced\Angular\CatDemo\Demo_Server\
 C:\Users\master\Desktop\GitHub\C_Sharp\web\Advanced\Angular\CatDemo\Demo_Server\Demo_Server\bin\Debug\net5.0\Microsoft.IdentityModel.Protocols.dll
 C:\Users\master\Desktop\GitHub\C_Sharp\web\Advanced\Angular\CatDemo\Demo_Server\Demo_Server\bin\Debug\net5.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 C:\Users\master\Desktop\GitHub\C_Sharp\web\Advanced\Angular\CatDemo\Demo_Server\Demo_Server\bin\Debug\net5.0\Microsoft.IdentityModel.Tokens.dll
-C:\Users\master\Desktop\GitHub\C_Sharp\web\Advanced\Angular\CatDemo\Demo_Server\Demo_Server\bin\Debug\net5.0\Newtonsoft.Json.dll
 C:\Users\master\Desktop\GitHub\C_Sharp\web\Advanced\Angular\CatDemo\Demo_Server\Demo_Server\bin\Debug\net5.0\System.Configuration.ConfigurationManager.dll
 C:\Users\master\Desktop\GitHub\C_Sharp\web\Advanced\Angular\CatDemo\Demo_Server\Demo_Server\bin\Debug\net5.0\System.Diagnostics.DiagnosticSource.dll
 C:\Users\master\Desktop\GitHub\C_Sharp\web\Advanced\Angular\CatDemo\Demo_Server\Demo_Server\bin\Debug\net5.0\System.IdentityModel.Tokens.Jwt.dll
@@ -60,3 +59,4 @@ C:\Users\master\Desktop\GitHub\C_Sharp\web\Advanced\Angular\CatDemo\Demo_Server\
 C:\Users\master\Desktop\GitHub\C_Sharp\web\Advanced\Angular\CatDemo\Demo_Server\Demo_Server\obj\Debug\net5.0\ref\Demo_Server.dll
 C:\Users\master\Desktop\GitHub\C_Sharp\web\Advanced\Angular\CatDemo\Demo_Server\Demo_Server\obj\Debug\net5.0\Demo_Server.pdb
 C:\Users\master\Desktop\GitHub\C_Sharp\web\Advanced\Angular\CatDemo\Demo_Server\Demo_Server\obj\Debug\net5.0\Demo_Server.genruntimeconfig.cache
+C:\Users\master\Desktop\GitHub\C_Sharp\web\Advanced\Angular\CatDemo\Demo_Server\Demo_Server\bin\Debug\net5.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
