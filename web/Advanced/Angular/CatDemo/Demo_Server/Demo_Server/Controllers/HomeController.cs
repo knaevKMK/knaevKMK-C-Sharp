@@ -7,6 +7,7 @@ namespace Demo_Server.Controllers
     public class HomeController : ApiController
     {
        // [Authorize]
+       [HttpGet]
         public ActionResult Get() {
             return Ok("Work it");
         }

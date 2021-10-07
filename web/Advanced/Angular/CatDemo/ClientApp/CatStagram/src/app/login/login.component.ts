@@ -20,7 +20,8 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
   }
   onLogin() {
-    this.authService.login(this.loginForm.value).subscribe(data => { console.log(data) });
+    var result = this.authService.login(this.loginForm.value).subscribe(data => { console.log(data) });
+    console.log(result)
   }
 
 
