@@ -9,5 +9,16 @@ using Microsoft.EntityFrameworkCore;
             : base(options)
         {
         }
+
+        public DbSet<Item> Items { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder builder)
+        {
+
+            builder.Entity<Item>(entity=> {
+                entity.HasKey(i => i.Id);
+            });
+            base.OnModelCreating(builder);
+        }
     }
 }

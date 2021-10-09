@@ -54,7 +54,6 @@ C:\Users\master\Desktop\GitHub\C_Sharp\web\Advanced\Angular\CatDemo\Demo_Server\
 C:\Users\master\Desktop\GitHub\C_Sharp\web\Advanced\Angular\CatDemo\Demo_Server\Demo_Server\obj\Debug\net5.0\staticwebassets\Demo_Server.StaticWebAssets.xml
 C:\Users\master\Desktop\GitHub\C_Sharp\web\Advanced\Angular\CatDemo\Demo_Server\Demo_Server\obj\Debug\net5.0\scopedcss\bundle\Demo_Server.styles.css
 C:\Users\master\Desktop\GitHub\C_Sharp\web\Advanced\Angular\CatDemo\Demo_Server\Demo_Server\obj\Debug\net5.0\Demo_Server.RazorTargetAssemblyInfo.cache
-C:\Users\master\Desktop\GitHub\C_Sharp\web\Advanced\Angular\CatDemo\Demo_Server\Demo_Server\obj\Debug\net5.0\Demo_Server.csproj.CopyComplete
 C:\Users\master\Desktop\GitHub\C_Sharp\web\Advanced\Angular\CatDemo\Demo_Server\Demo_Server\obj\Debug\net5.0\Demo_Server.dll
 C:\Users\master\Desktop\GitHub\C_Sharp\web\Advanced\Angular\CatDemo\Demo_Server\Demo_Server\obj\Debug\net5.0\ref\Demo_Server.dll
 C:\Users\master\Desktop\GitHub\C_Sharp\web\Advanced\Angular\CatDemo\Demo_Server\Demo_Server\obj\Debug\net5.0\Demo_Server.pdb

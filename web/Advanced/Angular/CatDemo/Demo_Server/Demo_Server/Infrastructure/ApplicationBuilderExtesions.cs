@@ -15,7 +15,7 @@ namespace Demo_Server.Infrastructure
             using var services = app.ApplicationServices.CreateScope();
 
             var db = services.ServiceProvider.GetService<DemoAppDbContext>();
-       //     db.Database.EnsureCreated();
+            db.Database.EnsureCreated();
             db.Database.Migrate();
         }
     }

@@ -3,6 +3,7 @@ namespace Demo_Server
     using Demo_Server.Data;
     using Demo_Server.Data.Model;
     using Demo_Server.Infrastructure;
+    using Demo_Server.Services;
     using Microsoft.AspNetCore.Authentication.JwtBearer;
     using Microsoft.AspNetCore.Builder;
     using Microsoft.AspNetCore.Hosting;
@@ -71,15 +72,16 @@ namespace Demo_Server
             });
 
                 services.AddControllers();
+            services.AddTransient<ItemService>();
             }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment())
             {
-                app.ApplyMigrations();
-                app.UseDatabaseErrorPage();
+        
              }
+                app.ApplyMigrations();
 
             app.UseRouting();
 

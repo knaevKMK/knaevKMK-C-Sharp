@@ -53,6 +53,9 @@ namespace Demo_Server.Controllers
         [Route("login")]
         [HttpPost]
         public async Task<ActionResult<object>> Login(UserLoginRequestModel model) {
+
+
+
             User user = await this.userManager.FindByNameAsync(model.Username);
                        if (user==null)
             {
