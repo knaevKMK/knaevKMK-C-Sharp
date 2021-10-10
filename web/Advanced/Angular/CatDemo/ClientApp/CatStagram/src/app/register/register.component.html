@@ -7,8 +7,12 @@
         <form [formGroup]= "registerForm" (ngSubmit)="onRegister()">
 
                 <div class="form-group">
+                    <img src="http://www.lomus.com.np/login-img.png"/>
+                    <p>If you allready registered, just
+                        <a href="http://localhost:4200/login">Login </a>
+                    </p>
               <label for="username" class="form-label">Username</label>
-              <input type="text" class="form-control" formControlName="username">
+              <input type="text" class="form-control" formControlName="username" placeholder="Write a username here....">
             </div>
             <div *ngIf="!username" class="alert alert-danger">Username is not valid</div>
 

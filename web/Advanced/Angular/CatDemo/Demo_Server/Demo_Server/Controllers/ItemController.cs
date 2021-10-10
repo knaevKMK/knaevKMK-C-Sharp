@@ -18,11 +18,7 @@ namespace Demo_Server.Controllers
         {
             this.itemService = itemService;
         }
-        [Route("get")]
-        public ActionResult Load()
-        {
-            return Ok("Work ItemController");
-        }
+    
 
         [HttpPost]
         [Route("add")]
@@ -59,8 +55,8 @@ namespace Demo_Server.Controllers
         [Route("all")]
         public async Task<ActionResult<ItemAddBindingModel>> All()
         {
-            var result = await this.itemService.All();
-            return Ok(result);
+            var result =  this.itemService.All();
+            return Ok(result.Result);
         }
     }
 }

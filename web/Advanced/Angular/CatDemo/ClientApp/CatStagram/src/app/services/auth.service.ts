@@ -9,10 +9,14 @@ export class AuthService {
   constructor(private http: HttpClient) { }
 
   login(data: any): Observable<any> {
-    return this.http.post(environment.appUrl + 'user/login', data)
-    // return this.http.get(environment.appUrl + 'home');
+    return this.http.post(environment.appUrl + 'user/login', data);
   }
+
   register(data: any): Observable<any> {
     return this.http.post(environment.appUrl + 'user/register', data);
   }
+
+  saveToken(token: any) { localStorage.setItem('token', token); };
+
+  getToken() { return localStorage.getItem('token'); };
 }

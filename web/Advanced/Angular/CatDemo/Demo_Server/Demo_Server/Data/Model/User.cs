@@ -8,5 +8,6 @@ namespace Demo_Server.Data.Model
 {
     public class User: IdentityUser
     {
+        public IEnumerable<Item> Items { get;  } = new List<Item>();
     }
 }

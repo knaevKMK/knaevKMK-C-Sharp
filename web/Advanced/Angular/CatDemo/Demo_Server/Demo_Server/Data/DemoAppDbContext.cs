@@ -16,7 +16,10 @@ using Microsoft.EntityFrameworkCore;
         {
 
             builder.Entity<Item>(entity=> {
-                entity.HasKey(i => i.Id);
+                entity.HasOne(i=>i.Owner)
+                .WithMany(u=>u.Items)
+                .HasForeignKey(i=>i.OwnerId)
+                .OnDelete(DeleteBehavior.Restrict);
             });
             base.OnModelCreating(builder);
         }

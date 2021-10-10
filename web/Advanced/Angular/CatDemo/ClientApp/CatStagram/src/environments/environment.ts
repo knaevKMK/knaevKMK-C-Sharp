@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  appUrl: "https://firstdemoserver.azurewebsites.net/"
+  //  appUrl: "https://firstdemoserver.azurewebsites.net/"
+  appUrl: "https://localhost:44386/"
 };
 
 /*

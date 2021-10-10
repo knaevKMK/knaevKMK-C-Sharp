@@ -16,13 +16,14 @@ namespace Demo_Server.Services
         {
             this.data = data;
         }
-
+        
         public async Task<int> Create(ItemAddBindingModel model) {
 
             var item = new Item {
                 Name = model.Name,
                Description= model.Description,
-               Price = model.Price
+               Price = model.Price,
+               ImageUrl = model.ImageUrl
             };
 
             var result = await  data.Items.AddAsync(item);
@@ -42,6 +43,7 @@ namespace Demo_Server.Services
         internal async  Task<Item[]> All()
         {
          return  this.data.Items
+                .OrderByDescending(i=>i.Id)
                 .ToArray();
 
             
