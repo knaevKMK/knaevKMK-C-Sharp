@@ -9,10 +9,10 @@ export class AuthService {
   constructor(private http: HttpClient) { }
 
   login(data: any): Observable<any> {
-    //return this.http.post(environment.appUrl + 'identity/login', data)
-    return this.http.get(environment.appUrl + 'home');
+    return this.http.post(environment.appUrl + 'user/login', data)
+    // return this.http.get(environment.appUrl + 'home');
   }
   register(data: any): Observable<any> {
-    return this.http.post(environment.appUrl + 'identity/register', data);
+    return this.http.post(environment.appUrl + 'user/register', data);
   }
 }

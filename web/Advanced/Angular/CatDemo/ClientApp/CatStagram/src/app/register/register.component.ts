@@ -13,20 +13,22 @@ export class RegisterComponent implements OnInit {
     this.registerForm = this.fb.group({
 
       'username': ['', Validators.required],
+      'email': ['', Validators.required],
       'password': ['', Validators.required],
-      'confirmPassword': ['', Validators.required],
-      'email': ['', Validators.required]
+      'confirmPassword': ['', Validators.required]
     });
   }
 
   ngOnInit(): void {
   }
   onRegister() {
-    var result = this.authService.register(this.registerForm.value);
-    console.log(result);
+
+    console.log(this.registerForm.value);
+    var result = this.authService.register(this.registerForm.value).subscribe(data => console.log(data));
   }
 
   get username() { return this.registerForm.get('username') }
   get email() { return this.registerForm.get('email') }
   get password() { return this.registerForm.get('password') }
+  get confirmPassword() { return this.registerForm.get('confirmPassword') }
 }
