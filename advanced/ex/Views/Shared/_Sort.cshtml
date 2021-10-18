@@ -1,0 +1,76 @@
+﻿@model ex.Models.Binding.FilterDto
+
+
+<div>
+
+
+<h1>Сортирай по: </h1>
+
+<form asp-controller="Home" asp-action="sort" method="post">
+
+    <div class="form-group">
+        <label>Пореден Номер:</label>
+      
+        <select asp-for="IdSort">
+            <option >Възходящо</option>
+            <option value="1">Низходящо</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label>Име:</label>
+        <input asp-for="Name" placeholder="Candidate Name..." />
+        <select asp-for="NameSort">
+            <option>Възходящо</option>
+            <option value="1">Низходящо</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label>Отдел:</label>
+        <select asp-for="Department">
+            <option >Select Deaprtment...</option>
+            @foreach (var department in Enum.GetValues<ex.Models.Enums.DepartmentEnum>())
+            {
+                <option label="@department" value="@department.ToString()"></option>
+            }
+        </select>
+        <select asp-for="DeprtmentSort">
+            <option >Възходящо</option>
+            <option value="1">Низходящо</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label>Образование:</label>
+        <input asp-for="Education" placeholder="Education..." />
+        <select asp-for="EdicationSort">
+            <option >Възходящо</option>
+            <option value="1">Низходящо</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label>Точки:</label>
+        <input asp-for="Score" placeholder="Score..." />
+        <select asp-for="ScoreSort">
+            <option>Възходящо</option>
+            <option value="1">Низходящо</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label >Дата на раждане:</label>
+        <input asp-for="BirthDate"  placeholder="Date of Birth" />
+        <select asp-for="arrow">
+            <option >Преди/След</option>
+            <option value="1">Преди</option>
+            <option value="2">След</option>
+        </select>
+        <select asp-for="BirthDateSort">
+            <option>Възходящо</option>
+            <option value="1">Низходящо</option>
+        </select>
+    </div>
+    <input type="submit" value="Сортирай">
+
+</form>
+</div>
+
