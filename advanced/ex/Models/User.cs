@@ -1,12 +1,9 @@
-﻿using ex.Models.Enums;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Threading.Tasks;
+﻿
 
 namespace ex.Models
 {
+    using System;
+    using System.ComponentModel.DataAnnotations;
     public class User
     {
         
@@ -15,8 +12,7 @@ namespace ex.Models
         [Required(ErrorMessage ="Names are required")]
         [StringLength(45)]
         public string FullName { get; set; }
-        [Required(ErrorMessage = "Department is required.")]
-        public DepartmentEnum Department { get; set; }
+        
         [Required(ErrorMessage ="Code required")]
         [StringLength(11)]
         public string Code { get; set; }
@@ -28,5 +24,7 @@ namespace ex.Models
 
         [Range(0,10, ErrorMessage = "Score must be positive with max value 10")]
         public int Score { get; set; }
+        public int? DepartmentId { get; set; }
+        public Department Department { get; set; }
     }
 }

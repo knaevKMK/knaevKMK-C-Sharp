@@ -131,7 +131,6 @@ C:\Users\master\Desktop\GitHub\C_Sharp\advanced\ex\obj\Debug\net5.0\ex.TagHelper
 C:\Users\master\Desktop\GitHub\C_Sharp\advanced\ex\obj\Debug\net5.0\ex.TagHelpers.output.cache
 C:\Users\master\Desktop\GitHub\C_Sharp\advanced\ex\obj\Debug\net5.0\ex.RazorCoreGenerate.cache
 C:\Users\master\Desktop\GitHub\C_Sharp\advanced\ex\obj\Debug\net5.0\Razor\Views\Home\Index.cshtml.g.cs
-C:\Users\master\Desktop\GitHub\C_Sharp\advanced\ex\obj\Debug\net5.0\Razor\Views\Shared\Error.cshtml.g.cs
 C:\Users\master\Desktop\GitHub\C_Sharp\advanced\ex\obj\Debug\net5.0\Razor\Views\Shared\_Layout.cshtml.g.cs
 C:\Users\master\Desktop\GitHub\C_Sharp\advanced\ex\obj\Debug\net5.0\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
 C:\Users\master\Desktop\GitHub\C_Sharp\advanced\ex\obj\Debug\net5.0\Razor\Views\_ViewImports.cshtml.g.cs
@@ -145,6 +144,6 @@ C:\Users\master\Desktop\GitHub\C_Sharp\advanced\ex\obj\Debug\net5.0\ref\ex.dll
 C:\Users\master\Desktop\GitHub\C_Sharp\advanced\ex\obj\Debug\net5.0\ex.pdb
 C:\Users\master\Desktop\GitHub\C_Sharp\advanced\ex\obj\Debug\net5.0\ex.genruntimeconfig.cache
 C:\Users\master\Desktop\GitHub\C_Sharp\advanced\ex\bin\Debug\net5.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
-C:\Users\master\Desktop\GitHub\C_Sharp\advanced\ex\obj\Debug\net5.0\Razor\Views\Home\addUser.cshtml.g.cs
-C:\Users\master\Desktop\GitHub\C_Sharp\advanced\ex\obj\Debug\net5.0\Razor\Views\Home\allUsers.cshtml.g.cs
 C:\Users\master\Desktop\GitHub\C_Sharp\advanced\ex\obj\Debug\net5.0\Razor\Views\Shared\_Sort.cshtml.g.cs
+C:\Users\master\Desktop\GitHub\C_Sharp\advanced\ex\obj\Debug\net5.0\Razor\Views\Candidate\addUser.cshtml.g.cs
+C:\Users\master\Desktop\GitHub\C_Sharp\advanced\ex\obj\Debug\net5.0\Razor\Views\Candidate\allUsers.cshtml.g.cs

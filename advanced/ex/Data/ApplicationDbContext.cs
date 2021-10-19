@@ -1,13 +1,9 @@
-﻿using ex.Models;
-using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using ex.Models.Binding;
-
+﻿
 namespace ex.Data
 {
+    using ex.Models;
+    using Microsoft.EntityFrameworkCore;
+
     public class ApplicationDbContext : DbContext
     {
         public ApplicationDbContext(DbContextOptions options) : base(options)
@@ -15,9 +11,11 @@ namespace ex.Data
         }
 
         public DbSet<User> Users { get; set; }
+        public DbSet<Department> Departments { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+
             base.OnModelCreating(modelBuilder);
         }
 

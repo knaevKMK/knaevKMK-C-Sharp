@@ -1,12 +1,9 @@
-﻿using ex.Models.Enums;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Threading.Tasks;
+﻿
 
 namespace ex.Models.Binding
 {
+using System;
+using System.ComponentModel.DataAnnotations;
     public class UserAddDto
     {
         [Required(ErrorMessage = "Names are required")]
@@ -14,8 +11,8 @@ namespace ex.Models.Binding
         public string FullName { get; set; }
 
 
-        [Required(ErrorMessage = "Department is required.")]
-        public DepartmentEnum Department { get; set; }
+        [Required(ErrorMessage = "Department Name is required.")]
+        public string DepartmentName { get; set; }
         
         public DateTime BirthDate { get; set; }
         [Required(ErrorMessage = "Edication required")]

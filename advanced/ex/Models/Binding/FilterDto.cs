@@ -1,12 +1,13 @@
-﻿using ex.Models.Enums;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Threading.Tasks;
+﻿
 
 namespace ex.Models.Binding
 {
+    using ex.Models.Enums;
+    using System;
+    using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
+    using System.Linq;
+    using System.Threading.Tasks;
     public class FilterDto
     {
 
@@ -24,6 +25,6 @@ namespace ex.Models.Binding
         
         public int? BirthYaer { get; set; }
         public byte? arrowBirth { get; set; }
-        public byte? BirthYaerSort { get; set; }
+        public byte? BirthYearSort { get; set; }
     }
 }
