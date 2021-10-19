@@ -17,7 +17,7 @@ namespace ex.Models.Binding
         public byte? NameSort { get; set; }
         public DepartmentEnum? Department { get; set; }
         public byte? DeprtmentSort { get; set; }
-        public string? Education { get; set; }
+        public string Education { get; set; }
         public byte? EdicationSort { get; set; }
         public int? Score { get; set; }
         public byte? arrowScore { get; set; }
