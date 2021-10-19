@@ -9,6 +9,6 @@ namespace ex.Models.Service
     public class FilterServiceModel
     {
         public bool IsSorted { get; set; }
-        public List<UserViewModel> users { get; set; }
+        public List<UserViewModel> Users { get; set; }
     }
 }

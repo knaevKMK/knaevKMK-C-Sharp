@@ -12,7 +12,8 @@
         <label>Пореден Номер:</label>
       
         <select asp-for="IdSort">
-            <option >Възходящо</option>
+           <option>Избери</option>
+            <option value="0">Възходящо</option>
             <option value="1">Низходящо</option>
         </select>
     </div>
@@ -21,7 +22,8 @@
         <label>Име:</label>
         <input asp-for="Name" placeholder="Candidate Name..." />
         <select asp-for="NameSort">
-            <option>Възходящо</option>
+            <option>Избери</option>
+            <option value="0">Възходящо</option>
             <option value="1">Низходящо</option>
         </select>
     </div>
@@ -36,7 +38,8 @@
             }
         </select>
         <select asp-for="DeprtmentSort">
-            <option >Възходящо</option>
+            <option>Избери</option>
+            <option value="0">Възходящо</option>
             <option value="1">Низходящо</option>
         </select>
     </div>
@@ -44,28 +47,36 @@
         <label>Образование:</label>
         <input asp-for="Education" placeholder="Education..." />
         <select asp-for="EdicationSort">
-            <option >Възходящо</option>
+            <option>Избери</option>
+            <option value="0">Възходящо</option>
             <option value="1">Низходящо</option>
         </select>
     </div>
     <div class="form-group">
         <label>Точки:</label>
         <input asp-for="Score" placeholder="Score..." />
+        <select asp-for="arrowScore">
+            <option>Текущ</option>
+            <option value="0">Под</option>
+            <option value="1">Над</option>
+        </select>
         <select asp-for="ScoreSort">
-            <option>Възходящо</option>
+            <option>Избери</option>
+            <option value="0">Възходящо</option>
             <option value="1">Низходящо</option>
         </select>
     </div>
     <div class="form-group">
-        <label >Дата на раждане:</label>
-        <input asp-for="BirthDate"  placeholder="Date of Birth" />
-        <select asp-for="arrow">
-            <option >Преди/След</option>
-            <option value="1">Преди</option>
-            <option value="2">След</option>
+        <label >Година на раждане:</label>
+        <input asp-for="BirthYaer"  placeholder="Year of Birth" />
+        <select asp-for="arrowBirth">
+            <option >Текущата</option>
+            <option value="0">Преди</option>
+            <option value="1">След</option>
         </select>
-        <select asp-for="BirthDateSort">
-            <option>Възходящо</option>
+        <select asp-for="BirthYaer">
+            <option>Избери</option>
+            <option value="0">Възходящо</option>
             <option value="1">Низходящо</option>
         </select>
     </div>

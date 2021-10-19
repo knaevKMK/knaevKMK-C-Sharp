@@ -10,7 +10,7 @@ namespace ex.Services
    public interface IUserService
     {
         void add(UserServiceModel userServiceModel);
-         object getAll(FilterDto sort);
+        List<UserViewModel> getAll(FilterDto sort);
         List<UserViewModel> getAll();
     }
 }

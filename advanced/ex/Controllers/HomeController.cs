@@ -53,18 +53,14 @@ using System.Diagnostics;
         }
                 
             
-          public IActionResult allUsers(FilterServiceModel filter) {
-            List<UserViewModel>  users = filter.users;
-            if (!filter.IsSorted) { 
-              users       = this.userService.getAll();
-            }
-            return View(users);
+          public IActionResult allUsers() {
+            List<UserViewModel>  users = this.userService.getAll();
+               return View(users);
         }
 
        public IActionResult sort(FilterDto sort) {
-          
-           
-            return RedirectToAction("allUsers", this.userService.getAll(sort));
+            List<UserViewModel> users = this.userService.getAll(sort);
+            return View("allUsers",users);
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

@@ -19,10 +19,11 @@ namespace ex.Models.Binding
         public string? Education { get; set; }
         public byte? EdicationSort { get; set; }
         public int? Score { get; set; }
+        public byte? arrowScore { get; set; }
         public byte? ScoreSort { get; set; }
         
-        public DateTime? BirthDate { get; set; }
-        public ArrowEnum? arrow { get; set; }
-        public byte? BirthDateSort { get; set; }
+        public int? BirthYaer { get; set; }
+        public byte? arrowBirth { get; set; }
+        public byte? BirthYaerSort { get; set; }
     }
 }

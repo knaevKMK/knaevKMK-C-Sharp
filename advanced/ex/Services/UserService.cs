@@ -62,12 +62,12 @@ namespace ex.Services
             return result;
         }
 
-        public object  getAll(FilterDto sort)
+        public List<UserViewModel> getAll(FilterDto sort)
         {
             bool _sort = false;
 
 
-            IQueryable<User> users = data.Users.AsQueryable();
+           var query =  this.data.Users.Where(u=>u.Id!=null);
             PropertyInfo[] properties = typeof(FilterDto).GetProperties();
             foreach (var field in properties)
             {
@@ -78,29 +78,52 @@ namespace ex.Services
                 }
               
                 switch (field.Name) {
-                    case "IdSort": users = users.OrderByDescending(u => u.Id); break;
-                    case "NameSort": users = users.OrderByDescending(u => u.FullName); break;
-                    case "DeprtmentSort": users = users.OrderByDescending(u => u.Department); break;
-                    case "EdicationSort": users = users.OrderByDescending(u => u.Education); break;
-                    case "ScoreSort": users = users.OrderByDescending(u => (int)u.Score); break;
-                    case "BirthDateSort": users = users.OrderByDescending(u => u.BirthDate); break;
-                    case "Name": users = users.Where(u => u.FullName.Any(_u=>u.FullName.Contains((string)_value))); break;
-                    case "Department": users = users.Where(u => u.Department.Equals(_value)); break;
-                    case "Education": users = users.Where(u => u.Education.Any(_u=>u.Education.Contains((string)_value))); break;
-                    case "Score": users = users.Where(u => u.Score==(int)_value); break;
-                    case "BirthDate": users= users.Where(u => u.BirthDate.Equals(_value)); break;
+                    //sort
+                    case "IdSort": query = (byte)_value==(byte)1? query.OrderByDescending(u => u.Id)
+                            : query.OrderBy(u => u.Id); break;
+                    case "NameSort": query = (byte)_value == (byte)1 ? query.OrderByDescending(u => u.FullName)
+                            : query.OrderBy(u => u.FullName); break;
+                    case "DeprtmentSort": query = (byte)_value == (byte)1 ? query.OrderByDescending(u => u.Department)
+                            : query.OrderBy(u => u.Department); break;
+                    case "EdicationSort": query = (byte)_value == (byte)1 ? query.OrderByDescending(u => u.Education)
+                            : query.OrderBy(u => u.Education); break;
+                    case "ScoreSort": query = (byte)_value == (byte)1 ? query.OrderByDescending(u => (int)u.Score)
+                            : query.OrderBy(u => (int)u.Score); break;
+                    case "BirthYaerSort": query = (byte)_value == (byte)1 ? query.OrderByDescending(u => u.BirthDate.Year)
+                            : query.OrderBy(u => u.BirthDate.Year); break;
+
+                        
+                    // filter
+                    case "Name": query = query.Where(u => u.FullName.Contains((string)_value)); break;
+                    case "Department": query = query.Where(u => u.Department.Equals(_value)); break;
+                    case "Education": query = query.Where(u => u.Education.Contains((string)_value)); break;
+                    case "Score": query =
+                            sort.arrowScore==null
+                            ? query.Where(u => u.Score == (int)_value)
+                            : sort.arrowScore==0 
+                                                ? query.Where(u=>u.Score<sort.Score)
+                                                : query.Where(u=>u.Score>sort.Score); break;
+                    case "BirthYaer": query =
+                         sort.arrowBirth == null
+                          ? query.Where(u => u.BirthDate.Year==(int)_value)
+                          : sort.arrowBirth==0 ? query.Where(u => u.BirthDate.Year < sort.BirthYaer)
+                                                  : query.Where(u => u.BirthDate.Year > sort.BirthYaer); break;
+
+
+                    //arrow
+
+                    case "arrowScore":query = (byte)_value == (byte)1 ? query.Where(u => u.Score > sort.Score)
+                           : query.Where(u =>u.Score<sort.Score); break;
+                    case "arrowBirth": query = (byte)_value == (byte)1 ? query.Where(u => u.BirthDate.Year > sort.BirthYaer)
+                           : query.Where(u => u.BirthDate.Year < sort.BirthYaer); break;
                 }
                     _sort = true;
             }
 
-            List<UserViewModel> _users = users
+          return query.ToList()
                 .Select(user => mapper.Map<UserViewModel>(user))
                 .ToList();
-            return new FilterServiceModel
-            {
-               IsSorted= _sort,
-               users= _users
-            };
+          
         }
 
         public List<UserViewModel> getAll()
