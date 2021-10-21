@@ -16,7 +16,7 @@
             this.CreateMap<User, UserViewModel>()
                 .ForMember(model => model.DepartmentName, cfg => cfg.MapFrom(user => user.Department.Name));
 
-            
+            this.CreateMap<Department, DepartmentViewModel>();
         }
     }
 }

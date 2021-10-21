@@ -10,6 +10,7 @@
     using System.Collections.Generic;
     using System.Threading.Tasks;
 
+    [Route("/candidate")]
     public class CandidateController : ApiController
     {
 
@@ -47,6 +48,9 @@
             }
         }
 
-
-    }
+        //[HttpPost]
+        //[Route("/filter")]
+        //public async Task<ActionResult> Filter( userDto)
+        //{ }
+        }
 }

@@ -1,0 +1,50 @@
+
+    <form class="d-flex" [formGroup]= "sortForm" (ngSubmit)="onSort()">
+<ul>
+        <li class="form-group">
+            <input value="Id:  " disabled />
+                <select formControlName="idSort">
+               <option  value="0">                 A-Z               </option>
+               <option  type="submit"  value="1">Z-A</option>
+            </select>
+        </li>
+        <li class="form-group">
+            <input value="Name:  " disabled />
+                <select formControlName="nameSort">
+               <option  value="0">                 A-Z               </option>
+               <option  type="submit"  value="1">Z-A</option>
+            </select>
+        </li>
+        <li class="form-group">
+            <input value="Department:  " disabled />
+                <select formControlName="departmentSort">
+               <option  value="0">                 A-Z               </option>
+               <option  type="submit"  value="1">Z-A</option>
+            </select>
+        </li>
+        <li class="form-group">
+            <input value="Education:  " disabled />
+                <select formControlName="educationSort">
+               <option  value="0">                 A-Z               </option>
+               <option  type="submit"  value="1">Z-A</option>
+            </select>
+        </li>
+        <li class="form-group">
+            <input value="Score:  " disabled />
+                <select formControlName="scoreSort">
+               <option  value="0">                 A-Z               </option>
+               <option  type="submit"  value="1">Z-A</option>
+            </select>
+        </li>
+
+        <li class="form-group">
+            <input value="Birth Date:  " disabled />
+                <select formControlName="birthYearSort">
+               <option  value="0">                 A-Z               </option>
+               <option  type="submit"  value="1">Z-A</option>
+            </select>
+        </li>
+    </ul>
+    <input type="submit" title="Sort" value="Sort">
+        </form>
+

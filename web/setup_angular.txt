@@ -12,9 +12,9 @@ taskkill /F /PID <processId>
 dotnet new angular -o <my-new-app>
 cd <my-new-app>
 
-
+ng new <app name>
 ng g c <entity-name> -s --skipTests
-ng g c <entity-name> --module app
+ng g c <entity-name> --module app //work
 ng g c <entity-name>/<entity>-form -s --skipTests
 
 ng g class shared/<entity> --type=model --skipTests

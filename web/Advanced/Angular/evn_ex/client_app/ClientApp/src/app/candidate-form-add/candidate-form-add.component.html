@@ -1,0 +1,45 @@
+<div>
+
+    <form [formGroup]= "createForm" (ngSubmit)="onCreate()">
+        <div class="form-group">
+            <label class="control-label">Full Name</label>
+            <input formControlName="fullName" class="form-control"
+            placeholder="Full Name ..."/>
+
+          </div>
+
+          <div class="form-group">
+            <label class="control-label">Department Name </label>
+            <select formControlName="departmentName" class="form-control">
+              <option selected> Select...</option>
+              <option *ngFor="let department of departments" value="{{department.name}}">{{department.name}}</option>
+
+            </select>
+
+          </div>
+
+          <div class="form-group">
+            <label class="control-label">Education</label>
+            <input formControlName="education" class="form-control"
+            placeholder="Educaton / Level"/>
+
+        </div>
+
+          <div class="form-group">
+            <label class="control-label">Birth Date</label>
+            <input formControlName="birthDate" class="form-control" type="date" />
+
+          </div>
+
+
+          <div class="form-group">
+            <label class="control-label">Score</label>
+            <input formControlName="score" class="form-control" type="number"/>
+          </div>
+
+
+          <div class="form-group">
+            <input type="submit" value="Create" class="btn btn-primary" />
+          </div>
+    </form>
+</div>

@@ -1,0 +1,44 @@
+<form class="d-flex" [formGroup]= "filterForm" (ngSubmit)="onFilter()">
+
+
+    <div class="form-group">  <label>Име:</label>
+        <input formControlName="name" value="{{null}}" placeholder="Candidate Name..." />
+    </div>
+
+<div class="form-group">
+    <label>Отдел:</label>
+    <select formControlName="department">
+        <option selected value="{{null}}" >Select...</option>
+        <option *ngFor="let _department of departments"
+        value="{{_department.name}}">{{_department.name}}</option>
+        </select>
+</div>
+
+<div class="form-group">
+    <label>Образование:</label>
+    <input formControlName="education" value="{{null}}" class="form-control me-2" placeholder="Education..." />
+</div>
+
+    <div class="form-group">
+        <label>Точки:</label>
+        <input formControlName="score" type="number"
+        class="form-control me-2" placeholder="Score..." />
+        <select formControlName="arrowScore">
+            <option selected value="{{null}}">Current</option>
+            <option value="0">Под</option>
+            <option value="1">Над</option>
+        </select>
+    </div>
+
+        <div class="form-group">
+            <label >Година на раждане:</label>
+            <input value="{{null}}" formControlName="birthYaer" type="date"
+            class="form-control me-2"  placeholder="Year of Birth" />
+            <select formControlName="arrowBirth">
+                <option value="{{null}}" >Current</option>
+                <option value="0">Преди</option>
+                <option value="1">След</option>
+            </select>
+        </div>
+        <button class="btn btn-outline-success" type="submit">Search</button>
+</form>
