@@ -2,6 +2,8 @@ using evnServer.Config;
 using evnServer.Data;
 using evnServer.Service;
 using evnServer.Service.impl;
+using evnServer.Validation;
+using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -42,8 +44,15 @@ namespace evnServer
       //          configuration.RootPath = "ClientApp/dist";
             });
 
+            services.AddFluentValidation(config => {
+                config.AutomaticValidationEnabled = true;
+                config.DisableDataAnnotationsValidation = true;
+                config.ImplicitlyValidateChildProperties = true;
+                config.ImplicitlyValidateRootCollectionElements = true;
+            });
             services.AddTransient<IUserService, UserService>();
             services.AddTransient<IDepartmentService, DepartmentService>();
+            services.AddTransient<UserCreatDtoValidation>();
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {

@@ -10,16 +10,21 @@ namespace evnServer.Controllers
     using evnServer.Service;
     using AutoMapper;
     using Microsoft.AspNetCore.Mvc;
+    using evnServer.Validation;
+    using FluentValidation.Results;
+    using FluentValidation;
+    using FluentValidation.AspNetCore;
 
-   
     public class CandidateController: ApiConteroller { 
 
         private readonly IUserService userService;
+        private readonly UserCreatDtoValidation userModelValidator;
 
 
-        public CandidateController(IUserService userService, IMapper mapper) :base(mapper)
+        public CandidateController(IUserService userService, IMapper mapper, UserCreatDtoValidation userModelValidator) :base(mapper)
         {
             this.userService = userService;
+            this.userModelValidator = userModelValidator;
         }
 
         [HttpGet]
@@ -34,22 +39,29 @@ namespace evnServer.Controllers
         [Route("create")]
         public async Task<ActionResult> Create(UserCreateDto userDto)
         {
-            if (!ModelState.IsValid)
-            {
-                //return BadRequest();
-            }
 
-            try
+                ValidationResult validationResult = this.userModelValidator.Validate(userDto);
+            if (!validationResult.IsValid)
             {
-                var result = await this.userService.Create(base.mapper.CreateMapper().Map<UserServiceModel>(userDto));
+                validationResult.AddToModelState(ModelState, null);
+                return Ok(validationResult);
+            }
+                try
+                {
+                 int  result= await this.userService.Create(base.mapper.CreateMapper()
+                           .Map<UserServiceModel>(userDto));
 
                 return Ok(result);
-            }
-            catch (Exception)
-            {
-                return BadRequest();
-            }
-        }
+                }
+                catch (Exception)
+                {
+
+                    return BadRequest();
+                }
+
+         }
+          
+        
         [HttpPost]
         [Route("filter")]
         public async Task<ActionResult<List<UserViewModel>>> filter(FilterDto filter) {

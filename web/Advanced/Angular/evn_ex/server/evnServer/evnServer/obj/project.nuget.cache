@@ -1,11 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "QTlIlQLRUaPzZ6j2C+7qEKW4Umhcj/MLj5E35F98ZVyjoLLBAZvbaP4K9ma0oq0S0+ghF+fT+KmLozYq4Y68qw==",
+  "dgSpecHash": "K3lagXLHmqmjBl4nP2kSaug93lgKTOngJYHga17+kO1T5R6Us3QZXNjZW7MgfgF6lJoIm9lC66RY2yvIHD9Jrg==",
   "success": true,
   "projectFilePath": "C:\\Users\\master\\Desktop\\GitHub\\C_Sharp\\web\\Advanced\\Angular\\evn_ex\\server\\evnServer\\evnServer\\evnServer.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\master\\.nuget\\packages\\automapper\\10.1.1\\automapper.10.1.1.nupkg.sha512",
     "C:\\Users\\master\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\8.1.1\\automapper.extensions.microsoft.dependencyinjection.8.1.1.nupkg.sha512",
+    "C:\\Users\\master\\.nuget\\packages\\fluentvalidation\\10.3.4\\fluentvalidation.10.3.4.nupkg.sha512",
+    "C:\\Users\\master\\.nuget\\packages\\fluentvalidation.aspnetcore\\10.3.4\\fluentvalidation.aspnetcore.10.3.4.nupkg.sha512",
+    "C:\\Users\\master\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\10.3.4\\fluentvalidation.dependencyinjectionextensions.10.3.4.nupkg.sha512",
     "C:\\Users\\master\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\master\\.nuget\\packages\\microsoft.aspnetcore.hosting.abstractions\\2.2.0\\microsoft.aspnetcore.hosting.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\master\\.nuget\\packages\\microsoft.aspnetcore.hosting.server.abstractions\\2.2.0\\microsoft.aspnetcore.hosting.server.abstractions.2.2.0.nupkg.sha512",

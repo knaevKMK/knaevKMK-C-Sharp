@@ -67,3 +67,7 @@ C:\Users\master\Desktop\GitHub\C_Sharp\web\Advanced\Angular\evn_ex\server\evnSer
 C:\Users\master\Desktop\GitHub\C_Sharp\web\Advanced\Angular\evn_ex\server\evnServer\evnServer\bin\Debug\net5.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.pdb
 C:\Users\master\Desktop\GitHub\C_Sharp\web\Advanced\Angular\evn_ex\server\evnServer\evnServer\bin\Debug\net5.0\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
 C:\Users\master\Desktop\GitHub\C_Sharp\web\Advanced\Angular\evn_ex\server\evnServer\evnServer\bin\Debug\net5.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\master\Desktop\GitHub\C_Sharp\web\Advanced\Angular\evn_ex\server\evnServer\evnServer\bin\Debug\net5.0\FluentValidation.dll
+C:\Users\master\Desktop\GitHub\C_Sharp\web\Advanced\Angular\evn_ex\server\evnServer\evnServer\bin\Debug\net5.0\FluentValidation.AspNetCore.dll
+C:\Users\master\Desktop\GitHub\C_Sharp\web\Advanced\Angular\evn_ex\server\evnServer\evnServer\bin\Debug\net5.0\FluentValidation.DependencyInjectionExtensions.dll
+C:\Users\master\Desktop\GitHub\C_Sharp\web\Advanced\Angular\evn_ex\server\evnServer\evnServer\obj\Debug\net5.0\evnServer.csproj.CopyComplete
