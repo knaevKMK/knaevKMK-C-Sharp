@@ -18,9 +18,12 @@ export class CadidateAllComponent implements OnInit {
 
     this.activateRouter.queryParams.subscribe(params => {
       try {
-        this.users = JSON.parse(params["users"])
+        this.candidateService.filter(JSON.parse(params["query"])).subscribe(result => {
+          console.log(JSON.parse(params["query"]));
+          console.log(result);
+          this.users = result;
+        })
       } catch {
-
         this.candidateService.getAll().subscribe(result => this.users = result)
       }
 

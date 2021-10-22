@@ -40,10 +40,9 @@ export class FilterComponent implements OnInit {
   }
   onFilter() {
     console.log(this.filterForm.value)
-    this.userService.filter(this.filterForm.value).subscribe(result => {
-      console.log(result)
-      this.router.navigate(['/'], { queryParams: { "users": JSON.stringify(result) } });
-    })
+
+    this.router.navigate(['/'], { queryParams: { "query": JSON.stringify(this.filterForm.value) } });
+
   }
   get name() { return this.filterForm.get('name') }
   get department() { return this.filterForm.get('department') }

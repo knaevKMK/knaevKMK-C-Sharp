@@ -29,12 +29,7 @@ export class SortComponent implements OnInit {
   ngOnInit(): void {
   }
   onSort() {
-    console.log(this.sortForm.value)
-    this.userService.filter(this.sortForm.value).subscribe(result => {
-
-      this.router.navigate(['/'], { queryParams: { "users": JSON.stringify(result) } });
-    })
-
+    this.router.navigate(['/'], { queryParams: { "query": JSON.stringify(this.sortForm.value) } });
   }
 
   get idSort() { return this.sortForm.get('idSort') }
