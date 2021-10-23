@@ -44,14 +44,14 @@ namespace evnServer.Controllers
             if (!validationResult.IsValid)
             {
                 validationResult.AddToModelState(ModelState, null);
-                return Ok(validationResult);
+                return BadRequest(validationResult.Errors);
             }
                 try
                 {
                  int  result= await this.userService.Create(base.mapper.CreateMapper()
                            .Map<UserServiceModel>(userDto));
 
-                return Ok(result);
+                return Created("Created",result);
                 }
                 catch (Exception)
                 {
