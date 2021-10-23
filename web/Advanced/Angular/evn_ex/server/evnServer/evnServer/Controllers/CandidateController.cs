@@ -12,7 +12,6 @@ namespace evnServer.Controllers
     using Microsoft.AspNetCore.Mvc;
     using evnServer.Validation;
     using FluentValidation.Results;
-    using FluentValidation;
     using FluentValidation.AspNetCore;
 
     public class CandidateController: ApiConteroller { 
