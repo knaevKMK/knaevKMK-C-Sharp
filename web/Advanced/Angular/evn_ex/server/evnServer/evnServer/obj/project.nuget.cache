@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "K3lagXLHmqmjBl4nP2kSaug93lgKTOngJYHga17+kO1T5R6Us3QZXNjZW7MgfgF6lJoIm9lC66RY2yvIHD9Jrg==",
+  "dgSpecHash": "NmGkzt4OmaSjyHrzNK8+y4nW15bovf52MZts8vVw5b0xxn/MkdgZ+3dZcIsXQng/glRfahussxrr7aN6TzOGWA==",
   "success": true,
   "projectFilePath": "C:\\Users\\master\\Desktop\\GitHub\\C_Sharp\\web\\Advanced\\Angular\\evn_ex\\server\\evnServer\\evnServer\\evnServer.csproj",
   "expectedPackageFiles": [
@@ -10,6 +10,8 @@
     "C:\\Users\\master\\.nuget\\packages\\fluentvalidation.aspnetcore\\10.3.4\\fluentvalidation.aspnetcore.10.3.4.nupkg.sha512",
     "C:\\Users\\master\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\10.3.4\\fluentvalidation.dependencyinjectionextensions.10.3.4.nupkg.sha512",
     "C:\\Users\\master\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
+    "C:\\Users\\master\\.nuget\\packages\\mediatr\\9.0.0\\mediatr.9.0.0.nupkg.sha512",
+    "C:\\Users\\master\\.nuget\\packages\\mediatr.extensions.microsoft.dependencyinjection\\9.0.0\\mediatr.extensions.microsoft.dependencyinjection.9.0.0.nupkg.sha512",
     "C:\\Users\\master\\.nuget\\packages\\microsoft.aspnetcore.hosting.abstractions\\2.2.0\\microsoft.aspnetcore.hosting.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\master\\.nuget\\packages\\microsoft.aspnetcore.hosting.server.abstractions\\2.2.0\\microsoft.aspnetcore.hosting.server.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\master\\.nuget\\packages\\microsoft.aspnetcore.http.abstractions\\2.2.0\\microsoft.aspnetcore.http.abstractions.2.2.0.nupkg.sha512",

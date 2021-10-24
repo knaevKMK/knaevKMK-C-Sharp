@@ -1,27 +1,19 @@
+
+namespace evnServer
+{
 using evnServer.Config;
 using evnServer.Data;
-using evnServer.Service;
-using evnServer.Service.impl;
+using evnServer.Data.Repositories;
 using evnServer.Validation;
 using FluentValidation.AspNetCore;
+using MediatR;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.SpaServices.AngularCli;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace evnServer
-{
     public class Startup
     {
         public Startup(IConfiguration configuration)
@@ -50,8 +42,11 @@ namespace evnServer
                 config.ImplicitlyValidateChildProperties = true;
                 config.ImplicitlyValidateRootCollectionElements = true;
             });
-            services.AddTransient<IUserService, UserService>();
-            services.AddTransient<IDepartmentService, DepartmentService>();
+
+            services.AddTransient<IUserRepository, UserRepository>();
+            services.AddTransient<IDepartmentRepository, DepartmentRepository>();
+            services.AddMediatR(typeof(Startup));
+
             services.AddTransient<UserCreatDtoValidation>();
             services.AddControllers();
             services.AddSwaggerGen(c =>

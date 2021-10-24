@@ -7,23 +7,27 @@ namespace evnServer.Controllers
     using evnServer.Model.Binding;
     using evnServer.Model.Service;
     using evnServer.Model.View;
-    using evnServer.Service;
     using AutoMapper;
     using Microsoft.AspNetCore.Mvc;
     using evnServer.Validation;
     using FluentValidation.Results;
     using FluentValidation.AspNetCore;
+    using MediatR;
+    using evnServer.Service.Queries;
 
     public class CandidateController: ApiConteroller { 
 
-        private readonly IUserService userService;
         private readonly UserCreatDtoValidation userModelValidator;
+        private readonly IMediator mediator;
 
-
-        public CandidateController(IUserService userService, IMapper mapper, UserCreatDtoValidation userModelValidator) :base(mapper)
+        public CandidateController(
+            IMapper mapper, 
+            UserCreatDtoValidation userModelValidator, 
+            IMediator mediator) 
+                : base(mapper)
         {
-            this.userService = userService;
             this.userModelValidator = userModelValidator;
+            this.mediator = mediator;
         }
 
         [HttpGet]
@@ -31,8 +35,8 @@ namespace evnServer.Controllers
         public async Task<ActionResult<List<UserViewModel>>> All()
         {
 
-            var result = this.userService.All();
-            return await Task.FromResult(result);
+            var result = this.mediator.Send(new GetUserListQuery());
+            return Ok(result.Result);
         }
         [HttpPost]
         [Route("create")]
@@ -47,10 +51,11 @@ namespace evnServer.Controllers
             }
                 try
                 {
-                 int  result= await this.userService.Create(base.mapper.CreateMapper()
-                           .Map<UserServiceModel>(userDto));
+                var  result= 
+              mediator.Send(new CreateUserQuery {
+                 userServiceModel= base.mapper.CreateMapper().Map<UserServiceModel>(userDto)});
 
-                return Created("Created",result);
+                return Created("Created",result.Result);
                 }
                 catch (Exception)
                 {
@@ -63,10 +68,9 @@ namespace evnServer.Controllers
         
         [HttpPost]
         [Route("filter")]
-        public async Task<ActionResult<List<UserViewModel>>> filter(FilterDto filter) {
+        public async Task<ActionResult<List<UserViewModel>>> filter(FilterDto _filter) {
 
-
-            var result =  this.userService.filter(filter);
+            var result = await   this.mediator.Send(new FilterUsersListQuery {filter= _filter });
             return Ok(result);
         }
     }

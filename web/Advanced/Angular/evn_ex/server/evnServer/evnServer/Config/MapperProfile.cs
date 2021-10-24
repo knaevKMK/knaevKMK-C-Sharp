@@ -1,15 +1,11 @@
-﻿
-namespace evnServer.Config
+﻿namespace evnServer.Config
 {
-using AutoMapper;
-using evnServer.Model.Binding;
-using evnServer.Model.Entity;
-using evnServer.Model.Service;
-using evnServer.Model.View;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+    using AutoMapper;
+    using evnServer.Model.Binding;
+    using evnServer.Model.Entity;
+    using evnServer.Model.Service;
+    using evnServer.Model.View;
+
     public class MapperProfile:Profile
     {
 
@@ -20,6 +16,8 @@ using System.Threading.Tasks;
 
             this.CreateMap<User, UserViewModel>()
                 .ForMember(model => model.DepartmentName, cfg => cfg.MapFrom(user => user.Department.Name));
+
+       //     this.CreateMap<UserServiceModel, UserViewModel>();
 
 
             this.CreateMap<Department, DepartmentViewModel>();

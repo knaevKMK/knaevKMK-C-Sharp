@@ -1,12 +1,8 @@
-﻿using evnServer.Model.Entity;
-using FluentValidation;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
+﻿
 namespace evnServer.Validation
 {
+using evnServer.Model.Entity;
+using FluentValidation;
     public class DepartmentValidation : AbstractValidator<Department>
     {
         public DepartmentValidation()

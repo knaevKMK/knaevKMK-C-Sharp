@@ -70,3 +70,5 @@ C:\Users\master\Desktop\GitHub\C_Sharp\web\Advanced\Angular\evn_ex\server\evnSer
 C:\Users\master\Desktop\GitHub\C_Sharp\web\Advanced\Angular\evn_ex\server\evnServer\evnServer\bin\Debug\net5.0\FluentValidation.dll
 C:\Users\master\Desktop\GitHub\C_Sharp\web\Advanced\Angular\evn_ex\server\evnServer\evnServer\bin\Debug\net5.0\FluentValidation.AspNetCore.dll
 C:\Users\master\Desktop\GitHub\C_Sharp\web\Advanced\Angular\evn_ex\server\evnServer\evnServer\bin\Debug\net5.0\FluentValidation.DependencyInjectionExtensions.dll
+C:\Users\master\Desktop\GitHub\C_Sharp\web\Advanced\Angular\evn_ex\server\evnServer\evnServer\bin\Debug\net5.0\MediatR.dll
+C:\Users\master\Desktop\GitHub\C_Sharp\web\Advanced\Angular\evn_ex\server\evnServer\evnServer\bin\Debug\net5.0\MediatR.Extensions.Microsoft.DependencyInjection.dll

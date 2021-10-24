@@ -1,63 +1,21 @@
 ﻿
-namespace evnServer.Service.impl
+
+namespace evnServer.Data.Repositories
 {
-    using AutoMapper;
-    using AutoMapper.QueryableExtensions;
-    using evnServer.Data;
     using evnServer.Model.Binding;
     using evnServer.Model.Entity;
-    using evnServer.Model.Service;
-    using evnServer.Model.View;
-    using System;
-using System.Collections.Generic;
-using System.Linq;
+    using System.Linq;
     using System.Reflection;
-    using System.Threading.Tasks;
-    public class UserService: IUserService
+    public class UserRepository : Repository<User>, IUserRepository
     {
-
-        private readonly ApplicationDbContext data;
-        private readonly IConfigurationProvider mapper;
-
-        public UserService(IMapper mapper, ApplicationDbContext data)
+        
+        public UserRepository(ApplicationDbContext data) : base(data)
         {
-            this.mapper = mapper.ConfigurationProvider;
-            this.data = data;
         }
 
-        public List<UserViewModel> All()
+        public IQueryable<User> Sort(FilterDto sort)
         {
-            return this.data.Users
-                   .ProjectTo<UserViewModel>(this.mapper)
-                   .ToList();
-
-        }
-
-        public async Task<int> Create(UserServiceModel userServiceModel)
-        {
-            User user = mapper.CreateMapper().Map<User>(userServiceModel);
-            user.Department = data.Departments.FirstOrDefault(d => d.Name == userServiceModel.DepartmentName);
-
-            user.Code =
-                (1 + this.data.Users.Count()).ToString().PadLeft(3, '0')
-                + user.Department.Code
-                + GetLAstSixDigits(userServiceModel.BirthDate);
-
-            await this.data.Users.AddAsync(user);
-            this.data.SaveChanges();
-            return await Task.FromResult(user.Id);
-        }
-
-
-        private string GetLAstSixDigits(DateTime birthDate)
-        {
-            string[] s = birthDate.GetDateTimeFormats()[2].Split("/");
-            return s[1].PadLeft(2, '0') + s[0].PadLeft(2, '0') + s[2].PadLeft(2, '0');
-        }
-
-        public List<UserViewModel> filter(FilterDto sort)
-        {
-            var query = this.data.Users.Where(u => u.Id != null);
+            var query = base.data.Set<User>().Where(u => u.Id != null);
             PropertyInfo[] properties = typeof(FilterDto).GetProperties();
             foreach (var field in properties)
             {
@@ -112,12 +70,8 @@ using System.Linq;
                 }
 
             }
-
-            return query
-                  .ProjectTo<UserViewModel>(mapper)
-                  .ToList();
-
+            return query;
         }
     }
-}
+ }
 
