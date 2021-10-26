@@ -58,7 +58,7 @@ namespace evnServer.Data.Repositories
 
             switch (sort.SortBy.ToLower())
             {
-                //sort
+               
                 case "id":
                     query = checkArrow(sort.Arrow.ToLower()) 
                         ? query.OrderByDescending(u => u.Id)
