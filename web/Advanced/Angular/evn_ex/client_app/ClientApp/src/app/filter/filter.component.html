@@ -8,7 +8,7 @@
 <div class="form-group">
     <label>Отдел:</label>
     <select formControlName="department">
-        <option selected value="{{null}}" >Select...</option>
+        <option selected value="Select..." >Select...</option>
         <option *ngFor="let _department of departments"
         value="{{_department.name}}">{{_department.name}}</option>
         </select>
@@ -24,7 +24,7 @@
         <input formControlName="score" type="number"
         class="form-control me-2" placeholder="Score..." />
         <select formControlName="arrowScore">
-            <option selected value="{{null}}">Current</option>
+            <option selected value="Current">Current</option>
             <option value="0">Под</option>
             <option value="1">Над</option>
         </select>
@@ -35,7 +35,7 @@
             <input value="{{null}}" formControlName="birthYaer" type="date"
             class="form-control me-2"  placeholder="Year of Birth" />
             <select formControlName="arrowBirth">
-                <option value="{{null}}" >Current</option>
+                <option value="Current" >Current</option>
                 <option value="0">Преди</option>
                 <option value="1">След</option>
             </select>

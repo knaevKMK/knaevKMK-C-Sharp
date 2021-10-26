@@ -25,12 +25,12 @@ export class FilterComponent implements OnInit {
 
     this.filterForm = this.fb.group({
       'name': [null, Validators.required],
-      'department': [null, Validators.required],
+      'department': ["Select...", Validators.required],
       'education': [null, Validators.required],
       'score': [null, Validators.required],
-      'arrowScore': [null, Validators.required],
+      'arrowScore': ["Current", Validators.required],
       'birthYaer': [null, Validators.required],
-      'arrowBirth': [null, Validators.required]
+      'arrowBirth': ["Current", Validators.required]
     });
 
   }
@@ -39,10 +39,21 @@ export class FilterComponent implements OnInit {
     this.deprtmentService.getAll().subscribe(data => this.departments = data)
   }
   onFilter() {
-    console.log(this.filterForm.value)
+    this.checkOptionField();
 
     this.router.navigate(['/'], { queryParams: { "query": "filter " + JSON.stringify(this.filterForm.value) } });
+  }
 
+  checkOptionField() {
+    this.filterForm.value['department'] = this.filterForm.value['department'] == "Select..."
+      ? null
+      : this.filterForm.value['department'];
+    this.filterForm.value['arrowScore'] = this.filterForm.value['arrowScore'] == "Current"
+      ? null
+      : this.filterForm.value['arrowScore'];
+    this.filterForm.value['arrowBirth'] = this.filterForm.value['arrowBirth'] == "Current"
+      ? null
+      : this.filterForm.value['arrowBirth'];
   }
   get name() { return this.filterForm.get('name') }
   get department() { return this.filterForm.get('department') }

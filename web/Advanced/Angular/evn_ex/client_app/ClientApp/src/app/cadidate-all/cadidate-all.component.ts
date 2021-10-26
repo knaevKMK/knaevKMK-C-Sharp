@@ -11,26 +11,27 @@ import { CandidateService } from '../services/candidate.service';
 export class CadidateAllComponent implements OnInit {
 
   public users: User[] = [];
+
   constructor(
 
     private activateRouter: ActivatedRoute,
     private candidateService: CandidateService) {
-
     this.activateRouter.queryParams.subscribe(params => {
-      //  console.log(params["query"])
-      let token = params["query"] === undefined
-        ? ["NaN"]
-        : params["query"].split(" ");
+      let _param = [];
+      params["query"] === undefined
+        ? _param.push("NaN")
+        : _param = (params["query"].split(" "));
 
-      switch (token[0]) {
+      console.log(_param)
+
+      switch (_param[0]) {
         case 'sort':
-          this.candidateService.sort({ name: token[1], arrow: token[2] })
+          console.log(_param[0])
+          this.candidateService.sort({ name: _param[1], arrow: _param[2] })
             .subscribe(result => this.users = result);
           break;
         case 'filter':
-          console.log(token)
-          this.candidateService.filter(JSON.parse(token[1])).subscribe(result => {
-            console.log(result);
+          this.candidateService.filter(JSON.parse(_param[1])).subscribe(result => {
             this.users = result;
           })
 
@@ -38,11 +39,12 @@ export class CadidateAllComponent implements OnInit {
         default:
           this.candidateService.getAll().subscribe(result => this.users = result); break;
       }
-
     })
   }
 
   ngOnInit(): void {
+
+
 
   }
 

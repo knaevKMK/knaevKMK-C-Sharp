@@ -32,17 +32,15 @@ export class CandidateFormAddComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    //  debugger;
     this.departmentService.getAll().subscribe(data => this.departments = data)
 
   }
 
   onCreate() {
-    //debugger;
-    this.createForm.value['birthDate'] ? null :
-      this.createForm.value['birthDate'] = '1969-01-01'
+    this.createForm.value['birthDate']
+      ? null
+      : this.createForm.value['birthDate'] = '1969-01-01';
 
-    //   console.log(this.createForm.value['birthDate'])
     this.userService.create(this.createForm.value)
       .subscribe(
         data => (this.router.navigate(['/'])),
