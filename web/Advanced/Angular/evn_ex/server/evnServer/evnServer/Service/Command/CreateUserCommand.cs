@@ -1,21 +1,27 @@
 ﻿
-namespace evnServer.Service.Handlers
+namespace evnServer.Service.Command
 {
 using AutoMapper;
 using evnServer.Data.Repositories;
 using evnServer.Model.Entity;
-using evnServer.Service.Queries;
+using evnServer.Model.Service;
 using MediatR;
 using System;
 using System.Threading;
 using System.Threading.Tasks;
-    public class CreateUserHandler : IRequestHandler<CreateUserQuery, int>
+
+
+    public class CreateUserCommand : IRequest<int>
+    {
+        public UserServiceModel userServiceModel;
+    }
+    public class CreateUserCommandHandler : IRequestHandler<CreateUserCommand, int>
     {
         private readonly IConfigurationProvider mapper;
         private readonly IUserRepository userRepository;
         private readonly IDepartmentRepository departmentRepository;
 
-        public CreateUserHandler(IMapper mapper,
+        public CreateUserCommandHandler(IMapper mapper,
             IUserRepository userRepository,
          IDepartmentRepository departmentRepository)
         {
@@ -24,7 +30,7 @@ using System.Threading.Tasks;
             this.departmentRepository = departmentRepository;
         }
 
-        public async Task<int> Handle(CreateUserQuery request, CancellationToken cancellationToken)
+        public async Task<int> Handle(CreateUserCommand request, CancellationToken cancellationToken)
         {
             User user = mapper.CreateMapper().Map<User>(request.userServiceModel);
             user.Department = departmentRepository.GetDepartmentByName(request.userServiceModel.DepartmentName);

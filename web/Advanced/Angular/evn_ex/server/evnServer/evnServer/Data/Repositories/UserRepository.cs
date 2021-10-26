@@ -27,28 +27,6 @@ namespace evnServer.Data.Repositories
 
                 switch (field.Name)
                 {
-                    //sort
-                    case "IdSort":
-                        query = (byte)_value == (byte)1 ? query.OrderByDescending(u => u.Id)
-                 : query.OrderBy(u => u.Id); break;
-                    case "NameSort":
-                        query = (byte)_value == (byte)1 ? query.OrderByDescending(u => u.FullName)
-               : query.OrderBy(u => u.FullName); break;
-                    case "DeprtmentSort":
-                        query = (byte)_value == (byte)1 ? query.OrderByDescending(u => u.Department)
-          : query.OrderBy(u => u.Department); break;
-                    case "EdicationSort":
-                        query = (byte)_value == (byte)1 ? query.OrderByDescending(u => u.Education)
-          : query.OrderBy(u => u.Education); break;
-                    case "ScoreSort":
-                        query = (byte)_value == (byte)1 ? query.OrderByDescending(u => (int)u.Score)
-              : query.OrderBy(u => (int)u.Score); break;
-                    case "BirthYearSort":
-                        query = (byte)_value == (byte)1 ? query.OrderByDescending(u => u.BirthDate.Year)
-          : query.OrderBy(u => u.BirthDate.Year); break;
-
-
-                    // filter
                     case "Name": query = query.Where(u => u.FullName.Contains(sort.Name)); break;
                     case "Department": query = query.Where(u => u.Department.Name.Equals(sort.Department)); break;
                     case "Education": query = query.Where(u => u.Education.Contains(sort.Education)); break;
@@ -71,6 +49,43 @@ namespace evnServer.Data.Repositories
 
             }
             return query;
+        }
+
+        public IQueryable<User> SortBy(SortBindDto sort)
+        {
+            var query = base.data.Set<User>().Where(u => u.Id != null);
+
+
+            switch (sort.SortBy.ToLower())
+            {
+                //sort
+                case "id":
+                    query = checkArrow(sort.Arrow.ToLower()) 
+                        ? query.OrderByDescending(u => u.Id)
+                        : query.OrderBy(u => u.Id); break;
+                case "name":
+                    query = checkArrow(sort.Arrow.ToLower()) ? query.OrderByDescending(u => u.FullName)
+           : query.OrderBy(u => u.FullName); break;
+                case "department":
+                    query = checkArrow(sort.Arrow.ToLower()) ? query.OrderByDescending(u => u.Department.Name)
+      : query.OrderBy(u => u.Department.Name); break;
+                case "education":
+                    query = checkArrow(sort.Arrow.ToLower()) ? query.OrderByDescending(u => u.Education)
+      : query.OrderBy(u => u.Education); break;
+                case "score":
+                    query = checkArrow(sort.Arrow.ToLower()) ? query.OrderByDescending(u => u.Score)
+          : query.OrderBy(u => u.Score); break;
+                case "birthyear":
+                    query = checkArrow(sort.Arrow.ToLower()) ? query.OrderByDescending(u => u.BirthDate.Year)
+      : query.OrderBy(u => u.BirthDate.Year); break;
+            }
+
+                    return query;
+        }
+
+        private bool checkArrow(string sort)
+        {
+            return sort.Equals("desc");
         }
     }
  }

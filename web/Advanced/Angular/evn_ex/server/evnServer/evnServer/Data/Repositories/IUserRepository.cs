@@ -7,5 +7,6 @@ using System.Linq;
   public  interface IUserRepository:IRepository<User>
     {
         IQueryable<User> Sort(FilterDto sort);
+        IQueryable<User> SortBy(SortBindDto sort);
     }
 }

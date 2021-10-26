@@ -17,20 +17,29 @@ export class CadidateAllComponent implements OnInit {
     private candidateService: CandidateService) {
 
     this.activateRouter.queryParams.subscribe(params => {
-      try {
-        this.candidateService.filter(JSON.parse(params["query"])).subscribe(result => {
-          console.log(JSON.parse(params["query"]));
-          console.log(result);
-          this.users = result;
-        })
-      } catch {
-        this.candidateService.getAll().subscribe(result => this.users = result)
+      //  console.log(params["query"])
+      let token = params["query"] === undefined
+        ? ["NaN"]
+        : params["query"].split(" ");
+
+      switch (token[0]) {
+        case 'sort':
+          this.candidateService.sort({ name: token[1], arrow: token[2] })
+            .subscribe(result => this.users = result);
+          break;
+        case 'filter':
+          console.log(token)
+          this.candidateService.filter(JSON.parse(token[1])).subscribe(result => {
+            console.log(result);
+            this.users = result;
+          })
+
+          break;
+        default:
+          this.candidateService.getAll().subscribe(result => this.users = result); break;
       }
 
-
-    }
-    )
-
+    })
   }
 
   ngOnInit(): void {

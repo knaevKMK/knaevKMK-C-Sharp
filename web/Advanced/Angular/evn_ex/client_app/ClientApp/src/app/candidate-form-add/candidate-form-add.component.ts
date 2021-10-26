@@ -42,7 +42,7 @@ export class CandidateFormAddComponent implements OnInit {
     this.createForm.value['birthDate'] ? null :
       this.createForm.value['birthDate'] = '1969-01-01'
 
-    console.log(this.createForm.value['birthDate'])
+    //   console.log(this.createForm.value['birthDate'])
     this.userService.create(this.createForm.value)
       .subscribe(
         data => (this.router.navigate(['/'])),

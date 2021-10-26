@@ -4,6 +4,7 @@ namespace evnServer
 using evnServer.Config;
 using evnServer.Data;
 using evnServer.Data.Repositories;
+using evnServer.Service;
 using evnServer.Validation;
 using FluentValidation.AspNetCore;
 using MediatR;
@@ -43,6 +44,8 @@ using Microsoft.OpenApi.Models;
                 config.ImplicitlyValidateRootCollectionElements = true;
             });
 
+            services.AddTransient<IUserService, UserService>();
+            services.AddTransient<IDepartmentService, DepartmentService>();
             services.AddTransient<IUserRepository, UserRepository>();
             services.AddTransient<IDepartmentRepository, DepartmentRepository>();
             services.AddMediatR(typeof(Startup));

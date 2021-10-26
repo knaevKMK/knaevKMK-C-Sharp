@@ -5,29 +5,24 @@ namespace evnServer.Controllers
     using System.Collections.Generic;
     using System.Threading.Tasks;
     using evnServer.Model.Binding;
-    using evnServer.Model.Service;
     using evnServer.Model.View;
-    using AutoMapper;
     using Microsoft.AspNetCore.Mvc;
     using evnServer.Validation;
     using FluentValidation.Results;
     using FluentValidation.AspNetCore;
-    using MediatR;
-    using evnServer.Service.Queries;
+    using evnServer.Service;
 
-    public class CandidateController: ApiConteroller { 
+    public class CandidateController : ApiConteroller {
 
         private readonly UserCreatDtoValidation userModelValidator;
-        private readonly IMediator mediator;
-
+        private readonly IUserService userService;
         public CandidateController(
-            IMapper mapper, 
-            UserCreatDtoValidation userModelValidator, 
-            IMediator mediator) 
-                : base(mapper)
+
+            UserCreatDtoValidation userModelValidator,
+             IUserService userService)
         {
             this.userModelValidator = userModelValidator;
-            this.mediator = mediator;
+            this.userService = userService;
         }
 
         [HttpGet]
@@ -35,42 +30,48 @@ namespace evnServer.Controllers
         public async Task<ActionResult<List<UserViewModel>>> All()
         {
 
-            var result = this.mediator.Send(new GetUserListQuery());
-            return Ok(result.Result);
+            var result = await this.userService.GetAll();
+            return Ok(result);
         }
         [HttpPost]
         [Route("create")]
         public async Task<ActionResult> Create(UserCreateDto userDto)
         {
 
-                ValidationResult validationResult = this.userModelValidator.Validate(userDto);
+            ValidationResult validationResult = this.userModelValidator.Validate(userDto);
             if (!validationResult.IsValid)
             {
                 validationResult.AddToModelState(ModelState, null);
                 return BadRequest(validationResult.Errors);
             }
-                try
-                {
-                var  result= 
-              mediator.Send(new CreateUserQuery {
-                 userServiceModel= base.mapper.CreateMapper().Map<UserServiceModel>(userDto)});
+            try
+            {
+                var result = await
+                    this.userService.Create((userDto));
 
-                return Created("Created",result.Result);
-                }
-                catch (Exception)
-                {
+                return Created("Created", result);
+            }
+            catch (Exception)
+            {
 
-                    return BadRequest();
-                }
+                return BadRequest();
+            }
 
-         }
-          
-        
+        }
+
+
         [HttpPost]
         [Route("filter")]
-        public async Task<ActionResult<List<UserViewModel>>> filter(FilterDto _filter) {
-
-            var result = await   this.mediator.Send(new FilterUsersListQuery {filter= _filter });
+        public async Task<ActionResult<List<UserViewModel>>> filter(FilterDto filter) {
+            var result = await this.userService.Filter(filter);
+            return Ok(result);
+        }
+        [HttpGet]
+        [Route("sort")]
+        public async Task<ActionResult<List<UserViewModel>>> Sort([FromQuery]String query) {
+            string[] token = query.Split(" ");
+            SortBindDto _sort = new SortBindDto() { SortBy = token[0], Arrow = token[1] };
+            var result = await this.userService.Sort(_sort);
             return Ok(result);
         }
     }

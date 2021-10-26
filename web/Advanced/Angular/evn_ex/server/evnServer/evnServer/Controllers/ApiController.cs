@@ -10,11 +10,10 @@ using Microsoft.AspNetCore.Mvc;
     public abstract class ApiConteroller: ControllerBase
     {
 
-        protected readonly IConfigurationProvider mapper;
+       
 
-        protected ApiConteroller(IMapper mapper)
+        protected ApiConteroller()
         {
-            this.mapper = mapper.ConfigurationProvider;
         }
     }
 }

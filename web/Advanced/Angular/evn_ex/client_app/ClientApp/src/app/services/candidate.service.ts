@@ -22,4 +22,9 @@ export class CandidateService {
   filter(data: any): Observable<any> {
     return this.http.post(this.url + "/candidate/filter", data);
   }
+  sort(data: any): Observable<any> {
+    console.log(data)
+    //                                 /Candidate/sort?query=id%20asc
+    return this.http.get(this.url + `/Candidate/sort?query=${data['name']}%20${data['arrow']}`)
+  }
 }

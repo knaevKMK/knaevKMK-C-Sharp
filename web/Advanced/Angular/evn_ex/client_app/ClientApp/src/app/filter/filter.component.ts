@@ -41,7 +41,7 @@ export class FilterComponent implements OnInit {
   onFilter() {
     console.log(this.filterForm.value)
 
-    this.router.navigate(['/'], { queryParams: { "query": JSON.stringify(this.filterForm.value) } });
+    this.router.navigate(['/'], { queryParams: { "query": "filter " + JSON.stringify(this.filterForm.value) } });
 
   }
   get name() { return this.filterForm.get('name') }

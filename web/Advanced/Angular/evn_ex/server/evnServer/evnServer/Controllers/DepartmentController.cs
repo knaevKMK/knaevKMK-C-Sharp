@@ -3,6 +3,7 @@ namespace evnServer.Controllers
 {
     using AutoMapper;
     using evnServer.Model.View;
+    using evnServer.Service;
     using evnServer.Service.Queries;
     using MediatR;
     using Microsoft.AspNetCore.Mvc;
@@ -12,21 +13,19 @@ namespace evnServer.Controllers
   
     public  class DepartmentController:ApiConteroller
     {
-        private readonly IMediator mediator;
-
-        public DepartmentController(IMapper mapper, 
-            IMediator mediator) : base(mapper)
+        private readonly IDepartmentService departmentService;
+        public DepartmentController(
+        IDepartmentService departmentService)
         {
+            this.departmentService = departmentService;
 
-            this.mediator = mediator;
         }
 
         [HttpGet]
         [Route("all")]
         public async Task<ActionResult<List<DepartmentViewModel>>> All() {
-            var result =
-                mediator.Send(new DepartmentAllQuery());
-            return Ok(result.Result);
+            var result = await this.departmentService.GetAll();
+            return Ok(result);
         }
     }
 }
