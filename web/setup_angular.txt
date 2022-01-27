@@ -21,4 +21,4 @@ ng g class shared/<entity> --type=model --skipTests
 ng g s shared/<entity> --skipTests
 
 
-nd serve --o
+ng serve --o
